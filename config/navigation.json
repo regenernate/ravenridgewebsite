@@ -1,0 +1,19 @@
+{
+  "navigation":[
+    { "id":"rrfv",
+      "name":"About RRHH",
+      "path":"/about" },
+    { "id":"hcbd",
+      "name":"CBD Products",
+      "path":"/products" },
+    { "id":"gm",
+      "name":"Growing Methods",
+      "path":"/growing" },
+    { "id":"re",
+      "name":"Research & Education",
+      "path":"/research" },
+    { "id":"c",
+      "name":"Contact",
+      "path":"/contact" }      
+  ]
+}

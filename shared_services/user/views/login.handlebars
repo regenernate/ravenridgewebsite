@@ -1,0 +1,42 @@
+
+<div class="ui segment">
+  <form id="user_login_form" class="ui segment form" action='/user/login/' method='POST'>
+    <div class="ui relaxed divided horizontal list">
+      {{#each users}}
+      <a class="item" onClick="javascript:loginUser('{{email}}')">{{screen_name}}</a>
+      {{/each}}
+    </div>
+    <h5 class="ui horizontal divider">
+      or if you're a guest
+    </h5>
+    <div class="ui field">
+      <input id="login_email_input" class="ui fluid input" type='email' placeholder='enter email here' name='email'></input>
+    </div>
+    <div >
+      <input id="user_login_button" class="ui blue button" type='submit' name='submit' value='login'></input>
+    </div>
+  </form>
+  <script language="javascript">
+    function loginUser(email){
+      $('#login_email_input').val(email);
+      $('#user_login_button').click();
+    }
+
+      function loginUserOneClick(email){
+        let data = {};
+        data.email = email;
+        $.post({
+          url:'/user/oneclick',
+          data:data,
+          success:oneClickResponse,
+          dataType: 'json'
+        });
+        //disable buttons
+      }
+
+      function oneClickResponse( data ){
+        //do whats next based on response from server
+      }
+
+  </script>
+</div>

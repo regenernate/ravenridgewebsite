@@ -1,0 +1,62 @@
+
+<div class="ui fluid bottom attached small buttons">
+  {{#each navigation}}
+    <button class="ui small blue button" id='{{id}}' onclick="javascript:mainNav( this, '{{path}}' );">{{name}}</button>
+  {{/each}}
+</div>
+
+<script language='javascript'>
+
+  var current_target = null; //$('#visit_activity');
+  var content_hash = {};
+  var input_container = null;
+
+  mainNav(document.getElementById('{{navigation.[0].id}}'), '{{navigation.[0].path}}');
+
+  function mainNav( target, location ){
+    if($(target).is(current_target)){
+      console.log('here already');
+      return;
+    }
+    //cache current content, if there is any
+    if( current_target ){
+//      content_hash[current_target.attr('id')] = {success:true, content:input_container.html()};
+      current_target.toggleClass("inverted");
+    }
+    current_target = $(target);
+    current_target.toggleClass("inverted");
+
+    //if there is cached content, load it. otherwise do server call
+    if( content_hash.hasOwnProperty( current_target.attr('id') ) ){
+      showContent( content_hash[current_target.attr('id')] );
+    }else{
+      $.get({
+        url:location,
+        success:showContent,
+        dataType: 'json',
+        headers: {
+            Accept: "application/json; charset=utf-8",
+            "Content-Type": "text/plain; charset=utf-8"
+        }
+      });
+    }
+  }
+
+  function showContent( result ){
+    console.log("In load result :: ", result);
+    if(!input_container){
+      input_container = $('#input_container');
+    }
+    input_container.empty();
+    try{
+      if( result.success ){
+        input_container.append(result.content);
+      }else{
+        input_container.append(result.error);
+      }
+    }catch(err){
+      input_container.append("<h4>Primary navigation calls must return json objects.</h4>");
+    }
+  }
+
+</script>

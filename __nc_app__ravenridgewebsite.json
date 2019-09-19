@@ -1,0 +1,368 @@
+{
+  ".DS_Store": {
+    "mt": "Tue Jun 11 2019 20:16:33 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/.DS_Store"
+  },
+  ".env.default": {
+    "mt": "Wed Sep 18 2019 16:17:37 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/.env.default"
+  },
+  ".gitignore": {
+    "mt": "Tue Jun 11 2019 20:21:22 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/.gitignore"
+  },
+  "config/navigation.json": {
+    "mt": "Wed Jun 19 2019 14:55:31 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/config/navigation.json"
+  },
+  "config/routers/about_router.js": {
+    "mt": "Wed Sep 18 2019 16:37:50 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/config/routers/about_router.js"
+  },
+  "config/routers/product_testing_router.js": {
+    "mt": "Wed Sep 18 2019 17:02:38 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/config/routers/product_testing_router.js"
+  },
+  "config/routers/products_router.js": {
+    "mt": "Wed Sep 18 2019 16:53:44 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/config/routers/products_router.js"
+  },
+  "config/routers/purchasing_router.js": {
+    "mt": "Fri Jun 28 2019 18:12:35 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/config/routers/purchasing_router.js"
+  },
+  "config/routers/user_router.js": {
+    "mt": "Wed Sep 18 2019 16:38:21 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/config/routers/user_router.js"
+  },
+  "config/user/users.json": {
+    "mt": "Wed Sep 18 2019 16:29:17 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/config/user/users.json"
+  },
+  "content/about/index.handlebars": {
+    "mt": "Mon Jul 01 2019 17:17:56 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/about/index.handlebars"
+  },
+  "content/assets/.DS_Store": {
+    "mt": "Fri Jun 28 2019 17:58:52 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/.DS_Store"
+  },
+  "content/assets/cyn.png": {
+    "mt": "Fri Jun 28 2019 17:50:09 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/cyn.png"
+  },
+  "content/assets/hay_ropey_saruatown.jpg": {
+    "mt": "Mon Jul 01 2019 16:38:40 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/hay_ropey_saruatown.jpg"
+  },
+  "content/assets/hay_sauratown.jpg": {
+    "mt": "Mon Jul 01 2019 16:35:35 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/hay_sauratown.jpg"
+  },
+  "content/assets/hay_tractor_pilot.jpg": {
+    "mt": "Mon Jul 01 2019 16:28:51 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/hay_tractor_pilot.jpg"
+  },
+  "content/assets/hay_utv_terrace.jpg": {
+    "mt": "Mon Jul 01 2019 16:33:02 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/hay_utv_terrace.jpg"
+  },
+  "content/assets/hemp_hay_terraces.jpg": {
+    "mt": "Mon Jul 01 2019 16:36:54 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/hemp_hay_terraces.jpg"
+  },
+  "content/assets/logo/rrhh_logo_basic.png": {
+    "mt": "Fri Jun 28 2019 17:58:22 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/logo/rrhh_logo_basic.png"
+  },
+  "content/assets/logo/rrhh_logo_clean.png": {
+    "mt": "Fri Jun 28 2019 18:08:38 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/logo/rrhh_logo_clean.png"
+  },
+  "content/assets/matthew.png": {
+    "mt": "Wed Jun 19 2019 17:06:39 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/matthew.png"
+  },
+  "content/assets/molly.png": {
+    "mt": "Wed Jun 19 2019 17:06:30 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/molly.png"
+  },
+  "content/assets/nate.png": {
+    "mt": "Fri Jun 28 2019 17:51:42 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/nate.png"
+  },
+  "content/assets/white-image.png": {
+    "mt": "Wed Jun 19 2019 16:32:42 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/assets/white-image.png"
+  },
+  "content/components/call_to_action.handlebars": {
+    "mt": "Tue Jun 25 2019 21:59:04 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/components/call_to_action.handlebars"
+  },
+  "content/components/image_and_text_view.handlebars": {
+    "mt": "Tue Jun 25 2019 16:04:08 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/components/image_and_text_view.handlebars"
+  },
+  "content/components/scripts.handlebars": {
+    "mt": "Tue Jun 25 2019 21:59:29 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/components/scripts.handlebars"
+  },
+  "content/product_testing/display_result.handlebars": {
+    "mt": "Wed Sep 18 2019 17:04:23 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/product_testing/display_result.handlebars"
+  },
+  "content/product_testing/home.handlebars": {
+    "mt": "Wed Sep 18 2019 17:00:06 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/product_testing/home.handlebars"
+  },
+  "content/products": {
+    "exists": true,
+    "is_dir": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/content/products"
+  },
+  "favicon.ico": {
+    "mt": "Tue Jun 11 2019 20:21:44 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/favicon.ico"
+  },
+  "index.js": {
+    "mt": "Tue Jun 11 2019 20:21:58 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/index.js"
+  },
+  "migration.js": {
+    "mt": "Tue Jun 11 2019 20:38:37 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/migration.js"
+  },
+  "package-lock.json": {
+    "mt": "Tue Jun 11 2019 20:22:20 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/package-lock.json"
+  },
+  "package.json": {
+    "mt": "Thu Sep 05 2019 15:28:48 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/package.json"
+  },
+  "semantic/.DS_Store": {
+    "mt": "Tue Jun 11 2019 20:20:26 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/semantic/.DS_Store"
+  },
+  "semantic/dist/semantic.min.css": {
+    "mt": "Tue Jun 11 2019 20:20:26 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/semantic/dist/semantic.min.css"
+  },
+  "semantic/dist/semantic.min.js": {
+    "mt": "Tue Jun 11 2019 20:20:26 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/semantic/dist/semantic.min.js"
+  },
+  "server/bro.js": {
+    "mt": "Tue Jun 11 2019 20:19:20 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/bro.js"
+  },
+  "server/location.js": {
+    "mt": "Tue Jun 11 2019 20:19:20 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/location.js"
+  },
+  "server/mime_types.js": {
+    "mt": "Tue Jun 11 2019 20:19:20 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/mime_types.js"
+  },
+  "server/router.js": {
+    "mt": "Tue Jun 11 2019 20:19:20 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/router.js"
+  },
+  "server/routers/aws_image_router.js": {
+    "mt": "Tue Jun 11 2019 20:19:20 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/routers/aws_image_router.js"
+  },
+  "server/server_v2.js": {
+    "mt": "Wed Sep 18 2019 16:53:06 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/server_v2.js"
+  },
+  "server/views/footer.handlebars": {
+    "mt": "Tue Jun 11 2019 20:19:20 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/views/footer.handlebars"
+  },
+  "server/views/header.handlebars": {
+    "mt": "Fri Jun 28 2019 18:11:11 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/views/header.handlebars"
+  },
+  "server/views/logged_in.handlebars": {
+    "mt": "Wed Jun 19 2019 17:21:18 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/views/logged_in.handlebars"
+  },
+  "server/views/logged_out.handlebars": {
+    "mt": "Tue Jun 11 2019 20:19:20 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/views/logged_out.handlebars"
+  },
+  "server/views/mainnavigation.handlebars": {
+    "mt": "Tue Jun 11 2019 20:19:20 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/views/mainnavigation.handlebars"
+  },
+  "server/views/none.handlebars": {
+    "mt": "Tue Jun 11 2019 20:19:20 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/views/none.handlebars"
+  },
+  "server/views/template_manager.js": {
+    "mt": "Tue Jun 25 2019 22:36:24 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/server/views/template_manager.js"
+  },
+  "shared_services/aws_image_upload/.DS_Store": {
+    "mt": "Tue Mar 26 2019 14:33:38 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/shared_services/aws_image_upload/.DS_Store"
+  },
+  "shared_services/aws_image_upload/aws_config.js": {
+    "mt": "Tue Apr 02 2019 13:46:04 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/shared_services/aws_image_upload/aws_config.js"
+  },
+  "shared_services/aws_image_upload/image_controller.js": {
+    "mt": "Tue Apr 02 2019 15:32:51 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/shared_services/aws_image_upload/image_controller.js"
+  },
+  "shared_services/aws_image_upload/image_model.js": {
+    "mt": "Tue Apr 02 2019 15:30:47 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/shared_services/aws_image_upload/image_model.js"
+  },
+  "shared_services/aws_image_upload/imagetools.js": {
+    "mt": "Tue Mar 19 2019 06:51:18 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/shared_services/aws_image_upload/imagetools.js"
+  },
+  "shared_services/aws_image_upload/views/input_form.handlebars": {
+    "mt": "Mon Mar 25 2019 19:00:15 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/shared_services/aws_image_upload/views/input_form.handlebars"
+  },
+  "shared_services/database/mysql2_db.js": {
+    "mt": "Thu Apr 04 2019 20:12:51 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/shared_services/database/mysql2_db.js"
+  },
+  "shared_services/logging/logger.js": {
+    "mt": "Fri Apr 05 2019 13:10:11 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/shared_services/logging/logger.js"
+  },
+  "shared_services/user/user.js": {
+    "mt": "Wed Sep 18 2019 16:30:40 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/shared_services/user/user.js"
+  },
+  "shared_services/user/views/login.handlebars": {
+    "mt": "Fri Apr 12 2019 17:44:22 GMT-0400 (Eastern Daylight Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nathan/Desktop/ravenridgefamilyfarm/software/website/shared_services/user/views/login.handlebars"
+  }
+}
