@@ -10,16 +10,6 @@ var templates = template_manager.compileTemplates({
   "result":"./content/product_testing/display_result.handlebars",
   "home":"./content/product_testing/home.handlebars"
 });
-/** define unique components that are used by this set of routes **/
-var components = template_manager.compileComponents({
-});
-
-var routes = {
-  get : {
-  },
-  post : {
-  }
-}
 
 async function routeRequest( request, response, file_parts ){
   if(!file_parts.length || !file_parts[0].length)
@@ -34,13 +24,9 @@ async function routeRequest( request, response, file_parts ){
 
     //for now assume it does
     return bro.get(true, template_manager.executeTemplate(templates.result, {test_filename:file_parts[0] + ".jpg"}))
-  }
-  let lookup = routes[ String(request.method).toLowerCase() ];
-  if( lookup.hasOwnProperty( file_parts[0] ) ){
-    let routed_call = await lookup[ file_parts[0] ]( request, response );
-    return routed_call;
-  }else{
-    return bro.get(false, null, "There is no implementation of " + file_parts[0] + " in about_router.");
+  } else {
+    //handle any other possibilities or  return home templates
+    return bro.get(true, template_manager.executeTemplate(templates.home));
   }
 }
 
