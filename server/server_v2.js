@@ -13,18 +13,14 @@ const { parse } = require('querystring');
 const { location } = require('./location');
 const template_manager = require('./views/template_manager');
 
-//load logger
-var {log} = require('../shared_services/logging/logger');
-
-
 //connect to various data sources, ideally extracted to one config per service
 
 //mysql database
-var db = require('../shared_services/database/mysql2_db.js');
+var db = require('../services/database/mysql2_db.js');
 
 db.connect(function(err) {
   if (err) {
-    log('Unable to connect to MySQL.');
+    console.log('Unable to connect to MySQL.');
     process.exit(1)
   } else {
     initHttpServer();
@@ -43,7 +39,7 @@ db.connect(function(err) {
 //  login();
 //  logout();
 
-var user_service = require('../shared_services/user/user');
+var user_service = require('../services/user/user');
 
 var http_server;
 
@@ -63,7 +59,7 @@ var configured_routers = { };
 
 try{
   //loadConfiguredRoutes('./server/routers/', './routers/');
-  loadConfiguredRouter('./config/routers/', '../config/routers/');
+  loadConfiguredRouter('./services/service_routers/','../services/service_routers/');
 }catch(err){
   console.log( "there was an error loading a configured router", err.message );
 }
@@ -115,7 +111,7 @@ Server modifies json return data to be { success:.., content:..}
 
 async function receiveHttpRequest(request, response) {
   try{
-    log('SERVER REQUEST RECIEVED :: ', request.url, request.method);
+    console.log('SERVER REQUEST RECIEVED :: ', request.url, request.method);
     let request_path = request.url.toLowerCase();
     let request_method = request.method.toLowerCase();
     let request_headers = request.headers || {};
@@ -130,15 +126,20 @@ async function receiveHttpRequest(request, response) {
     if( qmi.length > 2 ) throw new Error('THERE can only be one ? in the query string.' + request_path);
     else if( qmi.length > 1 ){
       let queryobject = query.parse( qmi[1] );
+
+      //extract this into a helper that can be loaded as needed
       if(queryobject.latitude && queryobject.longitude){
         request.geolocation = location( queryobject.latitude, queryobject.longitude, queryobject.accuracy );
         delete(queryobject.latitude);
         delete(queryobject.longitude);
         delete(queryobject.accuracy);
       }
+
       request.query = queryobject;
+      if(qmi[0].substr(-1) == "/") qmi[0] = qmi[0].substring(0, qmi[0].length-1);
       request_path = qmi[0];
       request.url = request_path;
+      console.log("server_v2:queryobject => ", queryobject, request.url);
     }else request.query = {};
 //    log("query string :: ", request.query);
     //check for posted form or image data if post method requested
@@ -148,10 +149,10 @@ async function receiveHttpRequest(request, response) {
       }else{
         let content_type_in = request.headers['content-type'].toLowerCase();
         if( content_type_in.indexOf(FORM_URLENCODED) >= 0 ) {
-          log( "  PROCESSING AS :: " + FORM_URLENCODED );
+          console.log( "  PROCESSING AS :: " + FORM_URLENCODED );
           collectRequestData( request, response, respondToRequest );
         }else if( request.headers['content-type'].indexOf(FORM_MULTIPART) >= 0 ){
-          log( "  PROCESSING AS :: " + FORM_MULTIPART );
+          console.log( "  PROCESSING AS :: " + FORM_MULTIPART );
           throw new Error("Currently not accepting posted image data");
 //          image_service.processImageData( request, response, respondToRequest );
         }else{ //no special processing for other content types yet ...
@@ -163,7 +164,7 @@ async function receiveHttpRequest(request, response) {
       respondToRequest( request, response );
     }else throw new Error("Unsupported request method :: " + request_method);
   }catch(err){
-    log(err.stack);
+    console.log(err.stack);
     endRequest( response, "SERVER ERROR CAUGHT :: " + err.message + " :: " + err.stack, 'text/plain' )
   }
 }
@@ -177,7 +178,11 @@ async function respondToRequest( request, response ){
     let request_method = request.method.toLowerCase();
     let request_headers = request.headers || {};
 
+
+
+
     //validate user by calling user service
+
     let validate_user = await user_service.isValidUser(request, response);
     if( !validate_user.success ){
       let login_user = await user_service.login(request, response);
@@ -238,7 +243,7 @@ async function respondToRequest( request, response ){
               }
             }else{
 
-              if( routed_call.error ) log( routed_call.error );
+              if( routed_call.error ) console.log( routed_call.error );
 
               if( routed_call.redirect ){
                 response.writeHead(302, { "Location": routed_call.redirect });
@@ -259,7 +264,7 @@ async function respondToRequest( request, response ){
       }
     }
   }catch(err){
-    log(err.stack);
+    console.log(err.stack);
     if(content_type_out == mime_types['.html']){
       endRequest( response, err.message, content_type_out );
     }else if(content_type_out == mime_types['.json']){

@@ -31,6 +31,8 @@ function compileComponents( components, replace ){
 function loadComponentScripts( directories ){
 
 }
+
+/*
 //load any navigation elements from config
 fs.readFile("./config/navigation.json", function(error, content) {
     if (error) {
@@ -47,22 +49,25 @@ function setNavigation( nav ){
 
 handlebars.registerPartial('mainnavigation', handlebars.compile( fs.readFileSync( "./server/views/mainnavigation.handlebars", 'utf-8' )))
 handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./server/views/footer.handlebars", 'utf-8' )));
+*/
 handlebars.registerPartial('header', handlebars.compile( fs.readFileSync( "./server/views/header.handlebars", 'utf-8' )));
 
+
 //load and compile layout templates
-const layouts = compileTemplates( { "logged_in":"./server/views/logged_in.handlebars", "logged_out":"./server/views/logged_out.handlebars", "none":"./server/views/none.handlebars" } );
+//"logged_in":"./server/views/logged_in.handlebars", "logged_out":"./server/views/logged_out.handlebars",
+const layouts = compileTemplates( {  "none":"./server/views/none.handlebars", "logged_in":"./server/views/logged_in.handlebars"} );
 //need to activate system that will track compiled components and ensure the proper script files are loaded.
 //const component_scripts = loadComponentScripts( ["./content/components/scripts.handlebars"] );
 
 module.exports.compileTemplates = compileTemplates;
 module.exports.compileComponents = compileComponents;
 
-module.exports.showSegments = function(data){
-  return layouts.segments(data);
-}
-
 module.exports.executeTemplate = function( source, data, layout ){
-  if( !layout || !layouts.hasOwnProperty( layout ) ) layout = "none";
+  if( !layout ) layout = "none";
+  else if( !layouts.hasOwnProperty( layout ) ){
+    console.log("TemplateManager :: There is no layout ", layout);
+    layout = "none";
+  }
   if( !data ) data = {};
   if( !source ) source = function(data){ return data; }
 //  console.log("executeTemplate() : ", source, data, layout );
@@ -70,9 +75,8 @@ module.exports.executeTemplate = function( source, data, layout ){
   var template_value;
   try{
     cleanDatesForDisplay(data);
-    var nav = data.navigation;
-    if( !nav ) nav = default_navigation;
-    template_value = layouts[ layout ]( { user:data.user, navigation:nav, body:source(data) });
+    console.log(data);
+    template_value = layouts[ layout ]( { body:source(data) });
   }catch(err){
     console.log("template_manager.executeTemplate :: ", err.message);
   }

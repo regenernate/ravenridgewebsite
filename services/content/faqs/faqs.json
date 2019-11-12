@@ -1,0 +1,75 @@
+{
+  "faqs":[
+    {
+      "category":"Growing and Manufacture",
+      "items":[
+        {
+          "question":"What growing practices does RavenRidge use?",
+          "answer":"At RavenRidge, we follow regenerative agriculture practices. We do not use any petrochemical-derived fertilizers, nor do we spray any synthetic pesticides or herbicides. As needed, we manage pests and nutrient deficiencies with naturally derived materials ( i.e. alfalfa, kelp, manure, etc. ). <br>We welcome questions about how we grow, and why we grow the way we do. To ask us something, or to schedule a time to come out to the farm, email ravenridgehempandherbals@gmail.com."
+        },
+        {
+          "question":"Does your product have any residual (left over) solvents?",
+          "answer":"No. The only \"solvents\" used in our extraction process are heat, pressure, and Carbon Dioxide in either solid or liquid form. None of these leave residuals that can be harmful."
+        },
+        {
+          "question":"Can I view product laboratory tests?",
+          "answer":"Of course! We have each batch of product tested for cannabinoid and terpene profiles, and also do testing to ensure the hemp flower we use is free of mycotoxins and heavy metals. We do not test for pesticide or herbicide residue because we do not use pesticides or herbicides on our farm, and our planting locations are chosen to avoid any accidental drift from neighboring areas.<br>Tests for specific product can be found by visiting the url or scanning the QR code found on the product label. To view mycotoxin and heavy metal screening test results, click here."
+        }
+      ]
+    },
+    {
+      "category":"Hemp, CBD, and Full Plant Extract",
+      "items":[
+        {
+          "question":"Can you tell me what problems or symptoms hemp full plant extract will help with?",
+          "answer":"Unfortunately not. Most sublingual oils, including ours, are being sold under the regulatory framework of dietary supplements. In this category, the FDA does not allow any statements or claims that could be interpreted as recommending specific products for the treatment of any specific indication. However, there is research being done into the efficacy of hemp derived cbd in various circumstances, which we encourage you to look into."
+        },
+        {
+          "question":"Is hemp derived CBD safe?",
+          "answer":"Hemp derived CBD that is produced, packaged and labelled appropriately is generally considered safe for consumption by the FDA, but you should consult your Health Practitioner if you have any concerns. Our products are free from residual solvents, pesticides, herbicides, heavy metals, mycotoxins and other known contaminants. They are derived from health plants growing in health soil."
+        },
+        {
+          "question":"Can CBD products show up on a drug screen?",
+          "answer":"Unfortunately, yes, CBD products contain a trace amount of THC which, although legal when below .3%, can potentially still show up on a drug test. It is a good idea to consult with your employer before taking CBD products, if you have concerns about testing. The product testing for our products can be used to confirm the legal THC content."
+        },
+        {
+          "question":"What is the entourage effect?",
+          "answer":"The entourage effect is the idea that there may be more benefit from taking a solution that contains all the molecules a plant produces, rather than from taking an isolated molecule."
+        },
+        {
+          "question":"What dosage of CBD containing product should I use?",
+          "answer":"This will depend in part on the product strength ( # mg CBD per dose is shown on product labels ). You need to discuss the dosage you take with your Healthcare Practitioner.  Most people take 5-40 mg of CBD/day."
+        },
+        {
+          "question":"With what frequency should I use CBD containing products?",
+          "answer":"You need to discuss the frequency with your Healthcare Practitioner.  Most people use sublingual products 1-2 times per day and topicals on an as needed basis."
+        },
+        {
+          "question":"What are some additional sources of information on CBD?",
+          "answer":"<div class='ui bulleted list'><div class='item'>World Health Organization report on CBD</div><div class='item'>PubMed</div><div class='item'>Project CBD</div></div>"
+        }
+      ]
+    },
+    {
+      "category":"RavenRidge Products",
+      "items":[
+        {
+          "question":"Why does RavenRidge accept eCheck payments but not credit cards for its CBD based products?",
+          "answer":"At present, very few options are available for processing credit card payments for CBD-containing products. This is due to financial industry regulations that are slowing changing as the details are ironed out around the national legalization of hemp derived cbd products. Electronic Checks are less risky for banks and so several options exist to take payments in this manner. It is safe and secure, but requires the purchaser to enter the routing number and account number to a valid checking account rather than the twelve digits of a credit card number. As soon as a reasonable credit card option becomes available, we will update our services to include it as a payment option."
+        },
+        {
+          "question":"Why does RavenRidge only use Full Spectrum Extract to make its oral solution?",
+          "answer":"Full Spectrum Extract contains all of the nutrients produced by the hemp flower, not just the CBD.  RavenRidge believes there is more value in taking the full spectrum of cannabinoids and terpenes produced by the plant (called the entourage effect), than in taking a purified extract of CBD."
+        },
+        {
+          "question":"Why does RavenRidge offer 2 carrier oils?",
+          "answer":"<div class='ui bulleted list'><div class='item'>Our CBD oral spray/drops use either Organic Olive Oil or Organic Hempseed Oil as a carrier.   Both can be sustainably produced with low environmental impact.  Olive Oil is high in healthy monounsaturated fatty acids, and anti-oxidants, and has anti-inflammatory properties.  Hempseed Oil is high in healthy Omega-3 and Omega-6 fatty acids, and also has anti-inflammatory properties</div><div class='item'>Both oils are healthy, and Full Spectrum Hemp Flower Extract mixes well with either, so we recommend choosing based on which oil you prefer the taste of.  If you haven’t tasted Hempseed Oil, we would recommend you taste it prior to ordering.</div></div>"
+        },
+        {
+          "question":"Why does RavenRidge offer flavorings?",
+          "answer":"Our recommendation is to not add flavoring.  That said, Full Spectrum Hemp Extract has an earthy/grassy taste, and many people prefer to add a small amount of flavoring to change the flavor to something they prefer.   We use natural flavors from Apex Flavors (www.ApexFlavors.com) developed specifically for use with CBD based oral products.  We currently offer Peppermint, Black Licorice, and Orange flavoring."
+        }
+      ]
+    }
+  ]
+}
