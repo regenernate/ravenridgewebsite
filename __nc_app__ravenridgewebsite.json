@@ -29,6 +29,18 @@
     "state": 1,
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/config/users.json"
   },
+  "content/rrhh_footer.jpg": {
+    "mt": "Tue Nov 12 2019 16:10:28 GMT-0500 (Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/content/rrhh_footer.jpg"
+  },
+  "content/rrhh_header.png": {
+    "mt": "Tue Nov 12 2019 15:57:29 GMT-0500 (Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/content/rrhh_header.png"
+  },
   "favicon.ico": {
     "mt": "Thu Oct 31 2019 10:24:52 GMT-0400 (Eastern Daylight Time)",
     "exists": true,
@@ -48,7 +60,7 @@
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/migration.js"
   },
   "package-lock.json": {
-    "mt": "Fri Nov 08 2019 16:26:23 GMT-0500 (Eastern Standard Time)",
+    "mt": "Tue Nov 12 2019 14:49:24 GMT-0500 (Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/package-lock.json"
@@ -3990,25 +4002,25 @@
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/server/routers/aws_image_router.js"
   },
   "server/server_v2.js": {
-    "mt": "Mon Nov 11 2019 14:22:47 GMT-0500 (Eastern Standard Time)",
+    "mt": "Tue Nov 12 2019 16:16:58 GMT-0500 (Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/server/server_v2.js"
   },
   "server/views/footer.handlebars": {
-    "mt": "Thu Oct 31 2019 10:24:52 GMT-0400 (Eastern Daylight Time)",
+    "mt": "Tue Nov 12 2019 16:17:13 GMT-0500 (Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/server/views/footer.handlebars"
   },
   "server/views/header.handlebars": {
-    "mt": "Tue Nov 12 2019 09:09:24 GMT-0500 (Eastern Standard Time)",
+    "mt": "Tue Nov 12 2019 15:59:53 GMT-0500 (Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/server/views/header.handlebars"
   },
   "server/views/logged_in.handlebars": {
-    "mt": "Mon Nov 11 2019 16:21:38 GMT-0500 (Eastern Standard Time)",
+    "mt": "Tue Nov 12 2019 16:17:03 GMT-0500 (Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/server/views/logged_in.handlebars"
@@ -4032,7 +4044,7 @@
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/server/views/none.handlebars"
   },
   "server/views/template_manager.js": {
-    "mt": "Tue Nov 12 2019 08:38:21 GMT-0500 (Eastern Standard Time)",
+    "mt": "Tue Nov 12 2019 16:11:57 GMT-0500 (Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/server/views/template_manager.js"
@@ -4091,6 +4103,12 @@
     "state": 1,
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/services/database/mysql2_db.js"
   },
+  "services/monthlyusers/views/redirect.handlebars": {
+    "mt": "Tue Nov 12 2019 14:49:49 GMT-0500 (Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/services/monthlyusers/views/redirect.handlebars"
+  },
   "services/product_testing/views/display_result.handlebars": {
     "mt": "Thu Oct 31 2019 10:24:52 GMT-0400 (Eastern Daylight Time)",
     "exists": true,
@@ -4110,22 +4128,28 @@
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/services/purchasing/views/home.handlebars"
   },
   "services/service_routers/content_router.js": {
-    "mt": "Tue Nov 12 2019 08:40:57 GMT-0500 (Eastern Standard Time)",
+    "mt": "Tue Nov 12 2019 15:15:01 GMT-0500 (Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/services/service_routers/content_router.js"
   },
   "services/service_routers/product_testing_router.js": {
-    "mt": "Mon Nov 11 2019 05:55:11 GMT-0500 (Eastern Standard Time)",
+    "mt": "Tue Nov 12 2019 15:16:07 GMT-0500 (Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/services/service_routers/product_testing_router.js"
   },
   "services/service_routers/purchasing_router.js": {
-    "mt": "Mon Nov 11 2019 16:25:16 GMT-0500 (Eastern Standard Time)",
+    "mt": "Tue Nov 12 2019 15:16:17 GMT-0500 (Eastern Standard Time)",
     "exists": true,
     "state": 1,
     "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/services/service_routers/purchasing_router.js"
+  },
+  "services/service_routers/survey_redirect.js": {
+    "mt": "Tue Nov 12 2019 14:49:49 GMT-0500 (Eastern Standard Time)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/nate/Desktop/ravenridge/dev/ravenridgewebsite/services/service_routers/survey_redirect.js"
   },
   "services/service_routers/user_router.js": {
     "mt": "Fri Nov 08 2019 16:40:28 GMT-0500 (Eastern Standard Time)",

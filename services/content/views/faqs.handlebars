@@ -1,20 +1,27 @@
 <div class="ui text container">
   <h2 class="ui header">FAQs</h2>
   {{#each faqs}}
-  <div class="ui horizontal divider">
-    {{{category}}}
-  </div>
-  <div class="ui items">
-    {{#each items}}
-    <div class="item">
-      <div class="content">
-        <a class="header">{{question}}</a>
-        <div class="description">
-          <p>{{{answer}}}</p>
+  <div class="item">
+    <div class="ui horizontal divider">
+      {{{category}}}
+    </div>
+    <div class="ui items">
+      {{#if image}}
+      <div class="item">
+        <img class="ui image" src="/content/{{image}}">
+      </div>
+      {{/if}}
+      {{#each items}}
+      <div class="item">
+        <div class="content">
+          <a class="header">{{question}}</a>
+          <div class="description">
+            <p>{{{answer}}}</p>
+          </div>
         </div>
       </div>
+      {{/each}}
     </div>
-    {{/each}}
   </div>
   {{/each}}
 </div>

@@ -15,7 +15,8 @@ const mimeTypes = {
     '.eot': 'application/vnd.ms-fontobject',
     '.otf': 'application/font-otf',
     '.svg': 'application/image/svg+xml',
-    '.ico': 'image/x-icon'
+    '.ico': 'image/x-icon',
+    '.pdf': 'application/pdf'
 };
 
 module.exports.getMimeTypes = function( subset ){

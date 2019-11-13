@@ -2,6 +2,7 @@
   "faqs":[
     {
       "category":"Growing and Manufacture",
+      "image":"growing_practices.jpg",
       "items":[
         {
           "question":"What growing practices does RavenRidge use?",
@@ -19,6 +20,7 @@
     },
     {
       "category":"Hemp, CBD, and Full Plant Extract",
+      "image":"hemp_and_cbd.jpg",
       "items":[
         {
           "question":"Can you tell me what problems or symptoms hemp full plant extract will help with?",
@@ -52,6 +54,7 @@
     },
     {
       "category":"RavenRidge Products",
+      "image":"product.jpg",
       "items":[
         {
           "question":"Why does RavenRidge accept eCheck payments but not credit cards for its CBD based products?",
