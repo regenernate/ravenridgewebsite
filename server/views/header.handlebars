@@ -1,21 +1,24 @@
-<div class='ui menu'>
-  <a href="/purchase/" class="item">
+<img class="ui centered image" src="/content/rrhh_header.png">  
+<div class='ui stackable menu'>
+  <a href="/purchase/" class="{{#if nav.purchase}}header {{/if}}vertically fitted item">
     Purchase Hemp/CBD Products
   </a>
-  <a href="/" class="header item">
+  <a href="/" class="{{#if nav.about}}header {{/if}}vertically fitted item">
     About RavenRidge
   </a>
-  <a href="/education/faqs" class="item">
+  <a href="/education/faqs" class="{{#if nav.education}}header {{/if}}vertically fitted item">
     Hemp and Product FAQS
   </a>
-  <a class="item">
-    Contact
-  </a>
-  <div class="right aligned item">
-    <div class="ec-cart-widget"></div>
-    <div>
-    <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?17874207&data_platform=code&data_date=2019-11-11" charset="utf-8"></script>
-    <script type="text/javascript">Ecwid.init();</script>
+  <div class="right menu">
+    <a class="{{#if nav.contact}}header {{/if}}vertically fitted item">
+      Contact
+    </a>
+    <div class="vertically fitted item">
+      <div class="ec-cart-widget"></div>
+      <div>
+      <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?17874207&data_platform=code&data_date=2019-11-11" charset="utf-8"></script>
+      <script type="text/javascript">Ecwid.init();</script>
+      </div>
     </div>
   </div>
 </div>

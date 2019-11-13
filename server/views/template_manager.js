@@ -50,6 +50,7 @@ function setNavigation( nav ){
 handlebars.registerPartial('mainnavigation', handlebars.compile( fs.readFileSync( "./server/views/mainnavigation.handlebars", 'utf-8' )))
 handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./server/views/footer.handlebars", 'utf-8' )));
 */
+handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./server/views/footer.handlebars", 'utf-8' )));
 handlebars.registerPartial('header', handlebars.compile( fs.readFileSync( "./server/views/header.handlebars", 'utf-8' )));
 
 
@@ -69,14 +70,15 @@ module.exports.executeTemplate = function( source, data, layout ){
     layout = "none";
   }
   if( !data ) data = {};
+  //hackey default navigation
+  if( !data.nav ) data.nav = {about:true};
   if( !source ) source = function(data){ return data; }
 //  console.log("executeTemplate() : ", source, data, layout );
 //  console.log(data);
   var template_value;
   try{
     cleanDatesForDisplay(data);
-    console.log(data);
-    template_value = layouts[ layout ]( { body:source(data) });
+    template_value = layouts[ layout ]( { body:source(data), nav:data.nav });
   }catch(err){
     console.log("template_manager.executeTemplate :: ", err.message);
   }

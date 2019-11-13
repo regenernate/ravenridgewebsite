@@ -6,6 +6,8 @@ const fs = require('fs');
 
 //this variable tells the server what urls to route here
 let brp = "education";
+let nav = {};
+nav[brp] = true;
 module.exports.base_route_path = brp;
 //this variable controls whether or not this router gets loaded
 module.exports.active = true;
@@ -26,7 +28,7 @@ fs.readFile("./services/content/faqs/faqs.json", function(error, content) {
     if (error) {
       console.log("content_controller error :: " + error.message);
     } else {
-      faqs = JSON.parse(content);
+      faqs = JSON.parse(content).faqs;
     }
 });
 
@@ -41,7 +43,7 @@ var routes = {
 //write a method to handle route requests and return a bro
 async function routeRequest( request, response, file_parts ){
   if(file_parts[0].toLowerCase() == "faqs"){
-    return bro.get(true, template_manager.executeTemplate(templates.faqs, faqs, "logged_in"));
+    return bro.get(true, template_manager.executeTemplate(templates.faqs, {nav:nav,faqs:faqs}, "logged_in"));
   }else{
     return bro.get(false, null, "There is no page in content domain for " + file_parts.join("/"));
   }

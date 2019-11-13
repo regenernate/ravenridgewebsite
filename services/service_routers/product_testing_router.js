@@ -1,3 +1,6 @@
+let brp = "product_testing";
+let nav = {};
+nav[brp] = true;
 module.exports.base_route_path = "product_testing";
 //this variable controls whether or not this router gets loaded
 module.exports.active = true;
@@ -23,7 +26,7 @@ async function routeRequest( request, response, file_parts ){
     //need to check object storage to see if this test result exists
 
     //for now assume it does
-    return bro.get(true, template_manager.executeTemplate(templates.result, {test_filename:file_parts[0] + ".jpg"}))
+    return bro.get(true, template_manager.executeTemplate(templates.result, {nav:nav, test_filename:file_parts[0] + ".jpg"}))
   } else {
     //handle any other possibilities or  return home templates
     return bro.get(true, template_manager.executeTemplate(templates.home));

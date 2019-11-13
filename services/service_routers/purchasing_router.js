@@ -1,4 +1,7 @@
-module.exports.base_route_path = "purchase";
+let brp = "purchase"
+let nav = {};
+nav[brp] = true;
+module.exports.base_route_path = brp;
 //this variable controls whether or not this router gets loaded
 module.exports.active = true;
 
@@ -11,7 +14,7 @@ var templates = template_manager.compileTemplates({
 });
 
 async function routeRequest( request, response, file_parts ){
-  return bro.get(true, template_manager.executeTemplate(templates.home, null, "logged_in"));
+  return bro.get(true, template_manager.executeTemplate(templates.home, {nav:nav}, "logged_in"));
 }
 
 module.exports.router = routeRequest;
