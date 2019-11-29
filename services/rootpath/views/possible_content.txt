@@ -1,0 +1,31 @@
+
+<img class="ui huge centered image" src="/content/about/lay_of_land.jpg"/>
+
+<h3>RavenRidge Hemp and Herbals is our family farm found in the shadow of Pilot Mountain, North Carolina ( the mountain, not the town ).</h3>
+<div class="ui four column center aligned stacking grid">
+  <div class="item"><img class="ui image" src="/content/about/mom.jpg"></div>
+  <div class="item"><img class="ui image" src="/content/about/nate.jpg"></div>
+  <div class="item"><img class="ui image" src="/content/about/cyn_and_willy.jpg"></div>
+  <div class="item"><img class="ui image" src="/content/about/dad.jpg"></div>
+</div>
+<p>We grow hemp for whole-plant extract, and make small batch cbd products on-site.</p>
+
+<p>The CBD product space is quickly becoming a saturated market. Here is what makes us unique:</p>
+<div class="ui ordered list">
+  <div class="item">Every product we sell links to an independent third-party composition test for that batch. Be wary of CBD products that don't.</div>
+  <div class="item">We grow our plants under hay mulch, not under plastic or on bare soil. This benefits both the soil and the planet.</div>
+  <div class="item">We are committed to staying small, and to helping other small scale growers stay viable in this economically challenging time.</div>
+</div>
+
+<p>It's also kind of cool that we have four generations involved in growing and harvesting hemp at RavenRidge.</p>
+<img class="ui huge image" src="/content/about/four_generations.jpg"/>
+<p>Although arguably, the youngest members may be more entertainers than helpers.</p>
+
+<p>Beyond producing high quality herbal products, and helping other small growers do the same, our mission at RavenRidge is to add meaningful data into the regenerative agriculture movement which we believe is a cornerstone of the foundation for a healthier future.</p>
+
+<p>For us, regenerative agriculture means:</p>
+<div class="ui list">
+  <div class="item">Using biological alternatives to plastic mulch, commercial herbicides and pesticides, and petrochemical fertilizers.</div>
+  <div class="item">Maximizing diversity of plant, insect, animal and soil composition and microbiology.</div>
+  <div class="item">Prioritizing local resources, by-products and waste streams to build soil.</div>
+</div>

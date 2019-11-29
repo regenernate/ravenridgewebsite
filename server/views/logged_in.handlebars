@@ -17,12 +17,9 @@
 -->
   </head>
   <body>
-    <div class='ui'>
-      {{#> header nav=nav }}
-      {{/header}}
-      <div id='input_container'>
-        {{{body}}}
-      </div>
+      {{#> header }}{{/header}}
+      {{#> nav nav=nav}}{{/nav}}
+      {{{body}}}
       {{#> footer}}{{/footer}}
     </div>
   </body>

@@ -5,7 +5,7 @@ const fs = require('fs');
 //any querystring will have been removed from the file_parts array but is available as request.query
 
 //this variable tells the server what urls to route here
-let brp = "education";
+let brp = "rootpath";
 let nav = {};
 nav[brp] = true;
 module.exports.base_route_path = brp;
@@ -20,33 +20,12 @@ var template_manager = require('../../server/views/template_manager');
 
 /** define templates here for use in request routing **/
 var templates = template_manager.compileTemplates({
-  "faqs":"./services/content/views/faqs.handlebars"
+  "home":"./services/rootpath/views/home.handlebars"
 });
-
-var faqs;
-fs.readFile("./services/content/faqs/faqs.json", function(error, content) {
-    if (error) {
-      console.log("content_controller error :: " + error.message);
-    } else {
-      faqs = JSON.parse(content).faqs;
-    }
-});
-
-//define get and post routes here as {url segment}:{method_to_call}
-var routes = {
-  get : {
-  },
-  post : {
-  }
-}
 
 //write a method to handle route requests and return a bro
 async function routeRequest( request, response, file_parts ){
-  if(file_parts[0].toLowerCase() == "faqs"){
-    return bro.get(true, template_manager.executeTemplate(templates.faqs, {nav:nav,faqs:faqs}, "logged_in"));
-  }else{
-    return bro.get(true, template_manager.executeTemplate(template_manager.unsupported_route, {nav:nav, message:"Not sure what you're looking for? Try one of the menu items above!"}, "logged_in"));
-  }
+  return bro.get(true, template_manager.executeTemplate(templates.home, {nav:nav}, "logged_in"));
   /*
   let lookup = routes[ String(request.method).toLowerCase() ];
   if( lookup.hasOwnProperty( file_parts[0] ) ){

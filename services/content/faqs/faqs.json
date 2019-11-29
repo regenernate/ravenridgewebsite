@@ -1,7 +1,7 @@
 {
   "faqs":[
     {
-      "category":"Growing and Manufacture",
+      "category":"Growing and Manufacturing",
       "image":"growing_practices.jpg",
       "items":[
         {
@@ -10,11 +10,11 @@
         },
         {
           "question":"Does your product have any residual (left over) solvents?",
-          "answer":"No. The only \"solvents\" used in our extraction process are heat, pressure, and Carbon Dioxide in either solid or liquid form. None of these leave residuals that can be harmful."
+          "answer":"No. The only \"solvents\" used in our extraction process are heat, pressure, and carbon dioxide in either solid, liquid or gas form. None of these leave residuals."
         },
         {
           "question":"Can I view product laboratory tests?",
-          "answer":"Of course! We have each batch of product tested for cannabinoid and terpene profiles, and also do testing to ensure the hemp flower we use is free of mycotoxins and heavy metals. We do not test for pesticide or herbicide residue because we do not use pesticides or herbicides on our farm, and our planting locations are chosen to avoid any accidental drift from neighboring areas.<br>Tests for specific product can be found by visiting the url or scanning the QR code found on the product label. To view mycotoxin and heavy metal screening test results, click here."
+          "answer":"Of course! We have each batch of product tested for CBD content/dose to confirm the dosage on the bottle.  We also test our hemp flower to confirm it is free of mycotoxins and heavy metals.  These results are also available on our website.  We do not test for pesticide or herbicide residue because we do not use pesticides or herbicides on our farm, and our planting locations are chosen to avoid any possible drift from neighboring areas.<br>For more information visit our <a href='/product_testing/'>product testing page</a>."
         }
       ]
     },
@@ -24,15 +24,15 @@
       "items":[
         {
           "question":"Can you tell me what problems or symptoms hemp full plant extract will help with?",
-          "answer":"Unfortunately not. Most sublingual oils, including ours, are being sold under the regulatory framework of dietary supplements. In this category, the FDA does not allow any statements or claims that could be interpreted as recommending specific products for the treatment of any specific indication. However, there is research being done into the efficacy of hemp derived cbd in various circumstances, which we encourage you to look into."
+          "answer":"Per FDA regulations, hemp derived products are not medical products and are not intended for medical use, or to diagnose, treat or cure any disease or ailment. Make sure you consult with your physician before taking these products, and especially if you have any serious or chronic health condition.  By using this website you acknowledge the following: I understand these products have not been evaluated by the Food and Drug Administration.  These products are not to be used by children, or by pregnant women."
         },
         {
           "question":"Is hemp derived CBD safe?",
-          "answer":"Hemp derived CBD that is produced, packaged and labelled appropriately is generally considered safe for consumption by the FDA, but you should consult your Health Practitioner if you have any concerns. Our products are free from residual solvents, pesticides, herbicides, heavy metals, mycotoxins and other known contaminants. They are derived from health plants growing in health soil."
+          "answer":"Hemp derived CBD that is produced, packaged and labelled appropriately is considered safe, but you should consult your Health Practitioner if you have any concerns.  Our products are free from residual solvents, pesticides, herbicides, heavy metals, mycotoxins and other known contaminants. They are derived from healthy plants growing in healthy soil."
         },
         {
           "question":"Can CBD products show up on a drug screen?",
-          "answer":"Unfortunately, yes, CBD products contain a trace amount of THC which, although legal when below .3%, can potentially still show up on a drug test. It is a good idea to consult with your employer before taking CBD products, if you have concerns about testing. The product testing for our products can be used to confirm the legal THC content."
+          "answer":"Unfortunately, yes, CBD products contain a trace amount of THC which, although legal when below 0.3%, can potentially still show up on a drug test. It is a good idea to consult with your employer before taking CBD products, if you have concerns about testing. The product testing for our products can be used to confirm the legal THC content."
         },
         {
           "question":"What is the entourage effect?",
@@ -40,7 +40,7 @@
         },
         {
           "question":"What dosage of CBD containing product should I use?",
-          "answer":"This will depend in part on the product strength ( # mg CBD per dose is shown on product labels ). You need to discuss the dosage you take with your Healthcare Practitioner.  Most people take 5-40 mg of CBD/day."
+          "answer":"You need to discuss the dosage you take with your Healthcare Practitioner.  Most people take 5-40 mg of CBD/day."
         },
         {
           "question":"With what frequency should I use CBD containing products?",
@@ -58,11 +58,11 @@
       "items":[
         {
           "question":"Why does RavenRidge accept eCheck payments but not credit cards for its CBD based products?",
-          "answer":"At present, very few options are available for processing credit card payments for CBD-containing products. This is due to financial industry regulations that are slowing changing as the details are ironed out around the national legalization of hemp derived cbd products. Electronic Checks are less risky for banks and so several options exist to take payments in this manner. It is safe and secure, but requires the purchaser to enter the routing number and account number to a valid checking account rather than the twelve digits of a credit card number. As soon as a reasonable credit card option becomes available, we will update our services to include it as a payment option."
+          "answer":"At present, very few options are available for processing credit card payments for CBD-containing products. This is due to financial industry regulations that are slowing changing as the details are ironed out around the national legalization of hemp derived CBD products. Electronic Checks are less risky for banks and so several options exist to take payments in this manner. It is safe and secure, but requires the purchaser to enter the routing number and account number to a valid checking account rather than the twelve digits of a credit card number. As soon as a reasonable credit card option becomes available, we will update our services to include it as a payment option."
         },
         {
           "question":"Why does RavenRidge only use Full Spectrum Extract to make its oral solution?",
-          "answer":"Full Spectrum Extract contains all of the nutrients produced by the hemp flower, not just the CBD.  RavenRidge believes there is more value in taking the full spectrum of cannabinoids and terpenes produced by the plant (called the entourage effect), than in taking a purified extract of CBD."
+          "answer":"Full Spectrum Extract contains all of the active compounds produced by the hemp flower, not just the CBD. RavenRidge believes there is more value in taking the full spectrum of cannabinoids and terpenes produced by the plant (called the entourage effect), than in taking a purified extract of CBD."
         },
         {
           "question":"Why does RavenRidge offer 2 carrier oils?",
@@ -70,7 +70,7 @@
         },
         {
           "question":"Why does RavenRidge offer flavorings?",
-          "answer":"Our recommendation is to not add flavoring.  That said, Full Spectrum Hemp Extract has an earthy/grassy taste, and many people prefer to add a small amount of flavoring to change the flavor to something they prefer.   We use natural flavors from Apex Flavors (www.ApexFlavors.com) developed specifically for use with CBD based oral products.  We currently offer Peppermint, Black Licorice, and Orange flavoring."
+          "answer":"Our recommendation is to not add flavoring. That said, Full Spectrum Hemp Extract has an earthy/grassy taste, and many people prefer to add a small amount of flavoring to change the flavor to something they prefer. We use natural flavors from Apex Flavors (www.ApexFlavors.com) developed specifically for use with CBD based oral products. We currently offer Peppermint, Licorice, and Orange Cream flavoring."
         }
       ]
     }

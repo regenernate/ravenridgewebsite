@@ -3,12 +3,14 @@ const handlebars = require('handlebars');
 const moment = require('moment');
 var default_navigation;
 
+/*
 handlebars.registerHelper("everyOther", function (index, amount, scope) {
     if ( ++index % amount)
         return scope.inverse(this);
     else
         return scope.fn(this);
 });
+*/
 
 //compile each of the templates sent
 function compileTemplates( templates, replace ){
@@ -52,14 +54,16 @@ handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./ser
 */
 handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./server/views/footer.handlebars", 'utf-8' )));
 handlebars.registerPartial('header', handlebars.compile( fs.readFileSync( "./server/views/header.handlebars", 'utf-8' )));
+handlebars.registerPartial('nav', handlebars.compile( fs.readFileSync( "./server/views/nav.handlebars", 'utf-8' )));
 
 
 //load and compile layout templates
 //"logged_in":"./server/views/logged_in.handlebars", "logged_out":"./server/views/logged_out.handlebars",
-const layouts = compileTemplates( {  "none":"./server/views/none.handlebars", "logged_in":"./server/views/logged_in.handlebars"} );
+const layouts = compileTemplates( {  "unsupported":"./server/views/unsupported.handlebars", "none":"./server/views/none.handlebars", "logged_in":"./server/views/logged_in.handlebars"} );
 //need to activate system that will track compiled components and ensure the proper script files are loaded.
 //const component_scripts = loadComponentScripts( ["./content/components/scripts.handlebars"] );
 
+module.exports.unsupported_route = layouts.unsupported;
 module.exports.compileTemplates = compileTemplates;
 module.exports.compileComponents = compileComponents;
 
