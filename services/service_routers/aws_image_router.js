@@ -1,5 +1,5 @@
 //../..
-var aws_controller = require("../services/aws_image_upload/image_controller");
+var aws_controller = require("../aws_image_upload/image_controller");
 
 //define get and post routes here
 var routes = {
@@ -16,3 +16,4 @@ var routes = {
 
 module.exports.base_route_path = "image";
 module.exports.routes = routes;
+module.exports.active = false;

@@ -1,13 +1,13 @@
-var mime_types = require('../../mime_types').getMimeTypes( {'.html':true, '.json':true} );
+var mime_types = require('../../server/mime_types').getMimeTypes( {'.html':true, '.json':true} );
 
 var moment = require('moment');
-var bro = require('../../bro');
+var bro = require('../../server/bro');
 var image = require('./image_model');
 var aws = require('./aws_config');
 
-var template_manager = require('../../views/template_manager');
+var template_manager = require('../template_manager');
 var templates = template_manager.compileTemplates({
-  "input":"./server/services/aws_image_upload/views/input_form.handlebars"
+  "input":"./services/aws_image_upload/views/input_form.handlebars"
 });
 
 module.exports.getInputForm = async function( request, response ){

@@ -21,51 +21,21 @@ function compileTemplates( templates, replace ){
   }
   return ret;
 }
-//compile the components sent
-function compileComponents( components, replace ){
-  var ret = ( replace ? components : {} );
-  for( var i in components ){
-    ret[i] = handlebars.compile( fs.readFileSync( components[i], 'utf-8' ) );
-  }
-  return ret;
-}
 
 function loadComponentScripts( directories ){
 
 }
 
-/*
-//load any navigation elements from config
-fs.readFile("./config/navigation.json", function(error, content) {
-    if (error) {
-      console.log("server error :: " + error.message);
-    } else {
-//      configured_navigation = JSON.parse(content);
-      setNavigation(JSON.parse(content));
-    }
-});
-
-function setNavigation( nav ){
-  default_navigation = nav.navigation;
-}
-
-handlebars.registerPartial('mainnavigation', handlebars.compile( fs.readFileSync( "./server/views/mainnavigation.handlebars", 'utf-8' )))
-handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./server/views/footer.handlebars", 'utf-8' )));
-*/
-handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./server/views/footer.handlebars", 'utf-8' )));
-handlebars.registerPartial('header', handlebars.compile( fs.readFileSync( "./server/views/header.handlebars", 'utf-8' )));
-handlebars.registerPartial('nav', handlebars.compile( fs.readFileSync( "./server/views/nav.handlebars", 'utf-8' )));
-
+//compile and register partials
+handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./views/partials/footer.handlebars", 'utf-8' )));
+handlebars.registerPartial('header', handlebars.compile( fs.readFileSync( "./views/partials/header.handlebars", 'utf-8' )));
+handlebars.registerPartial('nav', handlebars.compile( fs.readFileSync( "./views/partials/nav.handlebars", 'utf-8' )));
 
 //load and compile layout templates
-//"logged_in":"./server/views/logged_in.handlebars", "logged_out":"./server/views/logged_out.handlebars",
-const layouts = compileTemplates( {  "unsupported":"./server/views/unsupported.handlebars", "none":"./server/views/none.handlebars", "logged_in":"./server/views/logged_in.handlebars"} );
-//need to activate system that will track compiled components and ensure the proper script files are loaded.
-//const component_scripts = loadComponentScripts( ["./content/components/scripts.handlebars"] );
+const layouts = compileTemplates( {  "unsupported":"./views/layouts/unsupported.handlebars", "none":"./views/layouts/none.handlebars", "logged_in":"./views/layouts/logged_in.handlebars"} );
 
 module.exports.unsupported_route = layouts.unsupported;
 module.exports.compileTemplates = compileTemplates;
-module.exports.compileComponents = compileComponents;
 
 module.exports.executeTemplate = function( source, data, layout ){
   if( !layout ) layout = "none";

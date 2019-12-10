@@ -4,7 +4,7 @@ var bro = require( '../../server/bro' );
 var Cookies = require('cookies');
 var keys = [process.env.COOKIE_KEY];
 //load template manager and compile templates
-var template_manager = require('../../server/views/template_manager')
+var template_manager = require('../../services/template_manager')
 var templates = template_manager.compileTemplates({
   "login":"./services/user/views/login.handlebars"
 });

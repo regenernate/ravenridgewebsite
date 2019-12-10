@@ -1,0 +1,21 @@
+
+@media only screen { /* all base screen styles go here, assuming full menu on top and single column display */
+
+}
+
+
+
+@media only screen and (max-width: 599px) { /* phones need to have split menu */
+}
+
+@media only screen and (min-width: 600px) {
+
+}
+
+@media only screen and (min-width: 900px) { /* landscape tablet and desktop screens should have two columns */
+
+}
+
+@media only screen and (min-width: 1200px) { /* some storylines can have three columns - maybe increase this breakpoint */
+
+}

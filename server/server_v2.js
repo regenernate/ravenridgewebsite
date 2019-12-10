@@ -11,7 +11,6 @@ const moment = require("moment");
 const query = require('query-string');
 const { parse } = require('querystring');
 const { location } = require('./location');
-const template_manager = require('./views/template_manager');
 
 //connect to various data sources, ideally extracted to one config per service
 
@@ -299,7 +298,8 @@ async function collectRequestData(request, response, resume) {
 }
 
 function formatDateForDB( datestring, format_as ){
-  return moment(datestring).format('x');
+  if(!format_as) format_as = "x";
+  return moment(datestring).format(format_as);
 }
 
 async function attemptToServeStaticFile( response, file_path, content_type ){

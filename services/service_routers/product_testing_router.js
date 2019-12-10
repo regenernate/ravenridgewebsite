@@ -6,7 +6,7 @@ module.exports.base_route_path = "product_testing";
 module.exports.active = true;
 
 var bro = require("../../server/bro");
-var template_manager = require('../../server/views/template_manager');
+var template_manager = require('../../services/template_manager');
 
 /** define templates here for use in request routing **/
 var templates = template_manager.compileTemplates({

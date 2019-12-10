@@ -10,7 +10,7 @@ if( process.env.NODE_ENV != "development" ){
 var base_image_path = 'https://' + bucket + "/" + process.env.OSS_ENDPOINT + '/';
 var base_thumb_path = 'https://' + thumb_bucket + "/" + process.env.OSS_ENDPOINT + '/';
 
-const mime_types = require('../../mime_types').getMimeTypes();
+const mime_types = require('../../server/mime_types').getMimeTypes();
 const image_types = {};
 image_types[ mime_types['.jpg'] ] = '.jpg';
 image_types[ mime_types['.jpeg'] ] = '.jpg';
