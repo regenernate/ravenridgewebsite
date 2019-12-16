@@ -137,7 +137,8 @@ header {
   }
 
   #product-navigation .selected {
-    background-color: #ada684;
+    background-color: #ffffff;
+    color:#d38322;
   }
 
   #product-navigation li:hover {
