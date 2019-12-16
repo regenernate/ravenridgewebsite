@@ -1,7 +1,47 @@
 const fs = require('fs');
 const handlebars = require('handlebars');
 const moment = require('moment');
-var default_navigation;
+
+
+handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
+
+    var operators, result;
+
+    if (arguments.length < 3) {
+        throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
+    }
+
+    if (options === undefined) {
+        options = rvalue;
+        rvalue = operator;
+        operator = "===";
+    }
+
+    operators = {
+        '==': function (l, r) { return l == r; },
+        '===': function (l, r) { return l === r; },
+        '!=': function (l, r) { return l != r; },
+        '!==': function (l, r) { return l !== r; },
+        '<': function (l, r) { return l < r; },
+        '>': function (l, r) { return l > r; },
+        '<=': function (l, r) { return l <= r; },
+        '>=': function (l, r) { return l >= r; },
+        'typeof': function (l, r) { return typeof l == r; }
+    };
+
+    if (!operators[operator]) {
+        throw new Error("Handlerbars Helper 'compare' doesn't know the operator " + operator);
+    }
+
+    result = operators[operator](lvalue, rvalue);
+
+    if (result) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+
+});
 
 /*
 handlebars.registerHelper("everyOther", function (index, amount, scope) {
@@ -27,18 +67,17 @@ function loadComponentScripts( directories ){
 }
 
 //compile and register partials
-handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./views/partials/footer.handlebars", 'utf-8' )));
-handlebars.registerPartial('header', handlebars.compile( fs.readFileSync( "./views/partials/header.handlebars", 'utf-8' )));
-handlebars.registerPartial('nav', handlebars.compile( fs.readFileSync( "./views/partials/nav.handlebars", 'utf-8' )));
+handlebars.registerPartial('head', handlebars.compile( fs.readFileSync( "./views/shared/head.handlebars", 'utf-8' )));
 
 //load and compile layout templates
-const layouts = compileTemplates( {  "unsupported":"./views/layouts/unsupported.handlebars", "none":"./views/layouts/none.handlebars", "logged_in":"./views/layouts/logged_in.handlebars"} );
+var default_layout = "logged_out";
+const layouts = compileTemplates( {  "unsupported":"./views/layouts/unsupported.handlebars", "logged_out":"./views/layouts/logged_out.handlebars"} );
 
 module.exports.unsupported_route = layouts.unsupported;
 module.exports.compileTemplates = compileTemplates;
 
 module.exports.executeTemplate = function( source, data, layout ){
-  if( !layout ) layout = "none";
+  if( !layout ) layout = default_layout;
   else if( !layouts.hasOwnProperty( layout ) ){
     console.log("TemplateManager :: There is no layout ", layout);
     layout = "none";

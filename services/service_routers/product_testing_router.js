@@ -16,7 +16,7 @@ var templates = template_manager.compileTemplates({
 
 async function routeRequest( request, response, file_parts ){
   if(!file_parts.length || !file_parts[0].length)
-    return bro.get(true, template_manager.executeTemplate(templates.home,{nav:nav}, "logged_in"));
+    return bro.get(true, template_manager.executeTemplate(templates.home,{nav:nav}, "logged_out"));
   //return bro.get(true, template_manager.showSegments({segments:[
 //    {text_content:'Our products are made in small batches, on premises, from fresh processed flower grown using regenerative methods.', image_content:'./content/assets/white-image.png'},
     //{text_content:'Our products are made in small batches, on premises, from fresh processed flower grown using regenerative methods.', image_content:'./content/assets/white-image.png'}
@@ -26,10 +26,10 @@ async function routeRequest( request, response, file_parts ){
     //need to check object storage to see if this test result exists
 
     //for now assume it does
-    return bro.get(true, template_manager.executeTemplate(templates.result, {nav:nav, test_filename:file_parts[0] + ".jpg"}, "logged_in"))
+    return bro.get(true, template_manager.executeTemplate(templates.result, {nav:nav, test_filename:file_parts[0] + ".jpg"}, "logged_out"))
   } else {
     //handle any other possibilities or  return home templates
-    return bro.get(true, template_manager.executeTemplate(templates.home, null, "logged_in"));
+    return bro.get(true, template_manager.executeTemplate(templates.home, null, "logged_out"));
   }
 }
 

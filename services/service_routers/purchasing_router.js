@@ -14,7 +14,7 @@ var templates = template_manager.compileTemplates({
 });
 
 async function routeRequest( request, response, file_parts ){
-  return bro.get(true, template_manager.executeTemplate(templates.home, {nav:nav}, "logged_in"));
+  return bro.get(true, template_manager.executeTemplate(templates.home, {nav:brp}));
 }
 
 module.exports.router = routeRequest;

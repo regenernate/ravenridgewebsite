@@ -1,28 +1,34 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-<!--
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
--->
-  </head>
+  {{#>head}}{{/head}}
   <body>
-    {{#> header}}
-    {{/header}}
-    <div class='ui'>
-      {{{body}}}
-    </div>
-    {{#> footer appname="FarmBuddy v1.0"}}
-    {{/footer}}
+    <header>
+      <img class="logo" src='/content/logo/rrhh_logo_header.jpg' alt='The RavenRidge Hemp and Herbals company logo features an iconic image of three local landmark mountains in the piedmont of NC, where the company is based.' />
+    </header>
+    <nav id="primary-navigation" role="navigation">
+      <ul>
+        <li {{#compare nav "about_us"}} class='selected' {{/compare}} ><a href='/about_us/'>Meet the Wheelers</a></li>
+        <li {{#compare nav "faqs"}} class='selected' {{/compare}} ><a href='/faqs/'>Hemp / Product FAQS</a></li>
+        <li {{#compare nav "third_party_testing"}} class='selected' {{/compare}} ><a href='/third_party_testing/'>Product Testing</a></li>
+      </ul>
+    </nav>
+
+    <main>
+
+    {{{body}}}
+
+    </main>
+
+
+    <nav id="product-navigation" role="navigation">
+      <ul>
+        <li {{#compare nav "purchase"}} class='selected' {{/compare}} ><a href='/purchase/'>View all Products</a></li>
+        <!-- Add individual products here based on user. -->
+      </ul>
+    </nav>
+
+    <footer>
+      <small>A RavenRidge Family Farm company</small>
+      <p>Contact us at : ravenridgefamilyfarm@gmail.com</p>
+    </footer>
   </body>
 </html>

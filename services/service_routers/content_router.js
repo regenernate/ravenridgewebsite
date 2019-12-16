@@ -5,7 +5,7 @@ const fs = require('fs');
 //any querystring will have been removed from the file_parts array but is available as request.query
 
 //this variable tells the server what urls to route here
-let brp = "education";
+let brp = "content";
 let nav = {};
 nav[brp] = true;
 module.exports.base_route_path = brp;
@@ -17,14 +17,17 @@ module.exports.active = true;
 var bro = require("../../server/bro");
 //load any controllers needed to handle requests
 var template_manager = require('../../services/template_manager');
+var default_template = "about_us";
 
 /** define templates here for use in request routing **/
 var templates = template_manager.compileTemplates({
-  "faqs":"./services/content/views/faqs.handlebars"
+  "about_us":"./services/content/views/about_us.handlebars",
+  "faqs":"./services/content/views/faqs.handlebars",
+  "third_party_testing":"./services/content/views/third_party_testing.handlebars"
 });
 
 var faqs;
-fs.readFile("./services/content/faqs/faqs.json", function(error, content) {
+fs.readFile("./services/content/data/faqs.json", function(error, content) {
     if (error) {
       console.log("content_controller error :: " + error.message);
     } else {
@@ -32,30 +35,26 @@ fs.readFile("./services/content/faqs/faqs.json", function(error, content) {
     }
 });
 
-//define get and post routes here as {url segment}:{method_to_call}
-var routes = {
-  get : {
-  },
-  post : {
-  }
-}
-
 //write a method to handle route requests and return a bro
 async function routeRequest( request, response, file_parts ){
-  if(file_parts[0].toLowerCase() == "faqs"){
-    return bro.get(true, template_manager.executeTemplate(templates.faqs, {nav:nav,faqs:faqs}, "logged_in"));
+  let rtn = null;
+  //if no page name, use default template
+  if( !file_parts || file_parts.length == 0 ) file_parts = [ default_template ];
+  //get requested page name
+  let template = file_parts[0].toLowerCase();
+  //check for requested template in templates object
+  if( templates.hasOwnProperty( template )){
+    let data_to_send = { nav:template };
+    if( template == "faqs" ){
+      data_to_send.faqs = faqs;
+    }
+    //execute template
+    rtn = bro.get( true, template_manager.executeTemplate( templates[ template ], data_to_send ) );
   }else{
-    return bro.get(true, template_manager.executeTemplate(template_manager.unsupported_route, {nav:nav, message:"Not sure what you're looking for? Try one of the menu items above!"}, "logged_in"));
+    //otherwise, show unsupported route message for now
+    rtn = bro.get(true, template_manager.executeTemplate( template_manager.unsupported_route, {message:"Not sure what you're looking for? Try one of the menu items above!"} ) );
   }
-  /*
-  let lookup = routes[ String(request.method).toLowerCase() ];
-  if( lookup.hasOwnProperty( file_parts[0] ) ){
-    let routed_call = await lookup[ file_parts[0] ]( request, response );
-    return routed_call;
-  }else{
-    return bro.get(false, null, "There is no implementation of " + file_parts[0] + " in " + brp + ".");
-  }
-  */
+  return rtn;
 }
 
 module.exports.router = routeRequest;

@@ -54,7 +54,13 @@ router method must have signature router( request, response, file_parts )
   where file_parts is an array of the remaining requested url segments without the base_route_path included
   file_parts also will not have any querystring but will have request.query object if any query string was sent
 *********************/
+var default_router_path = "content";
 var configured_routers = { };
+var modules_to_load = {
+                      "content_router":true,
+                      "purchasing_router":true,
+                      "user_router":true
+                    };
 
 try{
   //loadConfiguredRoutes('./server/routers/', './routers/');
@@ -71,10 +77,14 @@ function loadConfiguredRouter( dir, mod ){
       }
       //listing all files using forEach
       files.forEach(function (file) {
-          // load the module
-          let {router,base_route_path,active} = require(mod+file.split('.')[0]);
-          if(active)
-            configured_routers[ base_route_path ] = router;
+          //check if module is activated
+          let mod_name = file.split('.')[0];
+          if(modules_to_load.hasOwnProperty(mod_name)){
+            // load the module
+            let {router,base_route_path,active} = require(mod+mod_name);
+            if(active)
+              configured_routers[ base_route_path ] = router;
+          }
       });
   });
 }
@@ -191,7 +201,7 @@ async function respondToRequest( request, response ){
     }else{
       //bootstrap the main logged in page with logged_in layout
       if( request_path == '/') {
-        request_path = "rootpath";
+        request_path = default_router_path;
       }
 
       let extension = String(path.extname(request_path)).toLowerCase();
@@ -222,43 +232,40 @@ async function respondToRequest( request, response ){
         }else{
           content_type_out = mime_types['.html'];
         }
+        //clean up requested url
         let file_parts = request_path.split("/");
         if( file_parts[0] == "" || file_parts[0] == "." ) file_parts.shift();
-        //call router(s) of matched domain in order
-        if( configured_routers.hasOwnProperty( file_parts[0] )){
-          let routed_call = await configured_routers[ file_parts[0] ]( request, response, file_parts.slice(1) );
-          if( routed_call.success ){
-            if( routed_call.redirect ){
-              response.writeHead(302, { "Location": routed_call.redirect });
-              response.end();
-            }else if(content_type_out == mime_types['.html']){
-              endRequest( response, routed_call.content, content_type_out );
-            }else if(content_type_out == mime_types['.json']){
-              endRequest( response, JSON.stringify({success:true,content:routed_call.content}), content_type_out );
-            }
-          }else{
-
-            if( routed_call.error ) console.log( routed_call.error );
-
-            if( routed_call.redirect ){
-              response.writeHead(302, { "Location": routed_call.redirect });
-              response.end();
-            }else if(content_type_out == mime_types['.html']){
-              endRequest( response, routed_call.error, content_type_out );
-            }else if(content_type_out == mime_types['.json']){
-//                if( typeof(routed_call.error) == "string" ) routed_call.error = {error:routed_call.error};
-              endRequest( response, JSON.stringify({success:false, error:routed_call.error}), content_type_out );
-            }
-          }
-        }else{
-          console.log("There is no supported route at " + file_parts.join('/') + ".");
-          response.writeHead(302, { "Location": '/' });
-          response.end();
-          //throw new Error("There is no supported route at " + file_parts.join('/') + ".");
+        //if no matched router domain, insert default domain into url
+        if( !configured_routers.hasOwnProperty( file_parts[0] )){
+          file_parts.unshift(default_router_path);
         }
-        //if none matched, throw error
+        //call matched router
+        let routed_call = await configured_routers[ file_parts[0] ]( request, response, file_parts.slice(1) );
+        if( routed_call.success ){
+          if( routed_call.redirect ){
+            response.writeHead(302, { "Location": routed_call.redirect });
+            response.end();
+          }else if(content_type_out == mime_types['.html']){
+            endRequest( response, routed_call.content, content_type_out );
+          }else if(content_type_out == mime_types['.json']){
+            endRequest( response, JSON.stringify({success:true,content:routed_call.content}), content_type_out );
+        }else{
+
+          if( routed_call.error ) console.log( routed_call.error );
+
+          if( routed_call.redirect ){
+            response.writeHead(302, { "Location": routed_call.redirect });
+            response.end();
+          }else if(content_type_out == mime_types['.html']){
+            endRequest( response, routed_call.error, content_type_out );
+          }else if(content_type_out == mime_types['.json']){
+//                if( typeof(routed_call.error) == "string" ) routed_call.error = {error:routed_call.error};
+            endRequest( response, JSON.stringify({success:false, error:routed_call.error}), content_type_out );
+          }
+        }
       }
     }
+  }
   }catch(err){
     console.log(err.stack);
     if(content_type_out == mime_types['.html']){
