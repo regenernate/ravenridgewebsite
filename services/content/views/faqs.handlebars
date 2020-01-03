@@ -1,15 +1,17 @@
-<section>
-    <h1>FAQS</h1>
+<article>
+    <h1>Product FAQS</h1>
     {{#each faqs}}
+      <section>
       <h2>{{{category}}}</h2>
       {{#if image}}
       <img src="/content/{{image}}" />
       {{/if}}
       {{#each items}}
-      <article>
+      <div>
         <h3>{{question}}</h3>
         <p>{{{answer}}}</p>
-      </article>
+      </div>
       {{/each}}
+      <section>
     {{/each}}
-</section>
+</article>

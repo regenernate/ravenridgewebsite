@@ -59,7 +59,8 @@ var configured_routers = { };
 var modules_to_load = {
                       "content_router":true,
                       "purchasing_router":true,
-                      "user_router":true
+                      "user_router":true,
+                      "product_testing_router":true
                     };
 
 try{

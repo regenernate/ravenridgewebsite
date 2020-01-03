@@ -1,7 +1,7 @@
 {
-  "name": "farmbuddy",
+  "name": "ravenridge-hemp-and-herbals",
   "version": "1.0.0",
-  "description": "FarmBuddy helps regenerative family farms be successful.",
+  "description": "Primary website for RRHH business.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +14,6 @@
     "aws-sdk": "^2.568.0",
     "cookies": "^0.7.3",
     "dotenv": "^7.0.0",
-    "fomantic-ui": "^2.7.8",
     "formidable": "^1.2.1",
     "fs": "0.0.1-security",
     "handlebars": "^4.5.1",

@@ -1,7 +1,21 @@
+//load the list of current products
+
+const fs = require('fs');
+
+var tests;
+fs.readFile("./services/product_testing/data/product_data_by_test_id.json", function(error, content) {
+    if (error) {
+      console.log("content_controller error :: " + error.message);
+    } else {
+      tests = JSON.parse(content).tests;
+    }
+});
+
 let brp = "product_testing";
 let nav = {};
-nav[brp] = true;
-module.exports.base_route_path = "product_testing";
+//hack the nav to show "third_party_testing" active in "product_testing" route
+nav["third_party_testing"] = true;
+module.exports.base_route_path = brp;
 //this variable controls whether or not this router gets loaded
 module.exports.active = true;
 
@@ -10,26 +24,21 @@ var template_manager = require('../../services/template_manager');
 
 /** define templates here for use in request routing **/
 var templates = template_manager.compileTemplates({
-  "result":"./services/product_testing/views/display_result.handlebars",
+  "result":"./services/product_testing/views/result.handlebars",
   "home":"./services/product_testing/views/home.handlebars"
 });
 
 async function routeRequest( request, response, file_parts ){
-  if(!file_parts.length || !file_parts[0].length)
-    return bro.get(true, template_manager.executeTemplate(templates.home,{nav:nav}, "logged_out"));
-  //return bro.get(true, template_manager.showSegments({segments:[
-//    {text_content:'Our products are made in small batches, on premises, from fresh processed flower grown using regenerative methods.', image_content:'./content/assets/white-image.png'},
-    //{text_content:'Our products are made in small batches, on premises, from fresh processed flower grown using regenerative methods.', image_content:'./content/assets/white-image.png'}
-  //]}));
-  //if a number, check if it is a valid test result id
-  if( !isNaN(file_parts[0]) ){
-    //need to check object storage to see if this test result exists
-
-    //for now assume it does
-    return bro.get(true, template_manager.executeTemplate(templates.result, {nav:nav, test_filename:file_parts[0] + ".jpg"}, "logged_out"))
+  //if there is no test name sent, show list of all products and their coas
+  if(!file_parts.length || !file_parts[0].length || isNaN(file_parts[0])){
+    return bro.get(true, template_manager.executeTemplate(templates.home,{nav:nav}));
   } else {
-    //handle any other possibilities or  return home templates
-    return bro.get(true, template_manager.executeTemplate(templates.home, null, "logged_out"));
+    let fp0 = file_parts[0];
+    //need to check object storage to see if this test result exists
+    if( !tests.hasOwnProperty( fp0 ) )
+      return bro.get(true, template_manager.executeTemplate(template_manager.unsupported_route, {nav:nav, message:"<h1>There is no test matching this product.</h1><p>If you scanned a product URL and reached this page, please email Nathan at ravenridgehempandherbals @ gmail.com.</p>"}));
+    else
+      return bro.get(true, template_manager.executeTemplate(templates.result, {nav:nav, test_filename:fp0 + ".pdf", product_data:tests[fp0]}));
   }
 }
 

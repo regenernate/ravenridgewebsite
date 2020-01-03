@@ -14,7 +14,7 @@
         },
         {
           "question":"Can I view product laboratory tests?",
-          "answer":"Of course! We have each batch of product tested for CBD content/dose to confirm the dosage on the bottle.  We also test our hemp flower to confirm it is free of mycotoxins and heavy metals.  These results are also available on our website.  We do not test for pesticide or herbicide residue because we do not use pesticides or herbicides on our farm, and our planting locations are chosen to avoid any possible drift from neighboring areas.<br>For more information visit our <a href='/product_testing/'>product testing page</a>."
+          "answer":"Of course! We have each batch of product tested for CBD content/dose to confirm the dosage on the bottle.  We also test our hemp flower to confirm it is free of mycotoxins and heavy metals.  These results are also available on our website.  We do not test for pesticide or herbicide residue because we do not use pesticides or herbicides on our farm, and our planting locations are chosen to avoid any possible drift from neighboring areas.<br>For more information visit our <a href='/third_party_testing/'>product testing page</a>."
         }
       ]
     },
@@ -56,10 +56,6 @@
       "category":"RavenRidge Products",
       "image":"product.jpg",
       "items":[
-        {
-          "question":"Why does RavenRidge accept eCheck payments but not credit cards for its CBD based products?",
-          "answer":"At present, very few options are available for processing credit card payments for CBD-containing products. This is due to financial industry regulations that are slowing changing as the details are ironed out around the national legalization of hemp derived CBD products. Electronic Checks are less risky for banks and so several options exist to take payments in this manner. It is safe and secure, but requires the purchaser to enter the routing number and account number to a valid checking account rather than the twelve digits of a credit card number. As soon as a reasonable credit card option becomes available, we will update our services to include it as a payment option."
-        },
         {
           "question":"Why does RavenRidge only use Full Spectrum Extract to make its oral solution?",
           "answer":"Full Spectrum Extract contains all of the active compounds produced by the hemp flower, not just the CBD. RavenRidge believes there is more value in taking the full spectrum of cannabinoids and terpenes produced by the plant (called the entourage effect), than in taking a purified extract of CBD."

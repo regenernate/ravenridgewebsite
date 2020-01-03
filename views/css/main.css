@@ -1,15 +1,13 @@
 
+/* all base screen styles go here */
 
-@media only screen { /* all base screen styles go here, assuming full menu on top and single column display */
+@media only screen {
 
 /********* base definitions **********/
   body {
     position:relative;
     z-index:-101;
-  }
-
-  article {
-    margin:2rem auto;
+    background-color:#FFFFFF;
   }
 
   button {
@@ -44,12 +42,19 @@
      position: absolute;
   }
 
+  .centered {
+    width:100%;
+    margin:auto;
+  }
+
+  .some-padding {
+    padding: 1rem;
+  }
 /* used for selected tabs and buttons */
   .selected {
-    background-color: #FFFFFF;
-    color: #000000;
     border-right:.5vw solid #000000;
   }
+
 /* used for hover state */
   .active {
 
@@ -98,52 +103,67 @@ header {
   #product-navigation {
     top:auto;
     bottom:0;
-    background-color:#4c4946;
-  }
-
-  #product-navigation li {
-    color:#FFFFFF;
-    background-color:#4c4946;
-  }
-
-  #product-navigation .selected {
-    background-color: #ffffff;
-    color:#d38322;
-  }
-
-  #product-navigation li:hover {
-    background-color:#FFFFFF;
-    color:#d38322;
   }
 
   /**********  main styles *********/
   main {
     position:relative;
     z-index: -100;
-    margin:9rem auto 3rem auto;
-    width:90vw;
+    padding: 2vh 2vw;
   }
 
   main img {
     width:100%;
   }
+
+  article{
+    display:inline-block;
+  }
+
+  embed{
+    width:90vw;
+    height:90vh;
+  }
+
+  /**********  styles related to specific articles or pages *********/
+
+  #company_desc{
+    margin-top:3vh;
+  }
+  #company_desc p {
+    width:75vw;
+  }
+  #company_desc img {
+    width:auto;
+    height:40vh;
+  }
+
+  #company_desc img:first-child {
+    height:30vh;
+  }
+
+
+  #about_us {
+    margin:20vh 5vw;
+  }
+  #about_us p {
+    text-align: center;
+  }
+
 }
 
 
 
-@media only screen and (max-width: 599px) {
+@media only screen and (min-width: 599px) {
 }
 
 @media only screen and (min-width: 768px) {
 }
 
 @media only screen and (min-width: 900px) {
-  html{
-    font-size:18px;
-  }
 
   main{
-    width:75vw;
+    width:850px;
   }
 
   nav{
@@ -152,6 +172,11 @@ header {
 
   nav li{
     width:25vw;
+  }
+
+  embed{
+    width:850px;
+    height:90vh;
   }
   #product-navigation {
     bottom: auto;
@@ -163,7 +188,4 @@ header {
 }
 
 @media only screen and (min-width: 1200px) {
-  html{
-    font-size:22px;
-  }
 }

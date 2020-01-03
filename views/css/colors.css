@@ -16,12 +16,23 @@ nav a {
 
 nav, nav li {
   color:#FFFFFF;
-  background-color: #444931;
+  background-color:#4c4946;
   text-decoration: none;
 }
 
 nav li:hover {
   color:#1d3acc;
-  background-color: #ada684;
+  background-color: #FFFFFF;
   text-decoration: underline;
 }
+
+/* used for selected tabs and buttons */
+  .selected {
+    background-color: #FFFFFF;
+    color:#d38322;
+  }
+
+  .dark-background{
+    background-color: #322e26; /*dark brown*/
+    color: #ffffff;
+  }

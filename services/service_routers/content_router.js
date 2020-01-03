@@ -1,3 +1,12 @@
+/****
+
+The PURPOSE of this router is to handle requests for a set of mostly static content.
+It defines a set of templates which correlate to specific urls.
+It is used here to load the general information pages for the RRHH website
+
+****/
+
+
 const fs = require('fs');
 //The server will load active routers and if a request comes in with the base_route_path as specified below,
 //the server will call the defined router method as below, passing along the request and response objects,
