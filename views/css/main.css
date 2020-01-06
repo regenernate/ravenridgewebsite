@@ -136,7 +136,7 @@ header {
   }
 
   footer ul {
-    display: inline;
+    display: block;
     list-style: none;
   }
 
@@ -144,8 +144,7 @@ header {
     display: inline;
     padding-right:5px;
   }
-  footer span {
-    float:right;
+  footer p {
     padding-right: 2vw;
   }
   /**********  styles related to specific articles or pages *********/
@@ -208,6 +207,16 @@ header {
     left:50%;
   }
 
+  footer{
+    position:fixed;
+    bottom:0;
+  }
+  footer ul {
+    display: inline;
+  }
+  footer p {
+    display: inline;
+  }
 }
 
 @media only screen and (min-width: 1200px) {

@@ -34,7 +34,8 @@ var templates = template_manager.compileTemplates({
   "faqs":"./services/content/views/faqs.handlebars",
   "third_party_testing":"./services/content/views/third_party_testing.handlebars",
   "privacy_policy":"./services/content/views/privacy_policy.handlebars",
-  "terms_and_conditions":"./services/content/views/terms_and_conditions.handlebars"
+  "terms_and_conditions":"./services/content/views/terms_and_conditions.handlebars",
+  "shipping_and_returns":"./services/content/views/shipping_and_returns.handlebars"
 });
 
 var faqs;
