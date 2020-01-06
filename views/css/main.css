@@ -125,6 +125,29 @@ header {
     height:90vh;
   }
 
+  /**********  footer styles ******/
+
+  footer{
+    background-color: #FFFFFF;
+    display: inline-block;
+    border-top: #322e26 solid 2px;
+    width:100vw;
+    padding:.25rem;
+  }
+
+  footer ul {
+    display: inline;
+    list-style: none;
+  }
+
+  footer li {
+    display: inline;
+    padding-right:5px;
+  }
+  footer span {
+    float:right;
+    padding-right: 2vw;
+  }
   /**********  styles related to specific articles or pages *********/
 
   #company_desc{

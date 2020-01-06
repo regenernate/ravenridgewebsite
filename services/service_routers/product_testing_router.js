@@ -12,9 +12,8 @@ fs.readFile("./services/product_testing/data/product_data_by_test_id.json", func
 });
 
 let brp = "product_testing";
-let nav = {};
 //hack the nav to show "third_party_testing" active in "product_testing" route
-nav["third_party_testing"] = true;
+const nav = "third_party_testing";
 module.exports.base_route_path = brp;
 //this variable controls whether or not this router gets loaded
 module.exports.active = true;

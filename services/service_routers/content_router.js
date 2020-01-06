@@ -32,7 +32,9 @@ var default_template = "about_us";
 var templates = template_manager.compileTemplates({
   "about_us":"./services/content/views/about_us.handlebars",
   "faqs":"./services/content/views/faqs.handlebars",
-  "third_party_testing":"./services/content/views/third_party_testing.handlebars"
+  "third_party_testing":"./services/content/views/third_party_testing.handlebars",
+  "privacy_policy":"./services/content/views/privacy_policy.handlebars",
+  "terms_and_conditions":"./services/content/views/terms_and_conditions.handlebars"
 });
 
 var faqs;
