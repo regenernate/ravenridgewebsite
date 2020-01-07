@@ -148,6 +148,12 @@ header {
   }
   /**********  styles related to specific articles or pages *********/
 
+  .example {
+    margin: 4vw auto;
+    padding: 1vw;
+    border: #000000 solid 1px;
+  }
+
   #company_desc{
     margin-top:3vh;
   }
@@ -204,6 +210,11 @@ header {
     top: 6rem;
     right: auto;
     left:50%;
+  }
+
+  .example {
+    padding: 2vw 5vw;
+    border: #000000 solid 3px;
   }
 
   footer{

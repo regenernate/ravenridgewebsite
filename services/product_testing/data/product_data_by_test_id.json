@@ -1,8 +1,16 @@
 {
   "tests":{
-      "100":{
+      "101":{
         "product_name":"600mg CBD Sublingual oil",
         "stated_strength":"20mg / ml"
+      },
+      "100":{
+        "product_name":"300mg CBD Sublingual oil",
+        "stated_strength":"10mg / ml"
+      },
+      "103":{
+        "product_name":"900mg CBD Sublingual oil",
+        "stated_strength":"30mg / ml"
       }
   }
 }
