@@ -44,7 +44,25 @@ h5, h6 {
   font-size: 1em;
 }
 
-/** margins will change to create more whitespace as display size increases **/
+.action-box{
+  padding:3vh;
+  text-align:center;
+}
+
+.divider-box{
+  padding:2vh 0;
+  font-size:1.4rem;
+}
+.invitation{
+  width:100%;
+  font-size:1.9em;
+}
+
+.action{
+  width:100%;
+  font-size:1.9em;
+}
+
 main {
   margin:8rem auto 1rem auto;
 }
@@ -58,7 +76,7 @@ article {
 /** to reduce size, the next values down are .75, .563 **/
 @media only screen and (min-width: 900px){
   html{
-    font-size:18px;
+    font-size:16px;
   }
 
   h1{
@@ -77,14 +95,13 @@ article {
     font-size:1em;
   }
 
-  main {
-    margin-bottom:1rem;
-  }
-
   footer{
     padding-bottom:5px;
   }
 
+  main{
+    margin-bottom:3rem;
+  }
 }
 
 /*** change ratios to perfect fifth on large screens ***/
@@ -93,9 +110,5 @@ article {
 @media only screen and (min-width: 1200px){
   html{
     font-size:18px;
-  }
-
-  article {
-    margin-top:0rem;
   }
 }

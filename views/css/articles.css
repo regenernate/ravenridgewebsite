@@ -1,0 +1,8 @@
+/* assume all screen media defaults as phone to small tablet upright single column */
+/* do not assume any known width or orientation, but mostly portrait */
+
+@media only screen {
+  article {
+    
+  }
+}

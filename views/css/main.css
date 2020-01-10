@@ -1,5 +1,5 @@
 
-/* all base screen styles go here */
+/* assume all screen media defaults as phone to small tablet upright single column */
 
 @media only screen {
 
@@ -17,6 +17,13 @@
     color:#A39480;
   }
 
+  h1, h2, h3{
+    padding:0 4vw;
+  }
+
+  p {
+    padding:0 4vw;
+  }
 /***********  helper classes **********/
 
   .content-box {
@@ -47,6 +54,10 @@
     margin:auto;
   }
 
+  .text-centered {
+    text-align: center;
+  }
+
   .some-padding {
     padding: 1rem;
   }
@@ -57,7 +68,15 @@
 
 /* used for hover state */
   .active {
+  }
 
+/* used to float images or blocks of content */
+  .left{
+    float:none;
+  }
+
+  .right{
+    float:none;
   }
 
 /********** header styles *********/
@@ -109,7 +128,6 @@ header {
   main {
     position:relative;
     z-index: -100;
-    padding: 2vh 2vw;
   }
 
   main img {
@@ -148,35 +166,13 @@ header {
   }
   /**********  styles related to specific articles or pages *********/
 
+  /* example image, section or article has attention drawn to it with border and padding */
+
   .example {
     margin: 4vw auto;
     padding: 1vw;
     border: #000000 solid 1px;
   }
-
-  #company_desc{
-    margin-top:3vh;
-  }
-  #company_desc p {
-    width:75vw;
-  }
-  #company_desc img {
-    width:auto;
-    height:40vh;
-  }
-
-  #company_desc img:first-child {
-    height:30vh;
-  }
-
-
-  #about_us {
-    margin:20vh 5vw;
-  }
-  #about_us p {
-    text-align: center;
-  }
-
 }
 
 
@@ -188,6 +184,23 @@ header {
 }
 
 @media only screen and (min-width: 900px) {
+
+  /* used to float images or blocks of content */
+    .left{
+      float:left;
+    }
+
+    .right{
+      float:right;
+    }
+
+  p {
+    padding:0;
+  }
+
+  h1, h2, h3 {
+    padding:0;
+  }
 
   main{
     width:850px;
@@ -205,6 +218,8 @@ header {
     width:850px;
     height:90vh;
   }
+
+  /* bottom navigation moves to the top */
   #product-navigation {
     bottom: auto;
     top: 6rem;
@@ -229,5 +244,6 @@ header {
   }
 }
 
-@media only screen and (min-width: 1200px) {
+/* bigger than 1024, design centers fixed up to 1200pz
+@media only screen and (min-width: 1024px) {
 }
