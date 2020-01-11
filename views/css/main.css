@@ -145,6 +145,7 @@ header {
   /**********  footer styles ******/
 
   footer{
+    z-index: 2500;
     background-color: #FFFFFF;
     display: inline-block;
     border-top: #322e26 solid 2px;
@@ -173,14 +174,6 @@ header {
     padding: 1vw;
     border: #000000 solid 1px;
   }
-}
-
-
-
-@media only screen and (min-width: 599px) {
-}
-
-@media only screen and (min-width: 768px) {
 }
 
 @media only screen and (min-width: 900px) {
@@ -235,6 +228,7 @@ header {
   footer{
     position:fixed;
     bottom:0;
+    left:0;
   }
   footer ul {
     display: inline;
@@ -244,6 +238,6 @@ header {
   }
 }
 
-/* bigger than 1024, design centers fixed up to 1200pz
-@media only screen and (min-width: 1024px) {
+/* bigger than 1500, display two column */
+@media only screen and (min-width: 1500px) {
 }

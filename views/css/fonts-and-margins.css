@@ -4,9 +4,9 @@ html {
   font-size: 16px;
 }
 
-div p span body {
+div, p, span, body {
   font-family: Helvetica, Arial, sans-serif;
-  line-height:2rem;
+  line-height:1.75rem;
 }
 
 nav{
@@ -20,7 +20,7 @@ footer{
   padding-bottom:6rem;
 }
 
-h1 h2 h3 h4 h5 h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: Georgia, serif;
   line-height:2.5rem;
 }
@@ -29,7 +29,7 @@ h1 h2 h3 h4 h5 h6 {
 /** to bump up in size, the next values are 2.441, 3.052 **/
 /** to reduce size, the next values down are .8, .64 **/
 h1 {
-  font-size: 1.953em;
+  font-size: 2.1em;
 }
 
 h2 {
@@ -64,7 +64,7 @@ h5, h6 {
 }
 
 main {
-  margin:8rem auto 1rem auto;
+  margin:10rem auto 1rem auto;
 }
 
 article {
