@@ -15,7 +15,7 @@ const { location } = require('./location');
 //connect to various data sources, ideally extracted to one config per service
 
 //mysql database
-var db = require('../services/database/mysql2_db.js');
+var db = require('./database/mysql2_db.js');
 
 db.connect(function(err) {
   if (err) {
