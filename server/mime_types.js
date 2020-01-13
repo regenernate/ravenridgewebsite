@@ -1,5 +1,6 @@
 
 const mimeTypes = {
+    '.txt': 'text/plain',
     '.html': 'text/html',
     '.js': 'text/javascript',
     '.css': 'text/css',
