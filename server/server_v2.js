@@ -92,11 +92,9 @@ function loadConfiguredRouter( dir, mod ){
 
 /*******  Assumptions ******
 
-Any request from unregistered users displays login screen.
-Valid email allows entry at "/".
-
-All static resource requests will have an extension
+All static resource requests will have a file extension
 Multi-part form data and query data is parsed by the server and passed along with the request object
+
 Multi-part image streams are always routed to the image service to be uploaded and saved,
   after which image save details and thumbnail are returned
   Server does not currently pass image upload control on to any specific routes
@@ -112,21 +110,20 @@ Routes return a bro object with success, content and error values
     return values of html should not include <html> or <body> tags and should be
     assumed to be contextual to the domain requested ( i.e. farm/activity/ == <div id='activity_{timestamp}'>...</div>)
 
-Base layout includes css and jquery as needed.
-
 Server will await all calls to routes so methods must be async
 
 Server modifies json return data to be { success:.., content:..}
+
 ****************************/
 
 async function receiveHttpRequest(request, response) {
   try{
-    console.log('SERVER REQUEST RECIEVED :: ', request.url, request.method);
+//    console.log('SERVER REQUEST RECIEVED :: ', request.url, request.method);
     let request_path = request.url.toLowerCase();
     let request_method = request.method.toLowerCase();
     let request_headers = request.headers || {};
 
-    if( request_path == "/favicon.ico"){
+    if( request_path == "/favicon.ico" ){
       attemptToServeStaticFile( response, "." + request_path, mime_types[".ico"]);
       return;
     }
@@ -151,8 +148,10 @@ async function receiveHttpRequest(request, response) {
       request.url = request_path;
       console.log("server_v2:queryobject => ", queryobject, request.url);
     }else request.query = {};
+
 //    log("query string :: ", request.query);
-    //check for posted form or image data if post method requested
+
+    /* check for posted form or image data if post method requested */
     if( request_method == "post" ){
       if( !request_headers.hasOwnProperty('content-type') ){
         throw new Error("POST method received with no content-type declaration.");
@@ -179,8 +178,7 @@ async function receiveHttpRequest(request, response) {
   }
 }
 
-//Callback method currently needed here because form upload and image upload are asynchronous
-//implementing async / promise methods for these cases would streamline process
+
 async function respondToRequest( request, response ){
   let content_type_out = mime_types['.html'];
   try{
@@ -268,11 +266,13 @@ async function respondToRequest( request, response ){
     }
   }
   }catch(err){
-    console.log(err.stack);
+    console.log("RESPOND TO REQUEST CATCH", err.stack);
     if(content_type_out == mime_types['.html']){
       endRequest( response, err.message, content_type_out );
     }else if(content_type_out == mime_types['.json']){
       endRequest( response, JSON.stringify({success:false, error:err.message}), content_type_out );
+    }else{
+      endRequest( response, "Cannot process this request\r\r." + err.message, mime_types['.txt'] );
     }
   }
 }

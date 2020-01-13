@@ -14,7 +14,6 @@
     "aws-sdk": "^2.568.0",
     "cookies": "^0.7.3",
     "dotenv": "^7.0.0",
-    "formidable": "^1.2.1",
     "fs": "0.0.1-security",
     "handlebars": "^4.5.1",
     "moment": "^2.24.0",
