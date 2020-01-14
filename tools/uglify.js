@@ -1,7 +1,7 @@
 /* simple helper to manage uglifying css automatically whenever css files change in the supplied directory
 limitations:
 
-1. must be running
+1. this helper must be running
 2. list of css files to watch must be provided in order desired
 
 */
@@ -32,15 +32,5 @@ fs.watch(basepath, (event, filename) => {
   }
 });
 
-/*
-
-var uglifycss = require('uglifycss');
-
-var uglified = uglifycss.processFiles(
-    [ './views/css/ ],
-    { maxLineLen: 500, expandVars: true }
-);
-
-console.log(uglified);
-
-*/
+//do initial uglification
+uglify();

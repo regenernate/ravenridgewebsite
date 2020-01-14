@@ -1,0 +1,14 @@
+{
+  "pages":{
+    "result":{
+      "template":"./services/product_testing/views/result.handlebars",
+      "title":"Product Test Results for {{product_name}}.",
+      "desc":"These test results confirm canabinoid content in {{product_name}} matches the labeled amount: {{stated_strength}}."
+    },
+    "home":{
+      "template":"./services/product_testing/views/home.handlebars",
+      "title":"Links to RRHaH products and their third party test results.",
+      "desc":"We believe in full transparency regarding product testing. All product are listed here with links to the corresponding test."
+    }
+  }
+}

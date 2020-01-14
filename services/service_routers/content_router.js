@@ -26,17 +26,33 @@ module.exports.active = true;
 var bro = require("../../server/bro");
 //load any controllers needed to handle requests
 var template_manager = require('../../services/template_manager');
-var default_template = "about_us";
 
-/** define templates here for use in request routing **/
-var templates = template_manager.compileTemplates({
-  "about_us":"./services/content/views/about_us.handlebars",
-  "faqs":"./services/content/views/faqs.handlebars",
-  "third_party_testing":"./services/content/views/third_party_testing.handlebars",
-  "privacy_policy":"./services/content/views/privacy_policy.handlebars",
-  "terms_and_conditions":"./services/content/views/terms_and_conditions.handlebars",
-  "shipping_and_returns":"./services/content/views/shipping_and_returns.handlebars"
+var pages;
+var default_page;
+
+fs.readFile("./services/content/data/pages.json", function(error, content){
+  if(error) {
+    console.log("content_router error loading pages.json");
+  }else{
+    let c = JSON.parse(content);
+    pages = c.pages;
+    default_page = c.default_page;
+    //now compile loaded templates
+    compileTemplates();
+  }
 });
+
+//this variable will hold the pre-compiled template functions for whatever pages are loaded in pages.json
+var templates = {};
+
+//this method is called after pages.json loads
+function compileTemplates(){
+  //extract just template name/path pairs for template manager to compile from
+  for( var i in pages ){
+    templates[i] = pages[i].template;
+  }
+  template_manager.compileTemplates(templates, true);
+}
 
 var faqs;
 fs.readFile("./services/content/data/faqs.json", function(error, content) {
@@ -51,12 +67,12 @@ fs.readFile("./services/content/data/faqs.json", function(error, content) {
 async function routeRequest( request, response, file_parts ){
   let rtn = null;
   //if no page name, use default template
-  if( !file_parts || file_parts.length == 0 ) file_parts = [ default_template ];
+  if( !file_parts || file_parts.length == 0 ) file_parts = [ default_page ];
   //get requested page name
   let template = file_parts[0].toLowerCase();
   //check for requested template in templates object
   if( templates.hasOwnProperty( template )){
-    let data_to_send = { nav:template };
+    let data_to_send = { nav:template, title:pages[template].title, description:pages[template].desc };
     if( template == "faqs" ){
       data_to_send.faqs = faqs;
     }

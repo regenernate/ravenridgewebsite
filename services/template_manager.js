@@ -76,6 +76,12 @@ const layouts = compileTemplates( {  "unsupported":"./views/layouts/unsupported.
 module.exports.unsupported_route = layouts.unsupported;
 module.exports.compileTemplates = compileTemplates;
 
+/********
+
+data should be an object with specific variables to be sent to the source template ... the main of the page being rendered
+
+*******/
+
 module.exports.executeTemplate = function( source, data, layout ){
   if( !layout ) layout = default_layout;
   else if( !layouts.hasOwnProperty( layout ) ){
@@ -83,15 +89,18 @@ module.exports.executeTemplate = function( source, data, layout ){
     layout = "none";
   }
   if( !data ) data = {};
-  //hackey default navigation
+
+  //hackey default navigation - ideally navigation would be pulled out of template manager
+
   if( !data.nav ) data.nav = {about:true};
+
   if( !source ) source = function(data){ return data; }
 //  console.log("executeTemplate() : ", source, data, layout );
 //  console.log(data);
   var template_value;
   try{
     cleanDatesForDisplay(data);
-    template_value = layouts[ layout ]( { body:source(data), nav:data.nav });
+    template_value = layouts[ layout ]( { body:source(data), nav:data.nav, title:data.title, description:data.description });
   }catch(err){
     console.log("template_manager.executeTemplate :: ", err.message);
   }
