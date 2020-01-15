@@ -11,13 +11,19 @@ div, p, span, body {
 
 nav{
   font-family: Georgia, serif;
+  line-height:1.25rem;
 }
 
 footer{
   font-family:Helvetica, Arial, sans-serif;
-  font-size:.8rem;
+  font-size:.7rem;
+  line-height:.85rem;
   margin:auto;
   padding-bottom:6rem;
+}
+
+footer .contact-details{
+  font-size:.6rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,6 +50,7 @@ h5, h6 {
   font-size: 1em;
 }
 
+/** core user-centric elements of interface follow **/
 .action-box{
   padding:3vh;
   text-align:center;
@@ -53,6 +60,7 @@ h5, h6 {
   padding:2vh 0;
   font-size:1.4rem;
 }
+
 .invitation{
   width:100%;
   font-size:1.9em;
@@ -60,11 +68,11 @@ h5, h6 {
 
 .action{
   width:100%;
-  font-size:1.9em;
+  font-size:1.8em;
 }
 
 main {
-  margin:10rem auto 1rem auto;
+  margin:10rem auto 7rem auto;
 }
 
 article {
@@ -100,7 +108,7 @@ article {
   }
 
   main{
-    margin-bottom:3rem;
+    margin-bottom:7rem;
   }
 }
 
@@ -110,5 +118,9 @@ article {
 @media only screen and (min-width: 1200px){
   html{
     font-size:18px;
+  }
+
+  div, p, span, body {
+    line-height:1.5rem;
   }
 }

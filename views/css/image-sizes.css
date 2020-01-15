@@ -1,6 +1,14 @@
+/** this file is meant to contain SIZES of image classes so that media queries are easy to see and deal with **/
+/** generally shouldn't deal with positioning here **/
+
 /* assume all screen media defaults as phone to small tablet upright single column */
 
 @media only screen {
+
+  #footer-img {
+    width:100%;
+    max-width: 600px;
+  }
 
   .panoramic {
     width: 100vw;
@@ -24,6 +32,7 @@
   .half {
     width: 50%;
   }
+
 }
 
 
@@ -35,5 +44,13 @@
   .paired-equal{
     width:50%;
     max-width:500px;
+  }
+
+}
+
+@media only screen and ( min-width: 900px ){
+  #footer-img {
+    width:450;
+    float:left;
   }
 }

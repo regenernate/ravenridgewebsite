@@ -24,6 +24,91 @@
   p {
     padding:0 4vw;
   }
+
+  /********** header styles *********/
+
+  header {
+    height:6rem;
+    position: fixed;
+    top:0;
+    display: inline-block;
+    width:100%;
+  }
+
+  /********** navigation styles ********/
+
+    nav {
+      position:fixed;
+      width:100vw;
+      top:6rem;
+      left:0px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: inline-block;
+      margin:0;
+    }
+
+    nav li {
+      width:50vw;
+      display: inline-block;
+      padding:.5rem;
+      text-align: center;
+    }
+
+    #product-navigation {
+      top:auto;
+      bottom:0;
+    }
+
+    /**********  main styles *********/
+    main {
+      position:relative;
+      z-index: -100;
+    }
+
+    main img {
+      width:100%;
+    }
+
+    article{
+      display:inline-block;
+    }
+
+    embed{
+      width:98vw;
+    }
+
+    /**********  footer styles ******/
+
+    footer{
+      text-align: center;
+      border-top: #322e26 solid 2px;
+      z-index: 2500;
+      background-color: #FFFFFF;
+      display: block;
+      width:100vw;
+    }
+
+    footer ul {
+      display: inline-block;
+      padding-top: 20px;
+      list-style: none;
+    }
+
+    footer ul li {
+      display: inline-block;
+      padding-right:1vw;
+    }
+
+    /** ravenridge contact information ul in footer **/
+    .contact-details  {
+      padding-top:0;
+      display: block;
+    }
+    /**********  styles related to specific articles or pages *********/
+
 /***********  helper classes **********/
 
   .content-box {
@@ -61,6 +146,7 @@
   .some-padding {
     padding: 1rem;
   }
+
 /* used for selected tabs and buttons */
   .selected {
     border-right:.5vw solid #000000;
@@ -70,25 +156,7 @@
   .active {
   }
 
-/* used to float images or blocks of content */
-  .left{
-    float:none;
-  }
-
-  .right{
-    float:none;
-  }
-
-/********** header styles *********/
-
-header {
-  height:6rem;
-  position: fixed;
-  top:0;
-  display: inline-block;
-  width:100%;
-}
-
+/* header image */
  .logo {
    display:flex;
    margin-top:.05rem;
@@ -97,75 +165,6 @@ header {
    margin-right:auto;
  }
 
-/********** navigation styles ********/
-
-  nav {
-    position:fixed;
-    width:100vw;
-    top:6rem;
-    left:0px;
-  }
-
-  nav ul {
-    list-style: none;
-    display: inline-block;
-    margin:0;
-  }
-
-  nav li {
-    width:50vw;
-    display: inline-block;
-    padding:.5rem;
-    text-align: center;
-  }
-
-  #product-navigation {
-    top:auto;
-    bottom:0;
-  }
-
-  /**********  main styles *********/
-  main {
-    position:relative;
-    z-index: -100;
-  }
-
-  main img {
-    width:100%;
-  }
-
-  article{
-    display:inline-block;
-  }
-
-  embed{
-    width:98vw;
-  }
-
-  /**********  footer styles ******/
-
-  footer{
-    z-index: 2500;
-    background-color: #FFFFFF;
-    display: inline-block;
-    border-top: #322e26 solid 2px;
-    width:100vw;
-    padding:.25rem;
-  }
-
-  footer ul {
-    display: block;
-    list-style: none;
-  }
-
-  footer li {
-    display: inline;
-    padding-right:5px;
-  }
-  footer p {
-    padding-right: 2vw;
-  }
-  /**********  styles related to specific articles or pages *********/
 
   /* example image, section or article has attention drawn to it with border and padding */
 
@@ -177,15 +176,6 @@ header {
 }
 
 @media only screen and (min-width: 900px) {
-
-  /* used to float images or blocks of content */
-    .left{
-      float:left;
-    }
-
-    .right{
-      float:right;
-    }
 
   p {
     padding:0;
@@ -199,6 +189,7 @@ header {
     width:850px;
   }
 
+/******    navigation style changes *******/
   nav{
     width:50vw;
   }
@@ -207,12 +198,7 @@ header {
     width:25vw;
   }
 
-  embed{
-    width:850px;
-    height:90vh;
-  }
-
-  /* bottom navigation moves to the top */
+/* bottom navigation moves to the top right */
   #product-navigation {
     bottom: auto;
     top: 6rem;
@@ -220,22 +206,41 @@ header {
     left:50%;
   }
 
-  .example {
-    padding: 2vw 5vw;
-    border: #000000 solid 3px;
-  }
-
+/******  footer style changes *******/
   footer{
     position:fixed;
     bottom:0;
     left:0;
   }
+
   footer ul {
-    display: inline;
+    padding-top:10px;
   }
-  footer p {
-    display: inline;
+
+  footer section {
+    width:900px;
+    display:inline-block;
   }
+ /* ravenridge contact information in footer **/
+  .contact-details{
+    padding-top: 5px;
+  }
+  .contact-details li {
+    display: block;
+  }
+/*****   other style changes *******/
+  embed{
+    width:850px;
+    height:90vh;
+  }
+
+  /* image style for callout images */
+  .example {
+    padding: 2vw 5vw;
+    border: #000000 solid 3px;
+  }
+
+
 }
 
 /* bigger than 1500, display two column */

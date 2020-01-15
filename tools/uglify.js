@@ -10,9 +10,10 @@ limitations:
 const fs = require("fs");
 const uglifycss = require( 'uglifycss' );
 
+/*  ultimately pull this out of file into data.json  */
 var basepath = "../views/css/";
 var uglified_filename = "css_uglified.css";
-var css_files = [ "reset", "colors", "main", "fonts-and-margins", "images" ];
+var css_files = [ "reset", "colors", "main", "fonts-and-margins", "image-sizes" ];
 
 for ( let i in css_files ){
   css_files[i] = basepath + css_files[i] + ".css";

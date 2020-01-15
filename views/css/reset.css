@@ -7,7 +7,7 @@ html, body, div, form, fieldset, legend, label, ul, li, nav
  border-width:0px;
 }
 
-html, body, div, span, article, section, img, ul, li
+html, body, div, span, article, section, img, ul, li, header, footer
 {
   box-sizing: border-box;
 }
