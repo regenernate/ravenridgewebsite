@@ -2,33 +2,33 @@
   "pages":{
     "about_us":{
       "template":"./services/content/views/about_us.handlebars",
-      "title":"The Wheeler family grows hemp regeneratively.",
-      "desc":""
+      "title":"The Wheeler family grows hemp and herbs regeneratively.",
+      "desc":"Learn about RavenRidge Family Farm, managed by the Wheeler family, and get an introduction to regenerative agriculture and our CBD products."
     },
     "faqs":{
       "template":"./services/content/views/faqs.handlebars",
       "title":"Quality information about hemp, CBD and our products.",
-      "desc":""
+      "desc":"Learn about what makes our products unique, why you can be certain of their quality and whatever else interesting we are allowed to share."
     },
     "privacy_policy":{
       "template":"./services/content/views/privacy_policy.handlebars",
       "title":"Our privacy policy for website visitors and customers.",
-      "desc":""
+      "desc":"See how we treat visitor and customer data, and what to be aware of when you use this website."
     },
     "shipping_and_returns":{
       "template":"./services/content/views/shipping_and_returns.handlebars",
       "title":"Our shipping and returns policy for CBD products.",
-      "desc":""
+      "desc":"We offer free priority USPS shipping with all products, and will accept returns within ten days of purchase."
     },
     "terms_and_conditions":{
       "template":"./services/content/views/terms_and_conditions.handlebars",
       "title":"The terms and conditions for using this website.",
-      "desc":""
+      "desc":"Potential age restrictions and general risks surrounding the use of hemp and herbal products are outlined here. Be informed."
     },
     "third_party_testing":{
       "template":"./services/content/views/third_party_testing.handlebars",
       "title":"Our third party product testing pledge.",
-      "desc":""
+      "desc":"We believe in full transparency with our product testing, and this page show you how to find our product tests easily."
     }
   },
   "default_page":"about_us"

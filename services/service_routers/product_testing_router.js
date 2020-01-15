@@ -22,7 +22,8 @@ var templates = {};
 function compileTemplates(){
   //extract just template name/path pairs for template manager to compile from
   for( var i in pages ){
-    templates[i] = pages[i].template;
+    if( pages[i].template ) //templates can be null
+      templates[i] = pages[i].template;
   }
   template_manager.compileTemplates(templates, true);
 
@@ -79,12 +80,12 @@ var templates = template_manager.compileTemplates({
 async function routeRequest( request, response, file_parts ){
   //if there is no test name sent, show list of all products and their coas
   if(!file_parts.length || !file_parts[0].length || isNaN(file_parts[0])){
-    return bro.get(true, template_manager.executeTemplate(templates.home,{nav:nav, title:pages.home.title, desc:pages.home.description}));
+    return bro.get(true, template_manager.executeTemplate(templates.home,{nav:nav, title:pages.home.title, description:pages.home.desc}));
   } else {
     let fp0 = file_parts[0];
     //need to check object storage to see if this test result exists
     if( !tests.hasOwnProperty( fp0 ) )
-      return bro.get(true, template_manager.executeTemplate(template_manager.unsupported_route, {nav:nav, message:"<h1>There is no test matching this product.</h1><p>If you scanned a product URL and reached this page, please email Nathan at ravenridgehempandherbals @ gmail.com.</p>"}));
+      return bro.get(true, template_manager.executeTemplate(template_manager.unsupported_route, {nav:nav, title:pages.error.title, description:pages.error.desc, message:"<h1>There is no test matching this product.</h1><p>If you scanned a product URL and reached this page, please email Nathan at ravenridgehempandherbals @ gmail.com.</p>"}));
     else
       return bro.get(true, template_manager.executeTemplate(templates.result, {nav:nav, test_filename:fp0 + ".pdf", title:titles[fp0].title, description:titles[fp0].desc, product_data:tests[fp0], }));
   }
