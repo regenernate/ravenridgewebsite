@@ -85,7 +85,7 @@ async function routeRequest( request, response, file_parts ){
     let fp0 = file_parts[0];
     //need to check object storage to see if this test result exists
     if( !tests.hasOwnProperty( fp0 ) )
-      return bro.get(true, template_manager.executeTemplate(template_manager.unsupported_route, {nav:nav, title:pages.error.title, description:pages.error.desc, message:"<h1>There is no test matching this product.</h1><p>If you scanned a product URL and reached this page, please email Nathan at ravenridgehempandherbals @ gmail.com.</p>"}));
+      return bro.get(true, template_manager.executeTemplate(template_manager.unsupported_route, {nav:nav, title:pages.error.title, description:pages.error.desc, message:"<h1>There is no test matching this product.</h1><p>If you scanned a product URL and reached this page, please email Nathan at RavenRidgeFamilyFarm @ gmail.com.</p>"}));
     else
       return bro.get(true, template_manager.executeTemplate(templates.result, {nav:nav, test_filename:fp0 + ".pdf", title:titles[fp0].title, description:titles[fp0].desc, product_data:tests[fp0], }));
   }

@@ -9,7 +9,7 @@ var bro = require("../../server/bro");
 var template_manager = require('../../services/template_manager');
 
 var pagetitle = "Purchase NC made Full Spectrum Hemp products.";
-var pagedesc = "RavenRidge Hemp and Herbals sells full spectrum hemp sublingual and topical salve products for reasonable prices from plants we grow on our farm in NC.";
+var pagedesc = "RavenRidge Family Farm sells full spectrum hemp sublingual and topical salve products for reasonable prices from plants we grow on our farm in NC.";
 
 /** define templates here for use in request routing **/
 var templates = template_manager.compileTemplates({
