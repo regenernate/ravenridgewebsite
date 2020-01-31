@@ -14,7 +14,7 @@ const { location } = require('./location');
 
 //connect to various data sources, ideally extracted to one config per service
 
-//mysql database
+/*mysql database
 var db = require('./database/mysql2_db.js');
 
 db.connect(function(err) {
@@ -24,7 +24,7 @@ db.connect(function(err) {
   } else {
     initHttpServer();
   }
-});
+}); */
 
 //mongodb database...
 
@@ -38,13 +38,13 @@ db.connect(function(err) {
 //  login();
 //  logout();
 
-var user_service = require('../services/user/user');
-
 var http_server;
 
-function initHttpServer(){
-  http_server = http.createServer( receiveHttpRequest ).listen(process.env.PORT, process.env.BIND_IP);
+function initHttpServer( port, ip ){
+  http_server = http.createServer( receiveHttpRequest ).listen(port, ip);
 }
+
+module.exports.startServer = initHttpServer;
 
 //load routers and configured routes
 /**** assumptions ****
@@ -54,41 +54,21 @@ router method must have signature router( request, response, file_parts )
   where file_parts is an array of the remaining requested url segments without the base_route_path included
   file_parts also will not have any querystring but will have request.query object if any query string was sent
 *********************/
-var default_router_path = "content";
+
+var default_router_path;
 var configured_routers = { };
-var modules_to_load = {
-                      "content_router":true,
-                      "purchasing_router":true,
-                      "user_router":true,
-                      "product_testing_router":true
-                    };
 
-try{
-  //loadConfiguredRoutes('./server/routers/', './routers/');
-  loadConfiguredRouter('./services/service_routers/','../services/service_routers/');
-}catch(err){
-  console.log( "there was an error loading a configured router", err.message );
+function loadConfiguredRouter( name, mod ){
+  let {router,base_route_path} = require(mod+name);
+  configured_routers[ base_route_path ] = router;
 }
 
-function loadConfiguredRouter( dir, mod ){
-  fs.readdir(dir, function (err, files) {
-      //handling error
-      if (err) {
-          return console.log('Unable to scan directory: ' + err);
-      }
-      //listing all files using forEach
-      files.forEach(function (file) {
-          //check if module is activated
-          let mod_name = file.split('.')[0];
-          if(modules_to_load.hasOwnProperty(mod_name)){
-            // load the module
-            let {router,base_route_path,active} = require(mod+mod_name);
-            if(active)
-              configured_routers[ base_route_path ] = router;
-          }
-      });
-  });
+function setDefaultRouter( name ) {
+  default_router_path = name;
 }
+
+module.exports.addRouter = loadConfiguredRouter;
+module.exports.setDefaultRouter = setDefaultRouter;
 
 /*******  Assumptions ******
 
@@ -188,7 +168,7 @@ async function respondToRequest( request, response ){
 
     //validate user by calling user service
 
-    let validate_user = await user_service.isValidUser(request, response);
+/*    let validate_user = await user_service.isValidUser(request, response);
     if( !validate_user.success ){
       let login_user = await user_service.login(request, response);
       if( !login_user.success ){
@@ -197,74 +177,73 @@ async function respondToRequest( request, response ){
         response.writeHead(302, { "Location": '/' });
         response.end();
       }
-    }else{
+    }else{ */
       //bootstrap the main logged in page with logged_in layout
-      if( request_path == '/') {
-        request_path = default_router_path;
+    if( request_path == '/') {
+      request_path = default_router_path;
+    }
+
+    let extension = String(path.extname(request_path)).toLowerCase();
+    let has_extension = extension != "";
+
+    //if requested resource has a file extension, treat as static route
+    if( has_extension ){
+      content_type_out = mime_types[ extension ];
+      if( !content_type_out ) throw new Error('Unsupported extension requested :: ' + extension + ", " + request_path);
+      //check extension against content-type
+      //check extension against supported list
+      //check extension against accepts header
+      if( request_headers.hasOwnProperty( 'accepts' ) ){
+        if(String(request_headers.accepts).toLowerCase().indexOf(content_type_out) < 0){
+          throw new Error('Extension requested does not match accepts header, ' + extension);
+        }
       }
+      //serve static file
+      attemptToServeStaticFile( response, "." + request_path, content_type_out );
+    } else {
+      //no file extension so treat as dynamic route
+      //for now check only for html then json accepts
+      if( request_headers.hasOwnProperty( 'accept' ) ){
+        let accepts_header = String(request_headers.accept).toLowerCase();
+        if( accepts_header.indexOf( mime_types['.html'] ) >= 0 ) content_type_out = mime_types['.html'];
+        else if( accepts_header.indexOf( mime_types['.json'] ) >= 0 ) content_type_out = mime_types['.json'];
+        else throw new Error('Dynamic routes currently only serve content with accepts header html or json.');
+      }else{
+        content_type_out = mime_types['.html'];
+      }
+      //clean up requested url
+      let file_parts = request_path.split("/");
+      if( file_parts[0] == "" || file_parts[0] == "." ) file_parts.shift();
+      //if no matched router domain, insert default domain into url
+      if( !configured_routers.hasOwnProperty( file_parts[0] )){
+        file_parts.unshift(default_router_path);
+      }
+      //call matched router
+      let routed_call = await configured_routers[ file_parts[0] ]( request, response, file_parts.slice(1) );
 
-      let extension = String(path.extname(request_path)).toLowerCase();
-      let has_extension = extension != "";
+      if(!routed_call.success){
+        if( routed_call.error ) console.log( "/***** ERROR CALLING ROUTE *****/ ( " + routed_call.error + " )" );
 
-      //if requested resource has a file extension, treat as static route
-      if( has_extension ){
-        content_type_out = mime_types[ extension ];
-        if( !content_type_out ) throw new Error('Unsupported extension requested :: ' + extension + ", " + request_path);
-        //check extension against content-type
-        //check extension against supported list
-        //check extension against accepts header
-        if( request_headers.hasOwnProperty( 'accepts' ) ){
-          if(String(request_headers.accepts).toLowerCase().indexOf(content_type_out) < 0){
-            throw new Error('Extension requested does not match accepts header, ' + extension);
-          }
-        }
-        //serve static file
-        attemptToServeStaticFile( response, "." + request_path, content_type_out );
-      } else {
-        //no file extension so treat as dynamic route
-        //for now check only for html then json accepts
-        if( request_headers.hasOwnProperty( 'accept' ) ){
-          let accepts_header = String(request_headers.accept).toLowerCase();
-          if( accepts_header.indexOf( mime_types['.html'] ) >= 0 ) content_type_out = mime_types['.html'];
-          else if( accepts_header.indexOf( mime_types['.json'] ) >= 0 ) content_type_out = mime_types['.json'];
-          else throw new Error('Dynamic routes currently only serve content with accepts header html or json.');
-        }else{
-          content_type_out = mime_types['.html'];
-        }
-        //clean up requested url
-        let file_parts = request_path.split("/");
-        if( file_parts[0] == "" || file_parts[0] == "." ) file_parts.shift();
-        //if no matched router domain, insert default domain into url
-        if( !configured_routers.hasOwnProperty( file_parts[0] )){
-          file_parts.unshift(default_router_path);
-        }
-        //call matched router
-        let routed_call = await configured_routers[ file_parts[0] ]( request, response, file_parts.slice(1) );
-        if( routed_call.success ){
-          if( routed_call.redirect ){
-            response.writeHead(302, { "Location": routed_call.redirect });
-            response.end();
-          }else if(content_type_out == mime_types['.html']){
-            endRequest( response, routed_call.content, content_type_out );
-          }else if(content_type_out == mime_types['.json']){
-            endRequest( response, JSON.stringify({success:true,content:routed_call.content}), content_type_out );
-        }else{
-
-          if( routed_call.error ) console.log( routed_call.error );
-
-          if( routed_call.redirect ){
-            response.writeHead(302, { "Location": routed_call.redirect });
-            response.end();
-          }else if(content_type_out == mime_types['.html']){
-            endRequest( response, routed_call.error, content_type_out );
-          }else if(content_type_out == mime_types['.json']){
+        if( routed_call.redirect ){
+          response.writeHead(302, { "Location": routed_call.redirect });
+          response.end();
+        }else if(content_type_out == mime_types['.html']){
+          endRequest( response, routed_call.error, content_type_out );
+        }else if(content_type_out == mime_types['.json']){
 //                if( typeof(routed_call.error) == "string" ) routed_call.error = {error:routed_call.error};
-            endRequest( response, JSON.stringify({success:false, error:routed_call.error}), content_type_out );
-          }
+          endRequest( response, JSON.stringify({success:false, error:routed_call.error}), content_type_out );
+        }
+      }else{
+        if( routed_call.redirect ){
+          response.writeHead(302, { "Location": routed_call.redirect });
+          response.end();
+        }else if(content_type_out == mime_types['.html']){
+          endRequest( response, routed_call.content, content_type_out );
+        }else if(content_type_out == mime_types['.json']){
+          endRequest( response, JSON.stringify({success:true,content:routed_call.content}), content_type_out );
         }
       }
     }
-  }
   }catch(err){
     console.log("RESPOND TO REQUEST CATCH", err.stack);
     if(content_type_out == mime_types['.html']){
@@ -293,6 +272,7 @@ async function collectRequestData(request, response, resume) {
         request.body[i] = formatDateForDB( request.body[i] );
       }
     }
+    console.log( request.body );
     //look for and reformat location objects - put this into the where service
     if( request.body.latitude && request.body.longitude ){
       request.geolocation = location(request.body.latitude, request.body.longitude, request.body.accuracy);

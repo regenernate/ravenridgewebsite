@@ -16,6 +16,8 @@ fs.readFile("./services/product_testing/data/pages.json", function(error, conten
 });
 
 //this variable will hold the pre-compiled template functions for whatever pages are loaded in pages.json
+const bro = require("../../server/bro");
+const template_manager = require('../../services/template_manager');
 var templates = {};
 
 //this method is called after pages.json loads
@@ -25,6 +27,7 @@ function compileTemplates(){
     if( pages[i].template ) //templates can be null
       templates[i] = pages[i].template;
   }
+
   template_manager.compileTemplates(templates, true);
 
   loadTests();
@@ -68,8 +71,6 @@ module.exports.base_route_path = brp;
 //this variable controls whether or not this router gets loaded
 module.exports.active = true;
 
-var bro = require("../../server/bro");
-var template_manager = require('../../services/template_manager');
 
 /** define templates here for use in request routing **/
 var templates = template_manager.compileTemplates({

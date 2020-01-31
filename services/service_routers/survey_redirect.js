@@ -10,7 +10,7 @@ var templates = template_manager.compileTemplates({
   "redirect":"./services/monthlyusers/views/redirect.handlebars"
 });
 
-var base_route = "https://pharmbuddy.ravenridgehempandherbals.com/monthlyusers/";
+var base_route = "https://pharmbuddy.RavenRidgeFamilyFarm.com/monthlyusers/";
 async function routeRequest( request, response, file_parts ){
   return bro.get(true, template_manager.executeTemplate(templates.redirect, {route:base_route + file_parts.join('/')}));
 }

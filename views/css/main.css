@@ -78,6 +78,7 @@
 
     embed{
       width:98vw;
+      height:60vh;
     }
 
     /**********  footer styles ******/
@@ -231,7 +232,7 @@
 /*****   other style changes *******/
   embed{
     width:850px;
-    height:90vh;
+    height:85vh;
   }
 
   /* image style for callout images */
