@@ -12,6 +12,7 @@ const uglifycss = require( 'uglifycss' );
 
 /*  ultimately pull this out of file into data.json  */
 var basepath = "../views/css/";
+var outpath = "../dist/";
 var uglified_filename = "css_uglified.css";
 var css_files = [ "reset", "colors", "main", "fonts-and-margins", "image-sizes" ];
 
@@ -21,7 +22,7 @@ for ( let i in css_files ){
 
 function uglify(){
   var uglified_css = uglifycss.processFiles( css_files, {maxLineLen: 500} );
-  fs.writeFile( basepath + uglified_filename, uglified_css, 'utf8', ()=>{ console.log("css uglified"); } );
+  fs.writeFile( basepath + uglified_filename, outpath + uglified_css, 'utf8', ()=>{ console.log("css uglified"); } );
 }
 
 //set up listeners for css file changes
