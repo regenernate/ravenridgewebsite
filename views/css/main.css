@@ -10,11 +10,13 @@
     background-color:#FFFFFF;
   }
 
-  button {
-    padding:1em;
+  input[type='button'] {
+    padding:.5em 1em;
     border:1px solid #A39480;
-    border-radius: 1em;
-    color:#A39480;
+    border-radius: 15px;
+    font-size:1.25em;
+    color:#FFFFFF;
+    background-color: #2a4d7f;
   }
 
   h1, h2, h3{

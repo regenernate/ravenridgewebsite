@@ -11,6 +11,16 @@
       "103":{
         "product_name":"900mg CBD Sublingual oil",
         "stated_strength":"30mg / ml"
+      },
+      "104":{
+        "product_name":"1% CBD Topical Salve (green bottom label)",
+        "stated_strength":"one percent cbd",
+        "sample_id":"MO00207011-001"
+      },
+      "105":{
+        "product_name":".5% CBD Topical Salve (brown bottom label)",
+        "stated_strength":"one-half percent cbd",
+        "sample_id":"MO00207011-002"
       }
   }
 }

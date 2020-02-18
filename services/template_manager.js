@@ -54,6 +54,7 @@ handlebars.registerHelper("everyOther", function (index, amount, scope) {
 
 //compile each of the templates sent
 function compileTemplates( templates, replace ){
+//  console.log("compileTemplates :: ", templates);
   var ret = ( replace ? templates : {} );
   //todo :: probably should change this call to be asynchronous
   for( var i in templates ){
