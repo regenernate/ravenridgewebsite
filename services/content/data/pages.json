@@ -29,6 +29,11 @@
       "template":"./services/content/views/third_party_testing.handlebars",
       "title":"Our third party product testing pledge.",
       "desc":"We believe in full transparency with our product testing, and this page show you how to find our product tests easily."
+    },
+    "trifold2020":{
+      "template":"./services/content/views/trifold2020.handlebars",
+      "title":"Landing page for folks who have seen our 2020 brochure.",
+      "desc":"Thanks for visiting to learn more about our whole plant extract cbd products, and to buy sublingual oil or topical salve."
     }
   },
   "default_page":"about_us"
