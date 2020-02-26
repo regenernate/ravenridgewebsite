@@ -34,6 +34,11 @@
       "template":"./services/content/views/trifold2020.handlebars",
       "title":"Landing page for folks who have seen our 2020 brochure.",
       "desc":"Thanks for visiting to learn more about our whole plant extract cbd products, and to buy sublingual oil or topical salve."
+    },
+    "newsletter_signup":{
+      "template":"./services/content/views/newsletter_signup.handlebars",
+      "title":"Landing page for folks to sign up for our newsletter.",
+      "desc":"Thanks for visiting. To learn more about our whole plant extract cbd products, sign up for our newsletter."
     }
   },
   "default_page":"about_us"
