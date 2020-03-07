@@ -70,6 +70,8 @@ async function routeRequest( request, response, file_parts ){
   if( !file_parts || file_parts.length == 0 ) file_parts = [ default_page ];
   //get requested page name
   let template = file_parts[0].toLowerCase();
+  //check for "card{x}" and for now serve up the default card templates
+  if( template.substring( 0, 4 ) == "card" ) template = "card";
   //check for requested template in templates object
   if( templates.hasOwnProperty( template )){
     let data_to_send = { nav:template, title:pages[template].title, description:pages[template].desc };

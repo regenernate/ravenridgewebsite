@@ -39,7 +39,13 @@
       "template":"./services/content/views/newsletter_signup.handlebars",
       "title":"Landing page for folks to sign up for our newsletter.",
       "desc":"Thanks for visiting. To learn more about our whole plant extract cbd products, sign up for our newsletter."
+    },
+    "card":{
+      "template":"./services/content/views/card.handlebars",
+      "title":"Landing page for folks who found one of our business cards.",
+      "desc":"Thanks for visiting. To learn more about our whole plant extract cbd products, sign up for our newsletter. Or to buy CBD products, visit the products page."
     }
+
   },
   "default_page":"about_us"
 }
