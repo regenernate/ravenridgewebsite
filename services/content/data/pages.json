@@ -18,7 +18,7 @@
     "shipping_and_returns":{
       "template":"./services/content/views/shipping_and_returns.handlebars",
       "title":"Our shipping and returns policy for CBD products.",
-      "desc":"We offer free priority USPS shipping with all products, and will accept returns within ten days of purchase."
+      "desc":"The cost of priority USPS shipping anywhere in the United States is included in the price of all products, and we will accept returns within ten days of purchase."
     },
     "terms_and_conditions":{
       "template":"./services/content/views/terms_and_conditions.handlebars",
