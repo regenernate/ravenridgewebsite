@@ -38,14 +38,23 @@
     "newsletter_signup":{
       "template":"./services/content/views/newsletter_signup.handlebars",
       "title":"Landing page for folks to sign up for our newsletter.",
-      "desc":"Thanks for visiting. To learn more about our whole plant extract cbd products, sign up for our newsletter."
+      "desc":"Thanks for visiting. To learn more about our cbd products and regenerative practices, sign up for our newsletter."
     },
     "card":{
       "template":"./services/content/views/card.handlebars",
       "title":"Landing page for folks who found one of our business cards.",
       "desc":"Thanks for visiting. To learn more about our whole plant extract cbd products, sign up for our newsletter. Or to buy CBD products, visit the products page."
+    },
+    "acresusa":{
+      "template":"./services/content/views/acresusa.handlebars",
+      "title":"Thanks, ACRES readers, for spreading the good word!",
+      "desc":"Thanks for visiting. To learn more about our regenerative practices and hemp-derived CBD products, sign up for our newsletter. Or to buy CBD products, visit the products page."
+    },
+    "triadnatural":{
+      "template":"./services/content/views/triadnatural.handlebars",
+      "title":"Thanks, Triad Natural community, for supporting our work!",
+      "desc":"Thanks for visiting. To learn more about our whole plant extract products and regenerative practices, sign up for our newsletter. Or to buy CBD products, visit the products page."
     }
-
   },
   "default_page":"about_us"
 }

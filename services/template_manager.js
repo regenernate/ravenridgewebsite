@@ -69,6 +69,7 @@ function loadComponentScripts( directories ){
 
 //compile and register partials
 handlebars.registerPartial('head', handlebars.compile( fs.readFileSync( "./views/shared/head.handlebars", 'utf-8' )));
+handlebars.registerPartial('newsletter_signup', handlebars.compile( fs.readFileSync( "./views/shared/newsletter_signup.handlebars", 'utf-8' )));
 
 //load and compile layout templates
 var default_layout = "logged_out";
