@@ -71,6 +71,11 @@ h5, h6 {
   font-size:1.8em;
 }
 
+.notice{
+  font-size:.9em;
+  text-align: center;
+}
+
 main {
   margin:10rem auto 7rem auto;
 }

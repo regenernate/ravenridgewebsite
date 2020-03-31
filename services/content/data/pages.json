@@ -54,6 +54,11 @@
       "template":"./services/content/views/triadnatural.handlebars",
       "title":"Thanks, Triad Natural community, for supporting our work!",
       "desc":"Thanks for visiting. To learn more about our whole plant extract products and regenerative practices, sign up for our newsletter. Or to buy CBD products, visit the products page."
+    },
+    "pandemic_pricing":{
+      "template":"./services/content/views/pandemic_pricing.handlebars",
+      "title":"Get what you need during the pandemic.",
+      "desc":"We have reduced our pricing for the coronavirus pandemic so people can deal more effectively with their anxiety and stress during this time."
     }
   },
   "default_page":"about_us"
