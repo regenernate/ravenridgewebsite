@@ -15,6 +15,10 @@
       "title":"Our privacy policy for website visitors and customers.",
       "desc":"See how we treat visitor and customer data, and what to be aware of when you use this website."
     },
+    "mwc":{
+      "template":"./services/content/views/mwc_home.handlebars",
+      "title":"Michele Wheeler Creations made on-site at RavenRidge"
+    },
     "shipping_and_returns":{
       "template":"./services/content/views/shipping_and_returns.handlebars",
       "title":"Our shipping and returns policy for CBD products.",
