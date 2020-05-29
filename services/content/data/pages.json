@@ -62,7 +62,12 @@
     "pandemic_pricing":{
       "template":"./services/content/views/pandemic_pricing.handlebars",
       "title":"Get what you need during the pandemic.",
-      "desc":"We have reduced our pricing for the coronavirus pandemic so people can deal more effectively with their anxiety and stress during this time."
+      "desc":"We have reduced our pricing after the coronavirus pandemic so people can deal more effectively with their anxiety and stress during this time."
+    },
+    "regenerative_ag":{
+      "template":"./services/content/views/regenerative_ag.handlebars",
+      "title":"An intro to regenerative agriculture.",
+      "desc":"Regenerative agriculture is a cornerstone of our business model. Learn a bit about what it entails here."
     }
   },
   "default_page":"about_us"
