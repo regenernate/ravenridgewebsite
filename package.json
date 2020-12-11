@@ -8,6 +8,7 @@
     "start": "node index.js"
   },
   "author": "Nathan Wheeler",
+  "repository":"https://github.com/nathangreenling/ravenridgewebsite.git ravenridgewebsite",
   "license": "ISC",
   "dependencies": {
     "async": "^2.6.3",
