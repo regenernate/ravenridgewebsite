@@ -1,3 +1,9 @@
+/****
+
+Remnant from earlier need for database connection. Kept for future reference.
+
+****/
+
 var mysql = require('mysql2');
 var async = require('async');
 

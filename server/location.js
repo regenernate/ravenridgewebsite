@@ -1,3 +1,9 @@
+/****
+
+Structured object to store geolocation data
+
+****/
+
 
 module.exports.location = function( lat, long, acc ){
     return { latitude:formatCoordinate(lat), longitude:formatCoordinate(long), accuracy:formatAccuracy(acc) };

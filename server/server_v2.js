@@ -4,44 +4,18 @@ const FORM_URLENCODED = 'application/x-www-form-urlencoded';
 const FORM_MULTIPART = 'multipart/form-data';
 const mime_types = require('./mime_types').getMimeTypes();
 
-const fs = require("fs");
-const path = require('path');
-const http = require('http');
-const moment = require("moment");
-const query = require('query-string');
-const { parse } = require('querystring');
-const { location } = require('./location');
-
-//connect to various data sources, ideally extracted to one config per service
-
-/*mysql database
-var db = require('./database/mysql2_db.js');
-
-db.connect(function(err) {
-  if (err) {
-    console.log('Unable to connect to MySQL.');
-    process.exit(1)
-  } else {
-    initHttpServer();
-  }
-}); */
-
-//mongodb database...
-
-
-//user service ...
-//assumption :: the user service will handle access control so the server does no independent user verification
-//assumption :: a valid user service implements the following methods
-//  isValidUser( request, response ); - upon false return, server will respond with login form
-//                                    - true returns pass control to requested route
-//  getLoginForm(); - return value will be response
-//  login();
-//  logout();
+const FS = require("fs"); //used to read and serve static files
+const PATH = require('path'); //used to parse incoming request path
+const HTTP = require('http'); //basic http server that accepts and responds to requests
+const MOMENT = require("moment"); //used to convert dates into consistent db storage format
+const QUERY = require('query-string'); //used to parse incoming query strings, if any
+const { PARSE } = require('querystring'); // used in annoyingly necessary hack - see querystring parsing below :(
+const { LOCATION } = require('./location'); //used to store any geolocation info sent from client-side code
 
 var http_server;
 
 function initHttpServer( port, ip ){
-  http_server = http.createServer( receiveHttpRequest ).listen(port, ip);
+  http_server = HTTP.createServer( receiveHttpRequest ).listen(port, ip);
 }
 
 module.exports.startServer = initHttpServer;
@@ -59,8 +33,9 @@ var default_router_path;
 var configured_routers = { };
 
 function loadConfiguredRouter( name, mod ){
-  let {router,base_route_path} = require(mod+name);
-  configured_routers[ base_route_path ] = router;
+  let {router,base_route_path} = require(mod+name); //get the exported router function and url string to match up with incoming requests
+  if( configured_routers.hasOwnProperty( base_route_path ) ) throw new Error('More than one router is configured with the same base_route_path. At present only one router can be used per path. What are you trying to do anyway?');
+  configured_routers[ base_route_path ] = router; //save the router in the configured_routers at the base_route_path indicated
 }
 
 function setDefaultRouter( name ) {
@@ -77,7 +52,7 @@ async function receiveHttpRequest(request, response) {
     let request_method = request.method.toLowerCase();
     let request_headers = request.headers || {};
 
-    let ext = String(path.extname(request_path)).toLowerCase();
+    let ext = String(PATH.extname(request_path)).toLowerCase();
     //if requested resource has a file extension, treat as static route
     if( ext !== "" ){
 
@@ -105,15 +80,15 @@ async function receiveHttpRequest(request, response) {
   }
 }
 
-function getQueryString( request, path ){
-  let qmi = path.split("?");
-  if( qmi.length > 2 ) throw new Error('THERE can only be one ? in the query string.' + path);
+function getQueryString( request, l_path ){
+  let qmi = l_path.split("?");
+  if( qmi.length > 2 ) throw new Error('THERE can only be one ? in the query string. <' + l_path + '>');
   else if( qmi.length > 1 ){
-    let queryobject = query.parse( qmi[1] );
+    let queryobject = QUERY.parse( qmi[1] );
 
-    //extract this into a helper that can be loaded as needed
+    //look for and reformat any geolocation information sent in the query string, should extract this into a helper that can be loaded into servers as needed
     if(queryobject.latitude && queryobject.longitude){
-      request.geolocation = location( queryobject.latitude, queryobject.longitude, queryobject.accuracy );
+      request.geolocation = LOCATION( queryobject.latitude, queryobject.longitude, queryobject.accuracy );
       delete(queryobject.latitude);
       delete(queryobject.longitude);
       delete(queryobject.accuracy);
@@ -221,7 +196,7 @@ async function collectRequestData(request, response, resume) {
   });
   request.on('end', async () => {
     //annoying hack necessary to create prototype functions on querystring parsed object
-    request.body = JSON.parse(JSON.stringify(parse(body)));
+    request.body = JSON.parse(JSON.stringify(PARSE(body)));
     //look for and reformat dates
     for( let i in request.body ){
       if( i.indexOf( "_date" ) >= 0 ){
@@ -229,9 +204,10 @@ async function collectRequestData(request, response, resume) {
       }
     }
     console.log( request.body );
-    //look for and reformat location objects - put this into the where service
+
+    //look for and reformat any posted geolocation data, should extract this into a helper that can be loaded into servers as needed
     if( request.body.latitude && request.body.longitude ){
-      request.geolocation = location(request.body.latitude, request.body.longitude, request.body.accuracy);
+      request.geolocation = LOCATION(request.body.latitude, request.body.longitude, request.body.accuracy);
       delete( request.body.latitude );
       delete( request.body.longitude );
       delete( request.body.accuracy );
@@ -243,12 +219,12 @@ async function collectRequestData(request, response, resume) {
 
 function formatDateForDB( datestring, format_as ){
   if(!format_as) format_as = "x";
-  return moment(datestring).format(format_as);
+  return MOMENT(datestring).format(format_as);
 }
 
 const STATICS_DIRECTORY = "dist";
 
-async function attemptToServeStaticFile( request, response, path, headers, extension ){
+async function attemptToServeStaticFile( request, response, l_path, headers, extension ){
 
   let content_type_out = mime_types[ extension ];
 
@@ -267,7 +243,7 @@ async function attemptToServeStaticFile( request, response, path, headers, exten
     }
   }
   //clean up path
-  let file_parts = path.split("/");
+  let file_parts = l_path.split("/");
   if( file_parts[0] == "" || file_parts[0] == "." ) file_parts.shift();
   if( file_parts[ file_parts.length-1] == "" ) file_parts.pop();
   //hijack path to only try loading static files from the dist directory
@@ -275,7 +251,7 @@ async function attemptToServeStaticFile( request, response, path, headers, exten
 //  console.log( file_parts.join('/') );
   let nfp = "./" + file_parts.join("/");
   //try to serve static file
-  fs.readFile( nfp, function(error, content) {
+  FS.readFile( nfp, function(error, content) {
       if (error) {
         endRequest( response, "SERVER ERROR :: There is no resource at " + nfp + "!", 'text/plain', 404);
       }

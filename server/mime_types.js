@@ -1,4 +1,10 @@
 
+/*
+
+simple controller to ensure only acceptable mime types are approved in a request handling server
+
+*/
+
 const mimeTypes = {
     '.txt': 'text/plain',
     '.html': 'text/html',

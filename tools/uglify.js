@@ -2,7 +2,7 @@
 limitations:
 
 1. this helper must be running
-2. list of css files to watch must be provided in order desired
+2. list of css files to watch must be provided in order desired for uglified output
 
 */
 
@@ -10,11 +10,11 @@ limitations:
 const fs = require("fs");
 const uglifycss = require( 'uglifycss' );
 
-/*  ultimately pull this out of file into data.json  */
-var basepath = "../views/css/";
-var outpath = "../dist/";
-var uglified_filename = "css_uglified.css";
-var css_files = [ "reset", "colors", "main", "fonts-and-margins", "image-sizes" ];
+/*  ultimately pull this config data into external file ( i.e. data.json )  */
+var basepath = "../views/css/"; //where to find css files to uglify and concatenate
+var outpath = "../dist/"; //where to save uglified css file
+var uglified_filename = "css_uglified.css"; //what filename to use for uglified file
+var css_files = [ "reset", "colors", "main", "fonts-and-margins", "image-sizes" ]; //what filenames to look for in the basepath specified ( reduce hackiness-opportunity factor )
 
 for ( let i in css_files ){
   css_files[i] = basepath + css_files[i] + ".css";
@@ -22,17 +22,21 @@ for ( let i in css_files ){
 
 function uglify(){
   var uglified_css = uglifycss.processFiles( css_files, {maxLineLen: 500} );
-  fs.writeFile( outpath + uglified_filename, uglified_css, 'utf8', ()=>{ console.log("css uglified"); } );
+  fs.writeFile( outpath + uglified_filename, uglified_css, 'utf8', ()=>{ console.log( "These files were just uglified: ", css_files ) } );
 }
 
 //set up listeners for css file changes
 fs.watch(basepath, (event, filename) => {
+//  console.log("potential css file change detected...");
   if (filename) {
-    if( filename != uglified_filename ){
+//    console.log("file changed was :: ", filename);
+    if( filename != uglified_filename && css_files.indexOf(basepath + filename) >= 0 ){
+//      console.log("uglified from watcher");
       uglify();
     }
   }
 });
 
 //do initial uglification
+//console.log("initial uglification");
 uglify();

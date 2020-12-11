@@ -1,3 +1,10 @@
+/****
+
+Structured object to pass around as return to http server from various routes
+
+****/
+
+
 let ms = 0;
 let ct = 1;
 
