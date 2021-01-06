@@ -14,8 +14,17 @@ const uglifycss = require( 'uglifycss' );
 var basepath = "../views/css/"; //where to find css files to uglify and concatenate
 var outpath = "../dist/"; //where to save uglified css file
 var uglified_filename = "css_uglified.css"; //what filename to use for uglified file
-var css_files = [ "reset", "colors", "main", "fonts-and-margins", "image-sizes" ]; //what filenames to look for in the basepath specified ( reduce hackiness-opportunity factor )
 
+//what filenames to look for in the basepath specified ( reduce hackiness-opportunity factor )
+var css_files = [ "reset",
+                  "colors",
+                  "helper_classes",
+                  "fonts-and-margins",
+                  "image-sizes",
+                  "main",
+                  "nav",
+                  "footer"
+                ]; 
 for ( let i in css_files ){
   css_files[i] = basepath + css_files[i] + ".css";
 }

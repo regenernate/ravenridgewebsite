@@ -33,9 +33,9 @@ var default_router_path;
 var configured_routers = { };
 
 function loadConfiguredRouter( name, mod ){
-  let {router,base_route_path} = require(mod+name); //get the exported router function and url string to match up with incoming requests
-  if( configured_routers.hasOwnProperty( base_route_path ) ) throw new Error('More than one router is configured with the same base_route_path. At present only one router can be used per path. What are you trying to do anyway?');
-  configured_routers[ base_route_path ] = router; //save the router in the configured_routers at the base_route_path indicated
+  if( configured_routers.hasOwnProperty( name ) ) throw new Error('More than one router is configured with the same base_route_path. At present only one router can be used per path. What are you trying to do anyway?');
+  let {router} = require(mod); //get the exported router function and url string to match up with incoming requests
+  configured_routers[ name ] = router; //save the router in the configured_routers at the base_route_path indicated
 }
 
 function setDefaultRouter( name ) {

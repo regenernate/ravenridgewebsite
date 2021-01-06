@@ -13,17 +13,18 @@ if( !port || !ip ){
   console.log("Don't forget to set your .env file and define a port and ip.");
 }
 
-//configure routers to be loaded in simple json structure, eventually pull this out into config file ( i.e. /services/router_config.json )
-var routers_to_load = [ {name:"content_router", path:"../services/content/" },
-                        {name:"purchasing_router", path:"../services/purchasing/"},
-                        {name:"user_router", path:"../services/user/"},
-                        {name:"product_testing_router", path:"../services/product_testing/"}
-                      ];
+//load routers from config
+let {loadData} = require( "./tools/filesys/filesys_util");
+
+var routers_to_load = loadData("./config/routers.json");
+
+loadData = null;
+
 
 //method to load the configured routers
 function loadRouters(){
   for( let i in routers_to_load ){
-    http_server.addRouter( routers_to_load[i].name, routers_to_load[i].path ); //add the configured router to the server
+    http_server.addRouter( i, routers_to_load[i] ); //add the configured router to the server
   }
   http_server.setDefaultRouter( default_router_path ); //define the default path to use for unhandled requests
 }

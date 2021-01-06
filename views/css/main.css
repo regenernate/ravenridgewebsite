@@ -10,191 +10,39 @@
     background-color:#FFFFFF;
   }
 
-  input[type='button'] {
-    padding:.5em 1em;
-    border:1px solid #A39480;
-    border-radius: 15px;
-    font-size:1.25em;
-    color:#FFFFFF;
-    background-color: #2a4d7f;
-  }
-
-  h1, h2, h3{
+  h1, h2, h3 {
     padding:0 4vw;
   }
 
-  p {
-    padding:0 4vw;
+  /**********  main styles *********/
+  main {
+    position:relative;
+    z-index: -100;
   }
 
-  /********** header styles *********/
-
-  header {
-    height:6rem;
-    position: fixed;
-    top:0;
-    display: inline-block;
+  main img {
     width:100%;
   }
 
-  /********** navigation styles ********/
-
-    nav {
-      position:fixed;
-      width:100vw;
-      top:6rem;
-      left:0px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: inline-block;
-      margin:0;
-    }
-
-    nav li {
-      width:50vw;
-      display: inline-block;
-      padding:.5rem;
-      text-align: center;
-    }
-
-    #product-navigation {
-      top:auto;
-      bottom:0;
-    }
-
-    /**********  main styles *********/
-    main {
-      position:relative;
-      z-index: -100;
-    }
-
-    main img {
-      width:100%;
-    }
-
-    article{
-      display:inline-block;
-    }
-
-    embed{
-      width:98vw;
-      height:60vh;
-    }
-
-    /**********  footer styles ******/
-
-    footer{
-      text-align: center;
-      border-top: #322e26 solid 2px;
-      z-index: 2500;
-      background-color: #FFFFFF;
-      display: block;
-      width:100vw;
-    }
-
-    footer ul {
-      display: inline-block;
-      padding-top: 20px;
-      list-style: none;
-    }
-
-    footer ul li {
-      display: inline-block;
-      padding-right:1vw;
-    }
-
-    /** ravenridge contact information ul in footer **/
-    .contact-details  {
-      padding-top:0;
-      display: block;
-    }
-    /**********  styles related to specific articles or pages *********/
-
-/***********  helper classes **********/
-
-  .content-box {
-    box-sizing: content-box
+  article{
+    display:inline-block;
   }
 
-  .border-box {
-    box-sizing: border-box;
+  embed{
+    width:98vw;
+    height:60vh;
   }
 
-  .hidden-all {
-    display: none;
-  }
 
-  .hidden-visual {
-     border: 0;
-     clip: rect(0 0 0 0);
-     height: 1px;
-     width: 1px;
-     margin: -1px;
-     padding: 0;
-     overflow: hidden;
-     position: absolute;
-  }
+}
 
-  .pad-above{
-    margin-top:4em;
-    margin-bottom:3em;
-  }
+@media only screen and (max-width:400px) {
 
-  .centered {
-    width:100%;
-    margin:auto;
-  }
-
-  .text-centered {
-    text-align: center;
-  }
-
-  .some-padding {
-    padding: 1rem;
-  }
-
-/* used for selected tabs and buttons */
-  .selected {
-    border-right:.5vw solid #000000;
-  }
-
-/* used for hover state */
-  .active {
-  }
-
-/* header image */
- .logo {
-   display:flex;
-   margin-top:.05rem;
-   height:5.9rem;
-   margin-left:auto;
-   margin-right:auto;
- }
-
-
-  /* example image, section or article has attention drawn to it with border and padding */
-
-  .example {
-    margin: 4vw auto;
-    padding: 1vw;
-    border: #000000 solid 1px;
-  }
-
-  .notice {
-    background-color:#EA9A5B;
-    padding:.5em .7em;
-  }
 }
 
 @media only screen and (min-width: 900px) {
 
-  p {
-    padding:0;
-  }
-
-  h1, h2, h3 {
+  h1, h2, h3, p {
     padding:0;
   }
 
@@ -202,45 +50,7 @@
     width:850px;
   }
 
-/******    navigation style changes *******/
-  nav{
-    width:50vw;
-  }
 
-  nav li{
-    width:25vw;
-  }
-
-/* bottom navigation moves to the top right */
-  #product-navigation {
-    bottom: auto;
-    top: 6rem;
-    right: auto;
-    left:50%;
-  }
-
-/******  footer style changes *******/
-  footer{
-    position:fixed;
-    bottom:0;
-    left:0;
-  }
-
-  footer ul {
-    padding-top:10px;
-  }
-
-  footer section {
-    width:900px;
-    display:inline-block;
-  }
- /* ravenridge contact information in footer **/
-  .contact-details{
-    padding-top: 5px;
-  }
-  .contact-details li {
-    display: block;
-  }
 /*****   other style changes *******/
   embed{
     width:850px;
@@ -256,6 +66,8 @@
 
 }
 
-/* bigger than 1500, display two column */
-@media only screen and (min-width: 1500px) {
+/* bigger than 1200, display two column */
+@media only screen and (min-width: 1200px) {
+
+
 }

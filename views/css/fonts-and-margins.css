@@ -1,33 +1,38 @@
 /** base "mobile" font sizes follow **/
+.emphasis{
+  font-weight: bold;
+}
+
 html {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   font-size: 16px;
 }
 
 div, p, span, body {
-  font-family: Helvetica, Arial, sans-serif;
-  line-height:1.75rem;
+  font-family: Montserrat, Arial, sans-serif;
 }
 
 nav{
-  font-family: Georgia, serif;
-  line-height:1.25rem;
+  font-family: Adriane, Georgia, serif;
+}
+
+ol, ul {
+  font-size:1rem;
 }
 
 footer{
-  font-family:Helvetica, Arial, sans-serif;
-  font-size:.7rem;
-  line-height:.85rem;
-  margin:auto;
-  padding-bottom:6rem;
+  font-family:Montserrat, Arial, sans-serif;
+  font-size:.8rem;
+  line-height: 1.25rem;
 }
 
 footer .contact-details{
   font-size:.6rem;
+  line-height:.85rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia, serif;
+  font-family: Adriane, Georgia, serif;
   line-height:2.5rem;
 }
 
@@ -51,31 +56,6 @@ h5, h6 {
 }
 
 /** core user-centric elements of interface follow **/
-.action-box{
-  padding:3vh;
-  text-align:center;
-}
-
-.divider-box{
-  padding:2vh 0;
-  font-size:1.4rem;
-}
-
-.invitation{
-  width:100%;
-  font-size:1.9em;
-}
-
-.action{
-  width:100%;
-  font-size:1.8em;
-}
-
-.notice{
-  font-size:.9em;
-  text-align: center;
-}
-
 main {
   margin:10rem auto 7rem auto;
 }
@@ -106,10 +86,6 @@ article {
 
   h5, h6{
     font-size:1em;
-  }
-
-  footer{
-    padding-bottom:5px;
   }
 
   main{

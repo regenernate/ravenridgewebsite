@@ -1,5 +1,17 @@
+
+:root {
+    --rich-soil: #1D1A19;
+    --earth: #4D2310;
+    --mountain: #133648;
+    --grass: #586D31;
+    --lichen: #829950;
+    --sunset: #D08B45;
+    --dusk: #A6B9CE;
+    --evergreen: #3E614D;
+}
+
 header {
-  background-color: #FFFFFF;
+  background-color: var(--lichen);
 }
 
 p h1-h6 span {
@@ -8,22 +20,6 @@ p h1-h6 span {
 
 a {
   color:#1d3acc;
-}
-
-nav a {
-  color:inherit;
-}
-
-nav, nav li {
-  color:#FFFFFF;
-  background-color:#4c4946;
-  text-decoration: none;
-}
-
-nav li:hover {
-  color:#1d3acc;
-  background-color: #FFFFFF;
-  text-decoration: underline;
 }
 
 /* used for selected tabs and buttons */
@@ -36,3 +32,28 @@ nav li:hover {
     background-color: #322e26; /*dark brown*/
     color: #ffffff;
   }
+
+@media only screen {
+  nav a {
+    color:inherit;
+  }
+
+  nav li {
+    color:#FFFFFF;
+    background-color:var(--lichen);
+    text-decoration: none;
+  }
+
+  nav li:hover {
+    background-color: var(--grass);
+    border-bottom: .5vh var(--sunset) solid;
+  }
+
+  nav ol li {
+    background-color: var(--grass);
+  }
+
+  nav ol li:hover {
+    background-color: var(--lichen);
+  }
+}

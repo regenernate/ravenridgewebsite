@@ -71,6 +71,9 @@ function loadComponentScripts( directories ){
 handlebars.registerPartial('head', handlebars.compile( fs.readFileSync( "./views/shared/head.handlebars", 'utf-8' )));
 handlebars.registerPartial('newsletter_signup', handlebars.compile( fs.readFileSync( "./views/shared/newsletter_signup.handlebars", 'utf-8' )));
 
+handlebars.registerPartial('navigation', handlebars.compile( fs.readFileSync( "./views/shared/navigation.handlebars", 'utf-8' )));
+handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./views/shared/footer.handlebars", 'utf-8' )));
+
 //load and compile layout templates
 var default_layout = "logged_out";
 const layouts = compileTemplates( {  "unsupported":"./views/layouts/unsupported.handlebars", "logged_out":"./views/layouts/logged_out.handlebars"} );

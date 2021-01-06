@@ -1,0 +1,29 @@
+{
+  "pages":{
+    "meet_the_wheelers":{
+      "template":"./services/education/views/about_us.handlebars",
+      "title":"The Wheeler family grows hemp and herbs regeneratively.",
+      "desc":"Learn about RavenRidge Family Farm, managed by the Wheeler family, and get an introduction to regenerative agriculture and our CBD products."
+    },
+    "product_faqs":{
+      "template":"./services/education/views/faqs.handlebars",
+      "title":"Quality information about hemp, CBD and our products.",
+      "desc":"Learn about what makes our products unique, why you can be certain of their quality and whatever else interesting we are allowed to share."
+    },
+    "mwc":{
+      "template":"./services/education/views/mwc_home.handlebars",
+      "title":"Michele Wheeler Creations made on-site at RavenRidge"
+    },
+    "third_party_testing":{
+      "template":"./services/education/views/third_party_testing.handlebars",
+      "title":"Our third party product testing pledge.",
+      "desc":"We believe in full transparency with our product testing, and this page show you how to find our product tests easily."
+    },
+    "regenerative_ag":{
+      "template":"./services/education/views/regenerative_ag.handlebars",
+      "title":"An intro to regenerative agriculture.",
+      "desc":"Regenerative agriculture is a cornerstone of our business model. Learn a bit about what it entails here."
+    }
+  },
+  "default_page":"meet_the_wheelers"
+}

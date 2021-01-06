@@ -1,43 +1,16 @@
 <html>
   {{#>head this}}{{/head}}
   <body>
-    <header>
-      <img class="logo" src='/rrff_logo_fullsize.jpg' alt='The RavenRidge Family Farm company logo features an iconic image of three local landmark mountains in the piedmont of NC, where the company is based.' />
-    </header>
-    <nav id="primary-navigation" role="navigation">
-      <ul><li {{#compare nav "about_us"}} class='selected' {{/compare}} ><a href='/about_us/'>Meet the Wheelers</a></li><li {{#compare nav "faqs"}} class='selected' {{/compare}} ><a href='/faqs/'>Product FAQS</a></li>
-      </ul>
-    </nav>
+
+    {{#>navigation this}}{{/navigation}}
 
     <main>
-      <section class='notice'><p>We are extending our Covid-19 pandemic pricing indefinitely. You can learn more <a href='/pandemic_pricing'>here</a>.</p></section>
 
-    {{{body}}}
+      {{{body}}}
 
     </main>
 
-    <footer>
-      <section>
-        <ul>
-          <li><a href='/terms_and_conditions/'>Terms and Conditions</a></li>
-          <li><a href='/privacy_policy/'>Privacy Policy</a></li>
-          <li><a href='/shipping_and_returns/'>Shipping and Returns</a></li>
-        </ul>
-        <img id='footer-img' src='/rrff_footer_image.jpg' alt="This is a cute drawing showing the knob of Pilot Mountain, the town, and our proximity to both."/>
-         <ul class='contact-details'>
-           <li>RavenRidgeFamilyFarm@gmail.com</li>
-           <li>336.705.3198</li>
-           <li>348 Jim McKinney Rd. Pinnacle, NC 27043</li>
-         </ul>
-       </section>
-     </footer>
-
-    <nav id="product-navigation" role="navigation">
-      <ul>
-        <li {{#compare nav "third_party_testing"}} class='selected' {{/compare}} ><a href='/third_party_testing/'>Product Testing</a></li><li {{#compare nav "purchase"}} class='selected' {{/compare}} ><a href='/purchase/'>Buy Products</a></li>
-        <!-- Add individual products here based on user. -->
-      </ul>
-    </nav>
-
+    {{#>footer this}}{{/footer}}
+    
   </body>
 </html>
