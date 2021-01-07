@@ -74,7 +74,7 @@ async function routeRequest( request, response, file_parts ){
   if( template.substring( 0, 4 ) == "card" ) template = "card";
   //check for requested template in templates object
   if( templates.hasOwnProperty( template )){
-    let data_to_send = { nav:template, title:pages[template].title, description:pages[template].desc };
+    let data_to_send = { nav:{subdomain:"learn", subpage:template}, title:pages[template].title, description:pages[template].desc };
     if( template == "product_faqs" ){
       data_to_send.faqs = faqs;
     }

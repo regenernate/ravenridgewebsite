@@ -17,7 +17,7 @@ var templates = template_manager.compileTemplates({
 });
 
 async function routeRequest( request, response, file_parts ){
-  return bro.get(true, template_manager.executeTemplate(templates.home, {nav:brp, title:pagetitle, desc:pagedesc}));
+  return bro.get(true, template_manager.executeTemplate(templates.home, {nav:{subdomain:"shop",subpage:"sublinguals"}, title:pagetitle, desc:pagedesc}));
 }
 
 module.exports.router = routeRequest;

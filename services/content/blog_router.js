@@ -26,7 +26,7 @@ var template_manager = require('../../services/template_manager');
 async function routeRequest( request, response, file_parts ){
   let rtn = null;
   //use default error message for now
-  rtn = bro.get(true, template_manager.executeTemplate( template_manager.unsupported_route, {message:"Our blog will be implemented mid-January."} ) );
+  rtn = bro.get(true, template_manager.executeTemplate( template_manager.unsupported_route, {nav:{subdomain:'blog', subpage:null}, message:"Our blog will be implemented mid-January."} ) );
   return rtn;
 }
 

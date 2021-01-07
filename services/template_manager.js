@@ -3,6 +3,11 @@ const handlebars = require('handlebars');
 const moment = require('moment');
 
 
+handlebars.registerHelper('equals', function (value, compare) {
+  return value == compare;
+});
+
+
 handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
 
     var operators, result;

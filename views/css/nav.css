@@ -37,12 +37,15 @@
     padding: .5rem 0;
   }
 
+  .current_nav {
+    background-color:var(--mountain);
+  }
 /** subnavigation styles begin here **/
 
   #learn_subnav, #shop_subnav {
     position:fixed;
     top: 2.5rem;
-    width:60vw;
+/*    width:60vw; */
     display:none;
   }
 
@@ -64,7 +67,7 @@
   nav ol li {
     display: block;
     text-align: center;
-    padding: 0;
+    padding: 0 2rem;
   }
 
   #nav_home a {
@@ -195,7 +198,7 @@
     }
 
     #learn_subnav, #shop_subnav {
-      width:30vw;
+/*      width:30vw; */
     }
 
 }
