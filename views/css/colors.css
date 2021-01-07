@@ -46,7 +46,9 @@ a {
 
   nav li:hover {
     background-color: var(--grass);
-    border-bottom: .5vh var(--sunset) solid;
+    text-decoration: underline;
+    text-decoration-color: var(--sunset);
+    text-decoration-thickness: 3px;
   }
 
   nav ol li {
