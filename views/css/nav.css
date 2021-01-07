@@ -47,11 +47,11 @@
   }
 
   #learn_subnav {
-    left:5px;
+    left:0;
   }
 
   #shop_subnav {
-    right:5px;
+    right:0;
   }
 
   nav ol{

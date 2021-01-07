@@ -56,4 +56,12 @@ a {
   nav ol li:hover {
     background-color: var(--lichen);
   }
+
+  #nav_shop {
+    background-color: var(--evergreen);
+  }
+
+  #nav_shop:hover {
+    background-color: var(--grass);
+  }
 }

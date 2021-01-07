@@ -57,7 +57,7 @@ h5, h6 {
 
 /** core user-centric elements of interface follow **/
 main {
-  margin:10rem auto 7rem auto;
+  margin:5rem auto;
 }
 
 article {
@@ -89,7 +89,7 @@ article {
   }
 
   main{
-    margin-bottom:7rem;
+    margin:7rem auto;
   }
 }
 
