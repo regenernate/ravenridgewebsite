@@ -98,16 +98,17 @@ module.exports.executeTemplate = function( source, data, layout ){
     console.log("TemplateManager :: There is no layout ", layout);
     layout = "none";
   }
-  if( !data ) data = {};
-
-  //hackey default navigation - ideally navigation would be pulled out of template manager
-
-  if( !data.nav ) data.nav = {about:true};
+  if( !data ){
+    console.log("There was a call to template_manager with no nav data sent ... what do I do?");
+    throw new Error("There was a call to template_manager with no nav data sent ... what do I do?");
+    data = {};
+  } 
 
   if( !source ) source = function(data){ return data; }
 //  console.log("executeTemplate() : ", source, data, layout );
 //  console.log(data);
   var template_value;
+
   try{
     cleanDatesForDisplay(data);
     template_value = layouts[ layout ]( { body:source(data), nav:data.nav, title:data.title, description:data.description });

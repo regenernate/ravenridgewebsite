@@ -40,7 +40,26 @@
   .current_nav {
     background-color:var(--mountain);
   }
+
+  .current_nav:hover {
+    background-color:var(--mountain);
+  }
+
+  .current_nav_home {
+    border-bottom-color: var(--sunset);
+  }
 /** subnavigation styles begin here **/
+
+  .current_subnav {
+    background-color:var(--rich-soil);
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .current_subnav a {
+    pointer-events: none;
+    cursor: default;
+  }
 
   #learn_subnav, #shop_subnav {
     position:fixed;
@@ -71,7 +90,7 @@
   }
 
   #nav_home a {
-    padding:15px .5rem;
+    padding:10px .5rem;
   }
 
   #nav_learn, #nav_shop {
@@ -110,7 +129,7 @@
 
   #nav_home {
     background-color: #FFFFFF;
-    border-bottom: .5vh var(--sunset) solid;
+    border-bottom: .5vh var(--earth) solid;
     position:fixed;
     top:0;
     width:20vw;
@@ -143,7 +162,7 @@
     }
 
     #nav_home a {
-      padding:.25rem 0;
+      padding:.1rem 0;
     }
 
     #large_home_button {
@@ -182,7 +201,7 @@
     }
 
     #nav_home a{
-        padding:20px 2rem 10px 2rem;
+        padding:10px 2rem 5px 2rem;
     }
 
     #large_home_button {

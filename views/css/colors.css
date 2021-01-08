@@ -66,4 +66,8 @@ a {
   #nav_shop:hover {
     background-color: var(--grass);
   }
+
+  #nav_home:hover{
+    border-bottom-color: var(--sunset);
+  }
 }

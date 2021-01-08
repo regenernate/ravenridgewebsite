@@ -70,19 +70,20 @@ async function routeRequest( request, response, file_parts ){
   if( !file_parts || file_parts.length == 0 ) file_parts = [ default_page ];
   //get requested page name
   let template = file_parts[0].toLowerCase();
-  //check for "card{x}" and for now serve up the default card templates
-  if( template.substring( 0, 4 ) == "card" ) template = "card";
   //check for requested template in templates object
+  let data_to_send = { nav:{learn:true}, title:pages[template].title, description:pages[template].desc };
   if( templates.hasOwnProperty( template )){
-    let data_to_send = { nav:{subdomain:"learn", subpage:template}, title:pages[template].title, description:pages[template].desc };
+    data_to_send.nav[ template ] = true;
     if( template == "product_faqs" ){
       data_to_send.faqs = faqs;
     }
     //execute template
     rtn = bro.get( true, template_manager.executeTemplate( templates[ template ], data_to_send ) );
   }else{
+    data_to_send.nav.missing_page = true;
     //otherwise, show unsupported route message for now
-    rtn = bro.get(true, template_manager.executeTemplate( template_manager.unsupported_route, {message:"Not sure what you're looking for? Try one of the menu items above!"} ) );
+    data_to_send.message = "Not sure what you're looking for? Try one of the menu items above!"
+    rtn = bro.get(true, template_manager.executeTemplate( template_manager.unsupported_route, data_to_send ) );
   }
   return rtn;
 }

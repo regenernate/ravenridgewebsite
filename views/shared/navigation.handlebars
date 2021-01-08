@@ -1,21 +1,23 @@
 
   <nav id="primary_nav" role="navigation">
     <ul>
-      <li id="nav_learn"><a href='/learn/' {{#if (equals nav.subdomain "learn")}} class='current_nav' {{/if}}>Learn</a>
+      <li id="nav_learn" {{#if nav.learn}} class='current_nav' {{/if}}><a href='/learn/'>Learn</a>
         <ol id="learn_subnav" >
-          <li><a href='/learn/third_party_testing'>Product Testing</a></li>
-          <li><a href='/learn/why_ravenridge'>Why RavenRidge CBD?</a></li>
-          <li><a href='/learn/why_regenerative'>Regenerative Matters</a></li>
-          <li><a href='/learn/product_faqs'>Product FAQs</a></li>
-          <li><a href='/learn/meet_the_wheelers'>Meet the Wheelers</a></li>
+          <li {{#if nav.third_party_testing}} class='current_subnav' {{/if}}><a href='/learn/third_party_testing'>Product Testing</a></li>
+          <li {{#if nav.why_ravenridge}} class='current_subnav' {{/if}}><a href='/learn/why_ravenridge'>Why RavenRidge CBD?</a></li>
+          <li {{#if nav.why_regenerative}} class='current_subnav' {{/if}}><a href='/learn/why_regenerative'>Why Regenerative Matters</a></li>
+          <li {{#if nav.product_faqs}} class='current_subnav' {{/if}}><a href='/learn/product_faqs'>Product FAQs</a></li>
+          <li {{#if nav.meet_the_wheelers}} class='current_subnav' {{/if}}><a href='/learn/meet_the_wheelers'>Meet the Wheelers</a></li>
         </ol>
-      </li><li id="nav_shop"><a href='/shop/' {{#if (equals nav.subdomain "shop")}} class='current_nav' {{/if}}>Shop</a>
+      </li><li id="nav_shop" {{#if nav.shop}} class='current_nav' {{/if}}><a href='/shop/'>Shop</a>
         <ol id="shop_subnav">
-          <li><a href='/shop/starter_pack'>Regenerative CBD Starter Pack</a></li>
-          <li><a href='/shop/sublingual'>Sublinguals</a></li>
-          <li><a href='/shop/salve'>Topical Salve</a></li>
+          <li {{#if nav.starter_pack}} class='current_subnav' {{/if}}><a href='/shop/starter_pack'>Regenerative CBD Starter Pack</a></li>
+          <li {{#if nav.sublingual}} class='current_subnav' {{/if}}><a href='/shop/sublingual'>Sublingual Oil</a></li>
+          <li {{#if nav.salve}} class='current_subnav' {{/if}}><a href='/shop/salve'>Topical Salve</a></li>
         </ol>
-      </li><li id="nav_newsletter"><a href='/newsletter/' {{#if (equals nav.subdomain "newsletter")}} class='current_nav' {{/if}}>Newsletter</a></li><li id="nav_blog"><a href='/blog/' {{#if (equals nav.subdomain "blog")}} class='current_nav' {{/if}}>Blog</a></li><li id="nav_home">
+      </li><li id="nav_newsletter" {{#if nav.newsletter}} class='current_nav' {{/if}}>
+            <a href='/newsletter/'>Newsletter</a></li><li id="nav_blog" {{#if nav.blog}} class='current_nav' {{/if}}>
+            <a href='/blog/'>Blog</a></li><li id="nav_home"  {{#if nav.home}} class='current_nav_home' {{/if}}>
             <a id='small_home_button' href='/'><img class='logo_nav' src='/logo_tiny.png' alt='the RavenRidge Family Farm brand with bird watermark'/></a>
             <a id='medium_home_button' href='/'><img class='logo_nav' src='/logo_medium.jpg' alt='the RavenRidge Family Farm text-based logo. Still iconic but the mountains are not visible. They take up too much space!'/></a>
             <a id='large_home_button' href='/'><img class='logo_nav' src='/logo_large.jpg' alt='the RavenRidge Family Farm text-based logo. Still iconic but the mountains are not visible. They take up too much space!'/></a>
