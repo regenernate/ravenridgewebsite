@@ -1,0 +1,16 @@
+
+/* using flex as fallback for lack of grid support  */
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  /* Rest of the fallback layout code */
+}
+
+/* media query to check for specific css feature support */
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    /* Rest of the Grid code */
+  }
+}

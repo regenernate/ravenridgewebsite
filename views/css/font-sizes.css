@@ -1,7 +1,4 @@
 /** base "mobile" font sizes follow **/
-.emphasis{
-  font-weight: bold;
-}
 
 html {
   font-family: Montserrat, Arial, sans-serif;
@@ -33,14 +30,11 @@ footer .contact-details{
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Adriane, Georgia, serif;
-  line-height:2.5rem;
+  line-height: 1em;
 }
 
-/*** base ratios are for mobile devices, using major third ratio ( 4/5 or 1.25 ) ***/
-/** to bump up in size, the next values are 2.441, 3.052 **/
-/** to reduce size, the next values down are .8, .64 **/
 h1 {
-  font-size: 2.1em;
+  font-size: 1.8em;
 }
 
 h2 {
@@ -55,18 +49,16 @@ h5, h6 {
   font-size: 1em;
 }
 
-/** core user-centric elements of interface follow **/
-main {
-  margin:5rem auto;
-}
+@media only screen and (max-width: 500px){
+  h1{
+    font-size:1.4em;
+    line-height: 1.2em;
+  }
 
-article {
-  margin:0 auto;
+  h2 {
+    font-size: 1.3em;
+  }
 }
-
-/*** change ratios to perfect fourth on anything small tablet size or above ***/
-/** to bump up in size, the next values are 3.157, 4.209 **/
-/** to reduce size, the next values down are .75, .563 **/
 @media only screen and (min-width: 900px){
   html{
     font-size:16px;
@@ -88,14 +80,11 @@ article {
     font-size:1em;
   }
 
-  main{
-    margin:7rem auto;
+  h1, h2, h3, h4, h5, h6{
+    line-height: 1.5em;
   }
 }
 
-/*** change ratios to perfect fifth on large screens ***/
-/** to bump up in size, the next values are 5.063, 7.594 **/
-/** to reduce size, the next values down are .667, .444 **/
 @media only screen and (min-width: 1200px){
   html{
     font-size:18px;

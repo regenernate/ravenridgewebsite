@@ -5,11 +5,6 @@
 
 @media only screen {
 
-  #footer-img {
-    width:100%;
-    max-width: 600px;
-  }
-
   .panoramic {
     width: 100vw;
     max-width:100%;
@@ -49,8 +44,4 @@
 }
 
 @media only screen and ( min-width: 900px ){
-  #footer-img {
-    width:450;
-    float:left;
-  }
 }

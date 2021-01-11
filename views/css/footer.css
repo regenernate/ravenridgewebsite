@@ -3,7 +3,7 @@
 
   /**********  footer styles ******/
 
-  footer{
+  #page_footer{
     z-index: 2500;
     background-color: var(--evergreen);
     color:#FFFFFF;
@@ -13,21 +13,21 @@
     width:100vw;
   }
 
-  footer ul {
+  #page_footer ul {
     list-style: none;
     font-size: .7rem;
   }
 
-  footer a {
+  #page_footer a {
     text-decoration: none;
     color:#FFFFFF;
   }
 
-  footer .pad-vertical {
+  #page_footer .pad-vertical {
     line-height: 1.5rem;
   }
 
-  footer .social_logo {
+  #page_footer .social_logo {
   /**      background-color: var(--mountain); */
     margin-top: 3px;
     padding: 4px;
@@ -35,13 +35,13 @@
   }
 
   /** ravenridge contact information ul in footer **/
-  footer .contact-details {
+  #page_footer .contact-details {
     padding-top:0;
     padding-left:5vw;
     display: inline-block;
   }
 
-  footer .static-content {
+  #page_footer .static-content {
     padding-right: 5vw;
     padding-top: 2rem;
     float:right;
@@ -51,12 +51,12 @@
 
 
 @media only screen and (max-width:400px) {
-  footer .contact-details {
+  #page_footer .contact-details {
     display: block;
     padding-top: 1rem;
   }
 
-  footer .static-content {
+  #page_footer .static-content {
     float:none;
     padding-left:5vw;
   }
@@ -65,7 +65,7 @@
 @media only screen and (min-width: 900px) {
 
   /******  footer style changes *******/
-    footer{
+    #page_footer{
       padding:0;
       margin:0;
       position:fixed;
@@ -73,16 +73,16 @@
       left:0;
     }
 
-    footer .pad-vertical {
+    #page_footer .pad-vertical {
       line-height: 1.2rem;
     }
 
-    footer p {
+    #page_footer p {
       padding-bottom: 0;
       margin-bottom: 0;
     }
 
-    footer .static-content {
+    #page_footer .static-content {
       padding-top: 1rem;
     }
 
@@ -90,7 +90,7 @@
 
 @media only screen and (min-width: 1200px) {
 
-  footer .static-content {
+  #page_footer .static-content {
     padding-top: 1.5rem;
   }
 

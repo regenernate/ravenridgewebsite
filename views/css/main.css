@@ -5,19 +5,18 @@
 
 /********* base definitions **********/
   body {
-    position:relative;
     z-index:-101;
     background-color:#FFFFFF;
   }
 
   h1, h2, h3 {
-    padding:0 4vw;
+    text-align: center;
   }
 
   /**********  main styles *********/
   main {
-    position:relative;
     z-index: -100;
+    margin:4rem auto;
   }
 
   main img {
@@ -26,6 +25,11 @@
 
   article{
     display:inline-block;
+    width:100%;
+  }
+
+  article, section{
+    padding-bottom: 2rem;
   }
 
   embed{
@@ -33,11 +37,90 @@
     height:60vh;
   }
 
+  #farmlife{
+    position:relative;
+    width:100%;
+    margin-top:-4rem;
+  }
 
+  .farmlife_overlay {
+    position:absolute;
+    width:100%;
+    top:4rem;
+    text-align: center;
+    background-color: var(--evergreen);
+    color: #FFFFFF;
+    padding:0 3rem;
+    margin:auto;
+  }
+
+  .flex_box{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:flex-end;
+    width:100%;
+    text-align:center;
+  }
+
+  .flex_box a {
+    width:40%;
+  }
+
+  .dark_section{
+    text-align:center;
+    padding-top:2rem;
+    padding-bottom:3rem;
+    background-color: #E3E3E3;
+  }
+
+  .call_to_action_link{
+    background-color: var(--evergreen);
+    color:#FFFFFF;
+    display:inline-block;
+    padding:.3rem 1.5rem;
+  }
+
+  .call_to_action_link:hover {
+    background-color: var(--grass);
+    padding:.3rem 2.5rem;
+  }
+
+  #meet_the_wheelers{
+    background-color: var(--lichen);
+    color:#FFFFFF;
+    padding:1rem 4rem;
+    margin-top:4rem;
+    text-align: center;
+  }
+
+  #meet_the_wheelers img {
+    max-width: 320px;
+    width:30vw;
+  }
+
+  .blog_posts{
+    text-align:center;
+    padding-top:3rem;
+  }
+
+  .blog_posts a{
+    width:30%;
+  }
 }
 
-@media only screen and (max-width:400px) {
+@media only screen and (max-width:500px) {
+  #meet_the_wheelers{
+    padding:1rem;
+  }
+  #meet_the_wheelers img {
+    width:50%;
+  }
 
+  .farmlife_overlay {
+    padding:0 1rem;
+    top:3rem;
+  }
 }
 
 @media only screen and (min-width: 900px) {
@@ -68,6 +151,15 @@
 
 /* bigger than 1200, display two column */
 @media only screen and (min-width: 1200px) {
+  main{
+    width:1150px;
+  }
 
+}
+
+@media only screen and (min-width: 1800px) {
+  main{
+    width:1750px;
+  }
 
 }

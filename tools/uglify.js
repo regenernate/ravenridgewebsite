@@ -19,12 +19,12 @@ var uglified_filename = "css_uglified.css"; //what filename to use for uglified 
 var css_files = [ "reset",
                   "colors",
                   "helper_classes",
-                  "fonts-and-margins",
+                  "font-sizes",
                   "image-sizes",
                   "main",
                   "nav",
                   "footer"
-                ]; 
+                ];
 for ( let i in css_files ){
   css_files[i] = basepath + css_files[i] + ".css";
 }

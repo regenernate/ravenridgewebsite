@@ -7,9 +7,14 @@
 
 @media only screen {
 
+  :root{
+    --hover_menu_display:none;
+  }
+
   nav {
     position:fixed;
     top:0px;
+    z-index:5000;
   }
 
   nav ul {
@@ -105,7 +110,7 @@
   }
 
   #nav_learn:hover > #learn_subnav {
-     display: block;
+     display: var(--hover_menu_display);
   }
 
   #nav_shop {
@@ -113,7 +118,7 @@
   }
 
   #nav_shop:hover > #shop_subnav {
-     display: block;
+     display: var(--hover_menu_display);
   }
 
   #nav_newsletter, #nav_blog {
@@ -148,6 +153,10 @@
     display:none;
   }
 
+  .logo_nav{
+    max-width:150px;
+  }
+
 }
 
 @media only screen and (max-width:600px) {
@@ -178,6 +187,11 @@
     }
 }
 
+@media (hover: hover) {
+  :root{
+    --hover_menu_display:block;
+  }
+}
 
 @media only screen and (min-width: 900px) {
 
