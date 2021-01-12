@@ -33,6 +33,26 @@
       "template":"./services/education/views/why_ravenridge.handlebars",
       "title":"An intro to regenerative agriculture.",
       "desc":"Regenerative agriculture is a cornerstone of our business model. Learn a bit about what it entails here."
+    },
+    "richard":{
+      "template":"./services/education/views/richard.handlebars",
+      "title":"Some information about the Farm Doc",
+      "desc":"Here you can learn all there is to know about Richard, the farm doc at RavenRidge"
+    },
+    "michele":{
+      "template":"./services/education/views/michele.handlebars",
+      "title":"Some information about Michele",
+      "desc":"Here you can learn all there is to know about Michele, the assistant farm manager at RavenRidge."
+    },
+    "cynthia":{
+      "template":"./services/education/views/cynthia.handlebars",
+      "title":"Some information about Cynthia",
+      "desc":"Here you can learn all there is to know about Cynthia, the animal whisperer of RavenRidge"
+    },
+    "nathan":{
+      "template":"./services/education/views/nathan.handlebars",
+      "title":"Some information about Nathan",
+      "desc":"Here you can learn all there is to know about Nathan, the farm manager at RavenRidge"
     }
   },
   "default_page":"learn_landing"
