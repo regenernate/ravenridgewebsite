@@ -1,0 +1,28 @@
+
+  <h1>The RavenRidge Blog</h1>
+
+  <p>If you recall, there are four of us here at RavenRidge Family Farm. Four hard-headed, opinionated, cbd-loving, hippie crazies.</p>
+  <p>As you likely know, we make cbd products. We also grow our hemp following regenerative practices. We do both of these things because we believe that it matters. Both how we grow our plants, and how we heal our bodies. All of it has to do with how we interact with the world around us. These are the themes of the RavenRidge blog.</p>
+  <p>So where do you want to begin?</p>
+  {{#each content.categories}}
+  <section>
+    <h2>{{title}}</h2>
+
+    <ul>
+    {{#each ../content.posts}}
+    <li><a href='/blog/{{slug}}'>{{title}}</a></li>
+    {{/each}}
+    </ul>
+  </section>
+{{/each}}
+<!--
+  <h2>Informational pieces</h2>
+
+
+  <h2>Just darn good Narratives</h2>
+
+
+
+  <h2>A mix of everything</h2>
+</section>
+-->
