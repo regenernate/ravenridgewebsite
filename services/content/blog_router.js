@@ -117,7 +117,7 @@ async function loadPost( slug ){
     let url = 'https://api.dropinblog.com/v1/json/post/?' + dib_token + "&post=" + slug;
     let response = await fetch(url);
     json = await response.json();
-    if(json && json.status == SUCCESS ) return json.data.post;
+    if(json && json.status == SUCCESS ) return json.data;
     else return false;
   }catch(error){
     console.log('loadPost :: ', error);
@@ -129,24 +129,33 @@ async function loadPost( slug ){
 async function routeRequest( request, response, file_parts ){
   let rtn = null;
   let route;
+  let dts = {nav:{blog:true}}
   let content={ posts:post_list, posts_by_category:post_categories };
   if( !file_parts || !file_parts.length ) file_parts = ['home'];
   if( file_parts[0] == "reload" ){
     let s = await rebuildPosts();
     return bro.get(true, template_manager.executeTemplate( null, {content:content}, template_manager.none_route) );
   }
-  if( templates.hasOwnProperty( file_parts[0] )) route = file_parts[0];
-  else{
+  if( templates.hasOwnProperty( file_parts[0] )){
+    route = file_parts[0];
+    dts.title = pages[route].title;
+    dts.description = pages[route].description;
+  }else{
     let p = await loadPost(file_parts[0]);
     if( p ){
       route = "post";
-      content.post = p;
+      content.post = p.post;
+      dts.title = p.headTitle;
+      dts.description = p.headDescription;
     }else{
       route = "home";
+      dts.title = pages[route].title;
+      dts.description = pages[route].description;
     }
   }
   //use default error message for now
-  rtn = bro.get(true, template_manager.executeTemplate( templates[route], {nav:{blog:true}, content:content, title:pages[route].title, description:pages[route].desc} ) );
+  dts.content = content;
+  rtn = bro.get(true, template_manager.executeTemplate( templates[route], dts ) );
   return rtn;
 }
 
