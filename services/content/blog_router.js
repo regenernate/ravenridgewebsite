@@ -44,8 +44,8 @@ var pages = { home:{
 const dib_token = "b=HVGYH9CBTW48PTWHQ2ET";
 const SUCCESS = "success";
 
-var post_categories = [];
-var post_listing = [];
+var post_categories;
+var post_list;
 
 compileTemplates();
 loadBlogPosts();
@@ -65,23 +65,56 @@ async function loadBlogPosts(){
     json = await response.json();
     if(json && json.status == SUCCESS){
       post_categories = json.data;
+    }else{
+      throw new Error("Blog Posts category call failed");
     }
     response = await fetch('https://api.dropinblog.com/v1/json/?' + dib_token);
     json = await response.json();
     if(json && json.status == SUCCESS ){
-      post_listing = json.data.posts;
+      post_list = json.data.posts;
+      buildPostsByCategory( json.data.posts );
+    }else{
+      throw new Error("Remote blog posts call failed");
     }
 //    console.log(post_listing);
   } catch (error) {
     console.log(error);
+    return false;
   }
+  return true;
+}
+
+function buildPostsByCategory( posts ){
+  for( let c in post_categories ){
+    let cat = post_categories[c].slug;
+    let plist = [];
+    for( let i=0; i<posts.length; i++){
+      for( let j in posts[i].categories ){
+        if( posts[i].categories[j].slug == cat ){
+          plist.push(posts[i]);
+          break;
+        }
+      }
+    }
+    post_categories[c].posts = plist;
+  }
+}
+
+async function rebuildPosts(){
+  let old_posts = post_list;
+  let old_cats = post_categories;
+  if( !( await loadBlogPosts() ) ){
+    post_list = old_posts;
+    post_categories = old_cats;
+    return false;
+  }
+  return true;
 }
 
 async function loadPost( slug ){
   let json;
   try{
     let url = 'https://api.dropinblog.com/v1/json/post/?' + dib_token + "&post=" + slug;
-    console.log(url);
     let response = await fetch(url);
     json = await response.json();
     if(json && json.status == SUCCESS ) return json.data.post;
@@ -96,8 +129,12 @@ async function loadPost( slug ){
 async function routeRequest( request, response, file_parts ){
   let rtn = null;
   let route;
-  let content={ categories:post_categories, posts:post_listing };
+  let content={ posts:post_list, posts_by_category:post_categories };
   if( !file_parts || !file_parts.length ) file_parts = ['home'];
+  if( file_parts[0] == "reload" ){
+    let s = await rebuildPosts();
+    return bro.get(true, template_manager.executeTemplate( null, {content:content}, template_manager.none_route) );
+  }
   if( templates.hasOwnProperty( file_parts[0] )) route = file_parts[0];
   else{
     let p = await loadPost(file_parts[0]);

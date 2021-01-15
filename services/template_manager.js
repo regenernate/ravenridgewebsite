@@ -81,9 +81,10 @@ handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./vie
 
 //load and compile layout templates
 var default_layout = "logged_out";
-const layouts = compileTemplates( {  "unsupported":"./views/layouts/unsupported.handlebars", "logged_out":"./views/layouts/logged_out.handlebars"} );
+const layouts = compileTemplates( {  "none":"./views/layouts/none.handlebars", "unsupported":"./views/layouts/unsupported.handlebars", "logged_out":"./views/layouts/logged_out.handlebars"} );
 
 module.exports.unsupported_route = layouts.unsupported;
+module.exports.none_route = layouts.none;
 module.exports.compileTemplates = compileTemplates;
 
 /********
@@ -102,7 +103,7 @@ module.exports.executeTemplate = function( source, data, layout ){
     console.log("There was a call to template_manager with no nav data sent ... what do I do?");
     throw new Error("There was a call to template_manager with no nav data sent ... what do I do?");
     data = {};
-  } 
+  }
 
   if( !source ) source = function(data){ return data; }
 //  console.log("executeTemplate() : ", source, data, layout );

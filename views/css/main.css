@@ -107,14 +107,47 @@
     width:30vw;
   }
 
-  .blog_posts{
-    text-align:center;
-    padding-top:3rem;
-  }
+   .blog_post h1 {
+     text-align:left;
+     font-size: 1.8rem;
+   }
 
-  .blog_posts a{
-    width:30%;
-  }
+   .blog_post h2 {
+     text-align:left;
+     font-size: 1.4rem;
+   }
+
+   .blog_post h3 {
+     text-align:left;
+     font-size: 1.2rem;
+   }
+
+   .blog_post p {
+     font-size:.9rem;
+   }
+   .blog_post img {
+     display:block;
+     width:70%;
+     margin-left:auto;
+     margin-right:auto;
+   }
+
+   .blog_post .flex_box img {
+     padding:1rem;
+   }
+
+   .blog_post .references {
+     overflow: hidden;
+   }
+
+   .post_list a{
+     padding:1rem;
+     width:40%;
+   }
+
+   .post_list {
+     flex-wrap:wrap;
+   }
 
   /* this is the image and text showing one of the farmers */
   .farmer_profile{
@@ -159,6 +192,10 @@
     width:50%;
   }
 
+  .post_list a{
+    width:90%;
+  }
+
   .farmlife_overlay {
     padding:0 1rem;
     top:3rem;
@@ -201,6 +238,10 @@
   main{
     width:1150px;
     margin-top: 6rem;
+  }
+
+  .post_list a{
+    width:30%;
   }
 
 }
