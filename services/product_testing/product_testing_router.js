@@ -47,11 +47,11 @@ function loadTests(){
         //currently hardcodes "result" as the page template that shows different tests - probably won't change so will leave it for now
         titles = {};
         for( let i in tests ){
-          if( tests[i].hasOwnProperty('sample_id') ){
+/*          if( tests[i].hasOwnProperty('sample_id') ){
             titles[i] = {title:insertTestDetails(pages.kaycha.title, tests[i]), desc:insertTestDetails(pages.kaycha.desc, tests[i])};
-          }else{
+          }else{*/
             titles[ i ] = {title:insertTestDetails(pages.result.title, tests[i]), desc:insertTestDetails(pages.result.desc, tests[i])};
-          }
+//          }
         }
       }
   });
@@ -84,11 +84,13 @@ async function routeRequest( request, response, file_parts ){
     //need to check object storage to see if this test result exists
     if( !tests.hasOwnProperty( fp0 ) )
       return bro.get(true, template_manager.executeTemplate(template_manager.unsupported_route, {nav:nav, title:pages.error.title, description:pages.error.desc, message:"<h1>There is no test matching this product.</h1><p>If you scanned a product URL and reached this page, please email Nathan at RavenRidgeFamilyFarm @ gmail.com.</p>"}));
-    else if( !tests[fp0].hasOwnProperty('sample_id') ){ //old testing company coas hosted as pdfs locally
-      return bro.get(true, template_manager.executeTemplate(templates.result, {nav:nav, test_filename:fp0 + ".pdf", title:titles[fp0].title, description:titles[fp0].desc, product_data:tests[fp0] }));
-    }else{ //new testing company coas hosted on their server
-      return bro.get(true, template_manager.executeTemplate(templates.kaycha, {nav:nav, title:titles[fp0].title, description:titles[fp0].desc, product_data:tests[fp0] }))
-    }
+    else
+      return bro.get(true, template_manager.executeTemplate(templates.result, {nav:nav, test_filename:fp0 + ".jpg", title:titles[fp0].title, description:titles[fp0].desc, product_data:tests[fp0] }));
+
+// if( !tests[fp0].hasOwnProperty('sample_id') ){ //old testing company coas hosted as pdfs locally
+//  }else{ //new testing company coas hosted on their server
+//      return bro.get(true, template_manager.executeTemplate(templates.kaycha, {nav:nav, title:titles[fp0].title, description:titles[fp0].desc, product_data:tests[fp0] }))
+//    }
   }
 }
 

@@ -58,6 +58,7 @@ async function routeRequest( request, response, file_parts ){
   //get requested page name
   let template = file_parts[0].toLowerCase();
 
+  if(!pages.hasOwnProperty(template)) template = default_page;
 
   let data_to_send = { nav:{home:true}, title:pages[template].title, description:pages[template].desc, content:{posts:blog_lister()} };
   //check for requested template in templates object

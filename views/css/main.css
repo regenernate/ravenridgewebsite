@@ -31,11 +31,6 @@
   main article, main section{
   }
 
-  embed{
-    width:98vw;
-    height:60vh;
-  }
-
   #farmlife{
     position:relative;
     width:100%;
@@ -280,11 +275,6 @@
 
 
 /*****   other style changes *******/
-  embed{
-    width:850px;
-    height:85vh;
-  }
-
   /* image style for callout images */
   .example {
     padding: 2vw 5vw;
@@ -318,7 +308,7 @@
 
 @media only screen and (min-width: 1800px) {
   main{
-    width:1750px;
+    width:1350px;
   }
 
 }

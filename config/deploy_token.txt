@@ -1,0 +1,3 @@
+//to deploy to alts
+
+nc deploy -i ravenridgealts -auth re5D-IRfnwa0oE75Pkw0p4gT0CuhJlaGHgwGJTNs2PWaB

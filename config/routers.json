@@ -3,5 +3,6 @@
   "shop":"../services/purchasing/purchasing_router",
   "learn":"../services/education/education_router",
   "newsletter":"../services/content/newsletter_router",
-  "blog":"../services/content/blog_router"
+  "blog":"../services/content/blog_router",
+  "product_testing":"../services/product_testing/product_testing_router"
 }

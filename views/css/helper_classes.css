@@ -13,6 +13,14 @@
      position: absolute;
   }
 
+  .really-extra-content {
+    display:none;
+  }
+
+  .hidden {
+    display: none;
+  }
+
   .border-highlight{
     border-style:solid;
     border-bottom-width: 5px;
@@ -20,6 +28,22 @@
   }
   .border-highlight:hover{
     border-color: var(--sunset);
+  }
+
+}
+
+@media only screen and (max-width:500px) {
+
+  .extra-content {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width:900px) {
+
+  .really-extra-content {
+    display:inline;
   }
 
 }
