@@ -16,6 +16,7 @@ const fs = require('fs');
 //this variable controls whether or not this router gets loaded
 module.exports.active = true;
 
+var { blog_lister } = require("./blog_router");
 //The server expects a basic return object or an error to be thrown
 //load the basic return object prototype
 var bro = require("../../server/bro");
@@ -58,7 +59,7 @@ async function routeRequest( request, response, file_parts ){
   let template = file_parts[0].toLowerCase();
 
 
-  let data_to_send = { nav:{home:true}, title:pages[template].title, description:pages[template].desc };
+  let data_to_send = { nav:{home:true}, title:pages[template].title, description:pages[template].desc, content:{posts:blog_lister()} };
   //check for requested template in templates object
   if( templates.hasOwnProperty( template )){
 

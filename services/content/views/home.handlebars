@@ -3,29 +3,30 @@
   <img src='/farmlife_dad_plants_hemp.jpg' alt='Richard plants hemp into a healthy living cover crop at RavenRidge.'/>
   <div class='farmlife_overlay'>
     <h1>Full Spectrum CBD</h1>
-    <p>Carefully grown in the mountains of North Carolina,<br>processed fresh in small batches.</p>
+    <p>Handmade products from regeneratively produced plants.</p>
+    <em><ul><li>Estate Grown</li><li>Small Batch</li><li>Eco-conscious</li></ul></em>
   </div>
 </section>
 
-<article>
+<article id='homepage_products'>
   <section>
     <h2>Products</h2>
     <div class='flex_box'>
-      <a href='/shop/sublingual'>
-        <img src='use_sublingual.png' />
-        Sublinguals
+      <a class='border-highlight' href='/shop/sublingual'>
+        <h3>Sublinguals</h3>
+        <img src='sublingual_homepage.jpg' />
       </a>
-      <a href='/shop/salve'>
-        <img src='use_salve.png' />
-        Salves
+      <a class='border-highlight' href='/shop/salve'>
+        <h3>Salves</h3>
+        <img src='salve_homepage.jpg' />
       </a>
     </div>
   </section>
-  <section class='dark_section'>
+<!--  <section class='dark_section'>
     <h3>Are you new to CBD?</h3>
     <p>Heres a bunch of reasons why you might want to consider our Starter Pack:</p>
     <a href='/shop/starter_pack' class='call_to_action_link'>Explore our Starter Pack</a>
-  </section>
+  </section> -->
 </article>
 
 <article id='meet_the_wheelers'>
@@ -38,13 +39,10 @@
   <a href='/learn/meet_the_wheelers' class='call_to_action_link'>Meet the Wheelers</a>
 </article>
 
+{{#if content.posts}}
 <section class='blog_posts'>
-  <h2>Blog Posts / Articles</h2>
-  <div class='flex_box'>
-    <a href='/blog/1'>
-      <img src='willy_in_the_grass.jpg' />
-      Willy Looks Down
-    </a>
-    <a href='/blog/2'><img src='rake_on_row.jpg' />Rake on a Row</a>
-  </div>
+  <h2>Visit our Blog</h2>
+  <hr />
+  {{>post_list content}}
 </section>
+{{/if}}

@@ -46,6 +46,7 @@ const SUCCESS = "success";
 
 var post_categories;
 var post_list;
+var pinned_list;
 
 compileTemplates();
 loadBlogPosts();
@@ -72,6 +73,7 @@ async function loadBlogPosts(){
     json = await response.json();
     if(json && json.status == SUCCESS ){
       post_list = json.data.posts;
+      pinned_list = getPinnedPosts( post_list );
       buildPostsByCategory( json.data.posts );
     }else{
       throw new Error("Remote blog posts call failed");
@@ -100,12 +102,22 @@ function buildPostsByCategory( posts ){
   }
 }
 
+function getPinnedPosts( posts ){
+  let pp = [];
+  for( let p in posts ){
+    if( posts[p].pinned ) pp.push( posts[p] );
+  }
+  return pp;
+}
+
 async function rebuildPosts(){
   let old_posts = post_list;
   let old_cats = post_categories;
+  let old_pins = pinned_list;
   if( !( await loadBlogPosts() ) ){
     post_list = old_posts;
     post_categories = old_cats;
+    pinned_list = old_pins;
     return false;
   }
   return true;
@@ -159,4 +171,14 @@ async function routeRequest( request, response, file_parts ){
   return rtn;
 }
 
+function blogLister(){
+  console.log("blog_router :: blogLister function");
+  if( pinned_list && pinned_list.length ){
+    return pinned_list;
+  }
+  else return false;
+}
+
 module.exports.router = routeRequest;
+
+module.exports.blog_lister = blogLister;

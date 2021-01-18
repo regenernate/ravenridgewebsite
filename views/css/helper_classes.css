@@ -13,4 +13,13 @@
      position: absolute;
   }
 
+  .border-highlight{
+    border-style:solid;
+    border-bottom-width: 5px;
+    border-color: #FFFFFF;
+  }
+  .border-highlight:hover{
+    border-color: var(--sunset);
+  }
+
 }

@@ -75,6 +75,7 @@ function loadComponentScripts( directories ){
 //compile and register partials
 handlebars.registerPartial('head', handlebars.compile( fs.readFileSync( "./views/shared/head.handlebars", 'utf-8' )));
 handlebars.registerPartial('newsletter_signup', handlebars.compile( fs.readFileSync( "./views/shared/newsletter_signup.handlebars", 'utf-8' )));
+handlebars.registerPartial('post_list', handlebars.compile( fs.readFileSync( "./views/shared/post_list.handlebars", 'utf-8' )));
 
 handlebars.registerPartial('navigation', handlebars.compile( fs.readFileSync( "./views/shared/navigation.handlebars", 'utf-8' )));
 handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./views/shared/footer.handlebars", 'utf-8' )));

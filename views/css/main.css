@@ -29,7 +29,6 @@
   }
 
   main article, main section{
-    padding-bottom: 2rem;
   }
 
   embed{
@@ -41,6 +40,18 @@
     position:relative;
     width:100%;
     margin-top:-4rem;
+  }
+
+  #farmlife h1{
+    line-height:1rem;
+  }
+  #farmlife ul {
+    margin-bottom:1rem;
+  }
+
+  #farmlife li {
+    display:inline;
+    margin:.5rem;
   }
 
   .farmlife_overlay {
@@ -105,6 +116,10 @@
   #meet_the_wheelers img {
     max-width: 320px;
     width:30vw;
+  }
+
+  .blog_posts {
+    margin-top: 4rem;
   }
 
    .blog_post h1 {
@@ -182,6 +197,11 @@
   .farmer_profile a:hover{
     text-decoration: underline;
   }
+
+  #homepage_products{
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+  }
 }
 
 @media only screen and (max-width:500px) {
@@ -194,6 +214,10 @@
 
   .post_list a{
     width:90%;
+  }
+
+  #farmlife p{
+    display:none;
   }
 
   .farmlife_overlay {
@@ -238,6 +262,11 @@
   main{
     width:1150px;
     margin-top: 6rem;
+  }
+
+  #homepage_products{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
   }
 
   .post_list a{
