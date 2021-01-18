@@ -156,6 +156,8 @@ async function routeRequest( request, response, file_parts ){
     let p = await loadPost(file_parts[0]);
     if( p ){
       route = "post";
+      content.posts = getSomePosts( 2, p.post ); //override full post list with two other posts for now
+      console.log("posts are ::", content.posts);
       content.post = p.post;
       dts.title = p.headTitle;
       dts.description = p.headDescription;
@@ -171,12 +173,26 @@ async function routeRequest( request, response, file_parts ){
   return rtn;
 }
 
+//method to return the pinned items
 function blogLister(){
   console.log("blog_router :: blogLister function");
   if( pinned_list && pinned_list.length ){
     return pinned_list;
   }
   else return false;
+}
+
+//method to return two posts that arent the post sent
+function getSomePosts( count, avoid ){
+  if( !count ) count = 2; //initialize to two posts is no number of posts sent
+  if( !avoid ) avoid = {slug:"whatwhat"}; //initialize to a non-likely slug in case of no avoid list sent
+  let rtn = [];
+  for( let i in post_list ){
+    if( post_list[i].slug == avoid.slug ) continue;
+    else rtn.push(post_list[i]);
+    if( rtn.length == count ) break;
+  }
+  return rtn;
 }
 
 module.exports.router = routeRequest;
