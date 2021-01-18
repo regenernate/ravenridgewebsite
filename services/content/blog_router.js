@@ -157,7 +157,6 @@ async function routeRequest( request, response, file_parts ){
     if( p ){
       route = "post";
       content.posts = getSomePosts( 2, p.post ); //override full post list with two other posts for now
-      console.log("posts are ::", content.posts);
       content.post = p.post;
       dts.title = p.headTitle;
       dts.description = p.headDescription;
@@ -175,7 +174,6 @@ async function routeRequest( request, response, file_parts ){
 
 //method to return the pinned items
 function blogLister(){
-  console.log("blog_router :: blogLister function");
   if( pinned_list && pinned_list.length ){
     return pinned_list;
   }
