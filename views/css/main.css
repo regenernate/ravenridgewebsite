@@ -202,6 +202,43 @@
     margin-top: 8vh;
     margin-bottom: 5vh;
   }
+
+  .learn_header {
+    padding:5%;
+    background-color: var(--mountain);
+    color:#FFFFFF;
+    border-bottom:3px;
+    border-color: var(--dusk);
+    border-style: solid;
+  }
+
+  .learn_header h1 {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+
+  .thing_to_know h2 {
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    color: var(--rich-soil);
+  }
+
+  .thing_to_know p {
+    margin:2% 10%;
+    color: var(--rich-soil);
+  }
+
+  .thing_to_know{
+    padding:5%;
+  }
+
+  .thing_to_know:nth-of-type(odd){
+    background-color:var(--dusk);
+    border-top:3px;
+    border-color:var(--mountain);
+    border-style:solid;
+  }
 }
 
 @media only screen and (max-width:500px) {
@@ -214,6 +251,10 @@
 
   .post_list a{
     width:90%;
+  }
+
+  #rrff_things_to_know p {
+    margin:2% 4%;
   }
 
   #farmlife p{
