@@ -66,6 +66,10 @@ async function loadBlogPosts(){
     json = await response.json();
     if(json && json.status == SUCCESS){
       post_categories = json.data;
+      //remove newsletter categories for now since the api doesn't allow us to exclude a category
+      for( let cat=post_categories.length-1; cat>=0; cat-- ){
+        if( post_categories[cat].slug.indexOf("newsletter") >= 0 ) post_categories.splice( cat, 1 );
+      }
     }else{
       throw new Error("Blog Posts category call failed");
     }
@@ -73,8 +77,21 @@ async function loadBlogPosts(){
     json = await response.json();
     if(json && json.status == SUCCESS ){
       post_list = json.data.posts;
+      let cat_fnd;
+      //remove posts with any newsletter related category
+      for( let pos=post_list.length-1; pos>=0; pos--){
+        //remove any posts with a newsletter category
+        cat_fnd = false;
+        for( let categ in post_list[pos].categories ){
+          if( post_list[pos].categories[categ].slug.indexOf("newsletter") >= 0 ){
+            cat_fnd = true;
+            break;
+          }
+        }
+        if(cat_fnd) post_list.splice( pos, 1 );
+      }
       pinned_list = getPinnedPosts( post_list );
-      buildPostsByCategory( json.data.posts );
+      buildPostsByCategory( post_list );
     }else{
       throw new Error("Remote blog posts call failed");
     }
