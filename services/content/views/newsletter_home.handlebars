@@ -1,0 +1,9 @@
+<h1>Welcome to the RavenRidge Family Farm Newsletter</h1>
+{{>newsletter_signup}}
+<p>There's only one newsletter thus far. Click below to see it.</p>
+
+<ol>
+{{#each newsletters}}
+<li><a href='/newsletter/{{slug}}'>{{title}}</a></li>
+{{/each}}
+</ol>
