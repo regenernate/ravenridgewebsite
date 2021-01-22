@@ -227,6 +227,7 @@
   }
 
   #narrative p {
+    line-height:1.6rem;
   }
 
   /* rh_ prefixes indicate the regenerative_health section */
