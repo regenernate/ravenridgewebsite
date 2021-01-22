@@ -133,7 +133,7 @@
    }
 
    .blog_post p {
-     font-size:.9rem;
+     font-size:1.1rem;
    }
    .blog_post img {
      display:block;
@@ -198,6 +198,93 @@
     margin-bottom: 5vh;
   }
 
+/* start newsletter specific styles */
+
+  #narrative, #regenerative_health, #our_backyards{
+    text-align:center;
+  }
+
+  #regenerative_health, #our_backyards{
+    padding-top: 10vh;
+  }
+
+  #narrative article, #regenerative_health article, #our_backyards article {
+    padding:1rem .5rem;
+    max-width: 1000px;
+    font-size:1.2rem;
+    line-height: normal;
+    text-align: left;
+  }
+
+  #narrative h2, #regenerative_health h3, #our_backyards h3 {
+    text-align:left;
+  }
+
+  #narrative h1{
+    padding: .5rem;
+    background-color: var(--rich-soil);
+    color: #ffffff;
+  }
+
+  #narrative p {
+  }
+
+  /* rh_ prefixes indicate the regenerative_health section */
+  .rh_header {
+    background-color: var(--grass);
+    color: #ffffff;
+  }
+
+  .rh_header h2 {
+    margin:0;
+    padding-bottom:10px;
+    padding-top: 10px;
+    line-height:normal;
+  }
+
+  .rh_tagline {
+    width: 100%;
+    text-align:center;
+    background-color: var(--rich-soil);
+    padding: .5rem;
+  }
+
+  /* ob_ prefixes indicate the our backyards section */
+  .ob_header {
+    background-color: var(--earth);
+    color: #FFFFFF;
+  }
+
+  .ob_header h2 {
+    margin:0;
+    padding-bottom:10px;
+    padding-top: 10px;
+    line-height:normal;
+  }
+
+  .ob_tagline {
+    width: 100%;
+    text-align:center;
+    background-color: var(--rich-soil);
+    padding: .5rem;
+  }
+
+  /*  image styles **/
+  .nl_fwc{
+    display:block;
+    margin:auto;
+    max-width: 750px;
+  }
+
+  .nl_center_small{
+    display:block;
+    margin:auto;
+    max-width: 500px;
+  }
+
+  /* end newsletter */
+
+
   .learn_header {
     padding:5%;
     background-color: var(--mountain);
@@ -234,6 +321,15 @@
     border-color:var(--mountain);
     border-style:solid;
   }
+
+  .thanks {
+    text-align:center;
+    color:#ffffff;
+    background-color: var(--sunset);
+    padding-top: 1rem;
+    padding-bottom:.5rem;
+  }
+
 }
 
 @media only screen and (max-width:500px) {

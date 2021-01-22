@@ -1,16 +1,37 @@
-<h1>{{title}}</h1>
-{{sections.narrative.post.publishedAt}}
 
-<article id='narrative'>
-  {{{sections.narrative.post.content}}}
-</article>
+<section id="narrative">
+  <h1>{{sections.narrative.post.publishedAt}}</h1>
+  <article>
+    <h2>{{{sections.narrative.post.title}}}</h2>
+    {{{sections.narrative.post.content}}}
+  </article>
+</section>
 
-<article id='regenerative_health'>
-  <h2>{{sections.regenerative-health.post.title}}</h2>
-  {{{sections.regenerative-health.post.content}}}
-</article>
+<section id='regenerative_health'>
+  <div class='rh_header'>
+    <h2>Regenerative Health</h2>
+    <div class='rh_tagline'><span>Healthy Soil • </span><span class='extra-content'>Healthy Plants • </span><span class='extra-content'>Healthy People • </span><span>Healthy Planet</span></div>
+  </div>
+  <article>
+    <h3>{{sections.regenerative-health.post.title}}</h3>
+    {{{sections.regenerative-health.post.content}}}
+  </article>
+</section>
 
-<article id='our_backyards'>
-  <h2>{{sections.our-backyards.post.title}}</h2>
-  {{{sections.our-backyards.post.content}}}
-</article>
+<section id='our_backyards'>
+  <div class='ob_header'>
+    <h2>A Sense of Place</h2>
+    <div class='ob_tagline'>Through our own backyards.</div>
+  </div>
+  <article id='our_backyards'>
+    <h3>{{sections.our-backyards.post.title}}</h3>
+    {{{sections.our-backyards.post.content}}}
+  </article>
+</section>
+
+<div class='thanks'>
+  Thanks for reading!
+</div>
+
+<p>If you haven't signed up for our emailed newsletter, here is your chance.</p>
+{{>newsletter_signup}}
