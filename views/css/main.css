@@ -81,6 +81,17 @@
     width:100%;
   }
 
+  .flex_box_b{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .flex_box_b p{
+    padding:40px;
+  }
+
   .dark_section{
     text-align:center;
     padding-top:2rem;
@@ -98,6 +109,12 @@
   .call_to_action_link:hover {
     background-color: var(--grass);
     padding:.3rem 2.5rem;
+  }
+
+  .well_padded{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 1rem;
   }
 
   #meet_the_wheelers{
@@ -381,6 +398,12 @@
   .farmer_profile{
     width:40%;
     margin:2rem;
+  }
+
+  .well_padded{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2rem;
   }
 
 }
