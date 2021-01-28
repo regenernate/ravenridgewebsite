@@ -1,0 +1,152 @@
+
+/** base screen styles are for 500px to 900px mobile landscape through tablet screen sizes **/
+@media only screen {
+
+  .story-time {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:90vw;
+    max-width: 750;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    font-family: Adriane, Georgia, serif;
+    text-align: center;
+  }
+
+  .story-time p:first-of-type{
+    padding-top:2rem;
+  }
+
+  .story-intro{
+    text-align:left;
+    width:70vw;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:1.4rem;
+    line-height:2.4rem;
+    font-family: Montserrat, Arial, sans-serif;
+    padding: 1rem 0;
+  }
+
+  .meet_a_farmer {
+    margin-bottom: 10rem;
+  }
+
+  .meet_a_farmer  p{
+    line-height: 2rem;
+    font-size: 1.4rem;
+  }
+
+  /* this is the image and text showing one of the farmers */
+  .farmer_profile{
+    width:40%;
+    margin:.5rem;
+    color:var(--mountain);
+  }
+
+  .farmer_profile span{
+    font-size: .8rem;
+    font-weight: bold;
+  }
+
+  .farmer_profile h3 {
+    line-height:1rem;
+    padding:0;
+  }
+
+  .farmer_profile p {
+    font-style: italic;
+    font-size: 16px;
+    line-height:1.2em;
+  }
+
+  .farmer_profile a {
+    font-weight: bold;
+    font-style: normal;
+    float:right;
+    padding-right: 1rem;
+    margin-top:2rem;
+  }
+  .farmer_profile a:hover{
+    text-decoration: underline;
+  }
+
+  .well_padded{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 1rem;
+  }
+
+  .center-quote{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    font-style:italic;
+    padding:2rem;
+    text-align: center;
+  }
+
+  .center-logo-part{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:200px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+}
+
+@media only screen and (max-width:750px) {
+
+  .story-time{
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+
+}
+
+/** following are styles for the narrowist of views ... this includes most phones in portrait orientation **/
+@media only screen and (max-width:500px) {
+
+  .story-time{
+    width:90vw;
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+  }
+
+}
+
+/** following are styles for typical laptop sizes, screens wider than 900px **/
+@media only screen and (min-width:900px) {
+
+  .story-time{
+    line-height:2.4rem;
+  }
+
+  .farmer_profile{
+    width:40%;
+    margin:2rem;
+  }
+
+  .well_padded{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2rem;
+  }
+
+}
+
+/** following are styles for the largest screens, those wider than 1200px **/
+@media only screen and (min-width:1200px) {
+
+  .story-time{
+    width:60vw;
+  }
+
+  .story-time p{
+    line-height:2.5rem;
+  }
+}

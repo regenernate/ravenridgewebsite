@@ -30,6 +30,21 @@
     border-color: var(--sunset);
   }
 
+  .fl{
+    position:relative;
+    float: left;
+  }
+
+  .maxh_600 {
+    max-height: 800;
+  }
+
+  .maxw_600 {
+    max-width: 800;
+  }
+
+
+
 }
 
 @media only screen and (max-width:500px) {
