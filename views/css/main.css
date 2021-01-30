@@ -31,8 +31,9 @@
   .flex_box{
     display:flex;
     flex-direction:row;
+    flex-wrap:wrap;
     justify-content: center;
-    align-items:flex-end;
+    align-items:center;
     width:100%;
     text-align:center;
   }
@@ -44,6 +45,7 @@
   .flex_box_top_align{
     display:flex;
     flex-direction:row;
+    flex-wrap:wrap;
     justify-content: center;
     align-items:flex-start;
     width:100%;
@@ -74,6 +76,7 @@
   main{
     width:1150px;
     margin-top: 6rem;
+    margin-bottom:25vh;
   }
 
 }

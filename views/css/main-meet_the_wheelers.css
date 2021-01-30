@@ -2,21 +2,40 @@
 /** base screen styles are for 500px to 900px mobile landscape through tablet screen sizes **/
 @media only screen {
 
-  .story-time {
+  .story{
     display:block;
     margin-left:auto;
     margin-right:auto;
     width:90vw;
     max-width: 750;
+    font-family: Adriane, Georgia, serif;
+  }
+
+  .farm-story {
     font-size: 1.8rem;
     line-height: 3rem;
-    font-family: Adriane, Georgia, serif;
     text-align: center;
   }
 
-  .story-time hr{
+  .personal-story{
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    text-align: left;
+  }
+
+  .alt-section{
+/*    background-color:var(--dusk); */
+    text-align:left;
+    padding: 4rem 5vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    border-top: 2px var(--earth) solid;
+    border-bottom: 2px var(--earth) solid;
+  }
+
+  .story hr{
     border:0;
-    border-bottom:2px var(--sunset) solid;
+    border-bottom:2px var(--earth) solid;
     padding-top: 2rem;
     margin-bottom:4rem;
   }
@@ -26,15 +45,12 @@
   }
 
   .story-intro{
-    text-align:left;
-    width:70vw;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
+    width:80vw;
+    padding: 1rem 0;
     font-size:1.4rem;
     line-height:2.4rem;
     font-family: Montserrat, Arial, sans-serif;
-    padding: 1rem 0;
+    text-align:left;
   }
 
   .meet_a_farmer {
@@ -49,6 +65,7 @@
   /* this is the image and text showing one of the farmers */
   .farmer_profile{
     width:40%;
+    min-width:250px;
     margin:.5rem;
     color:var(--mountain);
   }
@@ -94,6 +111,12 @@
     font-style:italic;
     padding:2rem;
     text-align: center;
+    background-color:var(--rich-soil);
+    color:#FFFFFF;
+  }
+
+  .center-quote img{
+    width:25%;
   }
 
   .center-logo-part{
@@ -109,7 +132,7 @@
 
 @media only screen and (max-width:750px) {
 
-  .story-time{
+  .farm-story, .personal_story{
     font-size: 1.4rem;
     line-height: 2.2rem;
   }
@@ -119,8 +142,7 @@
 /** following are styles for the narrowist of views ... this includes most phones in portrait orientation **/
 @media only screen and (max-width:500px) {
 
-  .story-time{
-    width:90vw;
+  .farm-story {
     font-size: 1.2rem;
     line-height: 1.9rem;
   }
@@ -133,8 +155,8 @@
 /** following are styles for typical laptop sizes, screens wider than 900px **/
 @media only screen and (min-width:900px) {
 
-  .story-time{
-    line-height:2.4rem;
+  .farm-story, .personal-story{
+    line-height:2.6rem;
   }
 
   .farmer_profile{
@@ -153,11 +175,11 @@
 /** following are styles for the largest screens, those wider than 1200px **/
 @media only screen and (min-width:1200px) {
 
-  .story-time{
+  .story{
     width:60vw;
   }
 
-  .story-time p{
+  .farm-story p, .personal-story p{
     line-height:2.5rem;
   }
 
