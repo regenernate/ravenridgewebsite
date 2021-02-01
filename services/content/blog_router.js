@@ -73,7 +73,7 @@ async function loadBlogPosts(){
     }else{
       throw new Error("Blog Posts category call failed");
     }
-    response = await fetch('https://api.dropinblog.com/v1/json/?' + dib_token);
+    response = await fetch('https://api.dropinblog.com/v1/json/?' + dib_token + "&limit=20");
     json = await response.json();
     if(json && json.status == SUCCESS ){
       post_list = json.data.posts;
@@ -199,7 +199,7 @@ function blogLister(){
 
 //method to return two posts that arent the post sent
 function getSomePosts( count, avoid ){
-  if( !count ) count = 2; //initialize to two posts is no number of posts sent
+  if( !count ) count = 2; //initialize to two posts if no number of posts sent
   if( !avoid ) avoid = {slug:"whatwhat"}; //initialize to a non-likely slug in case of no avoid list sent
   let rtn = [];
   for( let i in post_list ){
