@@ -26,11 +26,6 @@
   .alt-section{
 /*    background-color:var(--dusk); */
     text-align:left;
-    padding: 4rem 5vw;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    border-top: 2px var(--earth) solid;
-    border-bottom: 2px var(--earth) solid;
   }
 
   .story hr{
@@ -104,19 +99,18 @@
     padding-bottom: 1rem;
   }
 
-  .center-quote{
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    font-style:italic;
-    padding:2rem;
-    text-align: center;
+  /* .center-quote as a class is defined in main.css to be overridden / extended
+  in the main-*.css classes as needed */
+  .center-quote img{
     background-color:var(--rich-soil);
-    color:#FFFFFF;
+    width:50%;
+    margin-top:2rem;
+    padding:10%;
   }
 
-  .center-quote img{
-    width:25%;
+  .full_width{
+    width: 100%;
+    max-width: 750px;
   }
 
   .center-logo-part{

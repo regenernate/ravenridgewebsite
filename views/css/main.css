@@ -28,6 +28,33 @@
     width:100%;
   }
 
+  .center-quote{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    font-style:italic;
+    padding:2rem;
+    text-align: center;
+    background-color:var(--earth);
+    color:#FFFFFF;
+  }
+
+  .meaningful-quote{
+    font-style:italic;
+    padding:2rem;
+    text-align:center;
+    color:var(--earth);
+  }
+
+  .alt-section{
+/*    background-color:var(--dusk); */
+    padding: 4rem 5vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    border-top: 2px var(--earth) solid;
+    border-bottom: 2px var(--earth) solid;
+  }
+
   .flex_box{
     display:flex;
     flex-direction:row;
