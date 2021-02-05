@@ -1,5 +1,6 @@
 .env
-/images
-/samples
-/tools
-/dist
+.gitignore
+statics
+images
+samples
+dist
