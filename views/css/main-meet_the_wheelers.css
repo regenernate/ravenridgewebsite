@@ -1,0 +1,187 @@
+
+/** base screen styles are for 500px to 900px mobile landscape through tablet screen sizes **/
+@media only screen {
+
+  .story{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:90vw;
+    max-width: 750;
+    font-family: Adriane, Georgia, serif;
+  }
+
+  .farm-story {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+  .personal-story{
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    text-align: left;
+  }
+
+  .alt-section{
+/*    background-color:var(--dusk); */
+    text-align:left;
+  }
+
+  .story hr{
+    border:0;
+    border-bottom:2px var(--earth) solid;
+    padding-top: 2rem;
+    margin-bottom:4rem;
+  }
+
+  .pad-above{
+    padding-top:2rem;
+  }
+
+  .story-intro{
+    width:80vw;
+    padding: 1rem 0;
+    font-size:1.4rem;
+    line-height:2.4rem;
+    font-family: Montserrat, Arial, sans-serif;
+    text-align:left;
+  }
+
+  .meet_a_farmer {
+    margin-bottom: 10rem;
+  }
+
+  .meet_a_farmer  p{
+    line-height: 2rem;
+    font-size: 1.4rem;
+  }
+
+  /* this is the image and text showing one of the farmers */
+  .farmer_profile{
+    width:40%;
+    min-width:250px;
+    margin:.5rem;
+    color:var(--mountain);
+  }
+
+  .farmer_profile span{
+    font-size: .8rem;
+    line-height: 1rem;
+    font-weight: bold;
+  }
+
+  .farmer_profile h3 {
+    line-height:1rem;
+    padding:0;
+  }
+
+  .farmer_profile p {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1rem;
+  }
+
+  .farmer_profile a {
+    font-weight: bold;
+    font-style: normal;
+    float:right;
+    padding-right: 1rem;
+    margin-top:2rem;
+  }
+  .farmer_profile a:hover{
+    text-decoration: underline;
+  }
+
+  .well_padded{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 1rem;
+  }
+
+  /* .center-quote as a class is defined in main.css to be overridden / extended
+  in the main-*.css classes as needed */
+  .center-quote img{
+    background-color:var(--rich-soil);
+    width:50%;
+    margin-top:2rem;
+    padding:10%;
+  }
+
+  .full_width{
+    width: 100%;
+    max-width: 750px;
+  }
+
+  .center-logo-part{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:200px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+}
+
+@media only screen and (max-width:750px) {
+
+  .farm-story, .personal_story{
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+
+}
+
+/** following are styles for the narrowist of views ... this includes most phones in portrait orientation **/
+@media only screen and (max-width:500px) {
+
+  .farm-story {
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+  }
+
+  .story-intro{
+    width:90vw;
+  }
+}
+
+/** following are styles for typical laptop sizes, screens wider than 900px **/
+@media only screen and (min-width:900px) {
+
+  .farm-story, .personal-story{
+    line-height:2.6rem;
+  }
+
+  .farmer_profile{
+    width:40%;
+    margin:2rem;
+  }
+
+  .well_padded{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2rem;
+  }
+
+}
+
+/** following are styles for the largest screens, those wider than 1200px **/
+@media only screen and (min-width:1200px) {
+
+  .story{
+    width:60vw;
+  }
+
+  .farm-story p, .personal-story p{
+    line-height:2.5rem;
+  }
+
+  .farmer_profile p {
+    line-height: 1.5rem;
+  }
+
+  .story-intro{
+    width:100%;
+  }
+}

@@ -1,0 +1,106 @@
+
+/** base screen styles are for 500px to 900px mobile landscape through tablet screen sizes **/
+@media only screen {
+
+  .dark_section{
+    text-align:center;
+    padding-top:2rem;
+    padding-bottom:3rem;
+    background-color: #E3E3E3;
+  }
+
+  .call_to_action_link{
+    background-color: var(--evergreen);
+    color:#FFFFFF;
+    display:inline-block;
+    padding:.3rem 1.5rem;
+  }
+
+  .call_to_action_link:hover {
+    background-color: var(--grass);
+    padding:.3rem 2.5rem;
+  }
+
+  #meet_the_wheelers{
+    background-color: var(--lichen);
+    color:#FFFFFF;
+    padding:1rem 4rem;
+    margin-top:4rem;
+    text-align: center;
+  }
+
+  #meet_the_wheelers img {
+    max-width: 320px;
+    width:30vw;
+  }
+
+  #farmlife{
+    position:relative;
+    width:100%;
+    margin-top:-4rem;
+  }
+
+  #farmlife h1{
+    line-height:1rem;
+  }
+  #farmlife ul {
+    margin-bottom:1rem;
+  }
+
+  #farmlife li {
+    display:inline;
+    margin:.5rem;
+  }
+
+  .farmlife_overlay {
+    position:absolute;
+    width:100%;
+    top:4rem;
+    text-align: center;
+    background-color: var(--evergreen);
+    color: #FFFFFF;
+    padding:0 3rem;
+    margin:auto;
+  }
+
+  #homepage_products{
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+  }
+
+}
+
+/** following are styles for the narrowist of views ... this includes most phones in portrait orientation **/
+@media only screen and (max-width:500px) {
+
+  #meet_the_wheelers{
+    padding:1rem;
+  }
+  #meet_the_wheelers img {
+    width:50%;
+  }
+
+  #farmlife p{
+    display:none;
+  }
+
+  .farmlife_overlay {
+    padding:0 1rem;
+    top:3rem;
+  }
+
+}
+
+/** following are styles for typical laptop sizes, screens wider than 900px **/
+@media only screen and (min-width:900px) {
+}
+
+/** following are styles for the largest screens, those wider than 1200px **/
+@media only screen and (min-width:1200px) {
+
+  #homepage_products{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+}

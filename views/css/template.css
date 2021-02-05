@@ -1,0 +1,17 @@
+
+/** base screen styles are for 500px to 900px mobile landscape through tablet screen sizes **/
+@media only screen {
+
+}
+
+/** following are styles for the narrowist of views ... this includes most phones in portrait orientation **/
+@media only screen and (max-width:500px) {
+}
+
+/** following are styles for typical laptop sizes, screens wider than 900px **/
+@media only screen and (min-width:900px) {
+}
+
+/** following are styles for the largest screens, those wider than 1200px **/
+@media only screen and (min-width:1200px) {
+}

@@ -1,0 +1,72 @@
+
+/** base screen styles are for 500px to 900px mobile landscape through tablet screen sizes **/
+@media only screen {
+
+  #rrff_things_to_know{
+    padding-bottom: 4rem;
+  }
+
+  #rrff_things_to_know p{
+    line-height: 2rem;
+  }
+
+  .learn_header {
+    padding:5%;
+    background-color: var(--mountain);
+    color:#FFFFFF;
+    border-bottom:3px;
+    border-color: var(--dusk);
+    border-style: solid;
+  }
+
+  .learn_header h1 {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+
+  .thing_to_know h2 {
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    color: var(--rich-soil);
+  }
+
+  .thing_to_know p {
+    margin:2% 10%;
+    color: var(--rich-soil);
+  }
+
+  .thing_to_know{
+    padding:5%;
+  }
+
+  .thing_to_know:nth-of-type(odd){
+    background-color:var(--dusk);
+    border-top:3px;
+    border-color:var(--mountain);
+    border-style:solid;
+  }
+}
+
+/** following are styles for the narrowist of views ... this includes most phones in portrait orientation **/
+@media only screen and (max-width:500px) {
+
+  #rrff_things_to_know p {
+    margin:2% 4%;
+  }
+
+}
+
+/** following are styles for typical laptop sizes, screens wider than 900px **/
+@media only screen and (min-width:900px) {
+
+  #rrff_things_to_know p{
+    line-height: 1.7rem;
+  }
+
+
+}
+
+/** following are styles for the largest screens, those wider than 1200px **/
+@media only screen and (min-width:1200px) {
+}

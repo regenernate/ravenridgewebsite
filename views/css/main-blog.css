@@ -1,0 +1,73 @@
+
+/** base screen styles are for 500px to 900px mobile landscape through tablet screen sizes **/
+@media only screen {
+
+ .blog_posts {
+  margin-top: 4rem;
+ }
+
+ .blog_post h1 {
+   text-align:left;
+   font-size: 1.8rem;
+ }
+
+ .blog_post h2 {
+   text-align:left;
+   font-size: 1.4rem;
+ }
+
+ .blog_post h3 {
+   text-align:left;
+   font-size: 1.2rem;
+ }
+
+ .blog_post p {
+   font-size:1.1rem;
+ }
+ .blog_post img {
+   display:block;
+   width:70%;
+   margin-left:auto;
+   margin-right:auto;
+ }
+
+ .blog_post .flex_box img {
+   padding:1rem;
+ }
+
+ .blog_post .references {
+   overflow: hidden;
+ }
+
+ .post_list a{
+   padding:1rem;
+   width:40%;
+ }
+
+ .post_list {
+   flex-wrap:wrap;
+ }
+
+}
+
+/** following are styles for the narrowist of views ... this includes most phones in portrait orientation **/
+@media only screen and (max-width:500px) {
+
+  .post_list a{
+    width:90%;
+  }
+
+}
+
+/** following are styles for typical laptop sizes, screens wider than 900px **/
+@media only screen and (min-width:900px) {
+}
+
+/** following are styles for the largest screens, those wider than 1200px **/
+@media only screen and (min-width:1200px) {
+
+  .post_list a{
+    width:30%;
+  }
+
+}

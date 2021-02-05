@@ -78,6 +78,7 @@ handlebars.registerPartial('newsletter_signup', handlebars.compile( fs.readFileS
 handlebars.registerPartial('post_list', handlebars.compile( fs.readFileSync( "./views/shared/post_list.handlebars", 'utf-8' )));
 
 handlebars.registerPartial('navigation', handlebars.compile( fs.readFileSync( "./views/shared/navigation.handlebars", 'utf-8' )));
+handlebars.registerPartial('mtw_navigation', handlebars.compile( fs.readFileSync( "./views/shared/mtw_navigation.handlebars", 'utf-8' )));
 handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./views/shared/footer.handlebars", 'utf-8' )));
 
 //load and compile layout templates
