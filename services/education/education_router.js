@@ -73,6 +73,7 @@ async function routeRequest( request, response, file_parts ){
   //check for requested template in templates object
   let data_to_send = { nav:{learn:true}, title:pages[template].title, description:pages[template].desc };
   if( templates.hasOwnProperty( template )){
+    console.log(template);
     data_to_send.nav[ template ] = true;
     if( template == "product_faqs" ){
       data_to_send.faqs = faqs;

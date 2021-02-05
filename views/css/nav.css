@@ -157,6 +157,27 @@
     max-width:150px;
   }
 
+  #mtw_nav{
+    position:static;
+    text-align:center;
+    margin-top:4rem;
+  }
+
+  #mtw_nav li{
+    padding-left: .5rem;
+    padding-right: .5rem;
+    background-color: #FFFFFF;
+    color:var(--rich-soil);
+  }
+
+  #mtw_nav .current_mtw_nav{
+    background-color:var(--rich-soil);
+    color:#FFFFFF;
+  }
+
+  .nav_center{
+    text-align:center;
+  }
 }
 
 @media only screen and (max-width:600px) {
