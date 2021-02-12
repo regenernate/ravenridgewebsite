@@ -50,7 +50,7 @@ function compileTemplates(){
 
 const dib_token = "b=HVGYH9CBTW48PTWHQ2ET";
 const SUCCESS = "success";
-var newsletter_list = [{slug:'january-2021', title:'January 2021 - Now introducing ...'}];
+var newsletter_list = [{slug:'january-2021', title:'January 2021 - Now introducing ...'},{slug:'february-2021', title:'February 2021 - The hard side of farming.'}];
 var sections={};
 
 loadNewsletterPosts();
