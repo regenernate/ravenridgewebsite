@@ -1,6 +1,8 @@
 
 <article>
-  <h1>Thanks for your interest in our salve products</h1>
+  <h1>RavenRidge Regenerative CBD Salve</h1>
+  <img class='center medium well-padded' src='/product_images/salve-and-fingers.jpg' />
+  <p class='center big'>Select from the strengths and sizes below. For more information and a side by side pricing comparison, scroll on down.</p>
 
 </article>
 
@@ -151,3 +153,22 @@
 /*]]>*/
 </script>
 </div>
+<article class='story personal-story'>
+  <h2>Only Estate-grown or Organic Ingredients</h2>
+  <p class='center medium'>We only use ingredients sourced with quality we can trust.</p>
+  <img class='center small' src='/product_images/salve-bottom.jpg' />
+</article>
+<article class='story story-intro'>
+  <h2>Compare Pricing per Milligram of CBD</h2>
+  <p>The following table compares one-time purchase pricing against our subscription pricing.</p>
+  <p><strong>Prices are in cents per milligram of CBD.</strong></p>
+  <table class='pricing'>
+    {{#each pricing}}
+      <tr class='head-row'><td colspan='4'>{{strength}} Regenerative CBD Salve</td></tr>
+      <tr class='alt-row'><td>Container Size</td><td>Total CBD</td><td>One-time<br />Purchases</td><td>Subscription</td></tr>
+      {{#each sizes}}
+      <tr><td>{{size}} oz.</td><td>{{total_cbd}} mg</td><td>${{full_mg_price}}/mg</td><td>${{subscription_mg_price}}/mg</td></tr>
+      {{/each}}
+    {{/each}}
+  </table>
+</article>

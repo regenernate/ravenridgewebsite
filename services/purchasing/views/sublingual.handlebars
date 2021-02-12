@@ -1,6 +1,7 @@
 
 <article>
-  <h1>These are our sublingual products</h1>
+  <h1>RavenRidge Regenerative CBD Sublingual Oil</h1>
+  <p class='center medium'>Select from the different strengths below. For a side by side comparison scroll on down.</p>
 </article>
 <div>
 <div id='collection-component-1612568874197'></div>
@@ -153,3 +154,16 @@
 /*]]>*/
 </script>
 </div>
+
+<article class='story story-intro'>
+  <h2>Compare Pricing per Milligram of CBD</h2>
+  <p>The following table compares one-time purchase pricing against our subscription pricing.</p>
+  <p><strong>Prices are in cents per milligram of CBD.</strong></p>
+  <table class='pricing'>
+    <tr class='head-row'><td colspan='4'>Regenerative CBD Sublingual Oil</td></tr>
+    <tr class='alt-row'><td>Strength</td><td>Total CBD</td><td>One-time<br />Purchases</td><td>Subscription</td></tr>
+    {{#each pricing}}
+    <tr><td>{{strength}}</td><td>{{total_cbd}} mg</td><td>${{full_mg_price}}/mg</td><td>${{subscription_mg_price}}/mg</td></tr>
+    {{/each}}
+  </table>
+</article>
