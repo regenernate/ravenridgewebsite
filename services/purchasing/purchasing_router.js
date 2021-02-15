@@ -27,7 +27,7 @@ var pricing = {
           size:"2", total_cbd:"600", full_price:"56", subscription_price:"48", full_mg_price:".09", subscription_mg_price:".08"
         },
         {
-          size:"4", total_cbd:"1200", full_price:"88", subscription_price:"75", full_mg_price:".07", subscription_mg_price:".06"
+          size:"4", total_cbd:"1200", full_price:"88", subscription_price:"76", full_mg_price:".07", subscription_mg_price:".06"
         }
       ]
     },{
@@ -37,10 +37,10 @@ var pricing = {
           size:"1", total_cbd:"600", full_price:"50", subscription_price:"42", full_mg_price:".08", subscription_mg_price:".07"
         },
         {
-          size:"2", total_cbd:"1200", full_price:"88", subscription_price:"76", full_mg_price:".07", subscription_mg_price:".06"
+          size:"2", total_cbd:"1200", full_price:"88", subscription_price:"74", full_mg_price:".07", subscription_mg_price:".06"
         },
         {
-          size:"4", total_cbd:"2400", full_price:"130", subscription_price:"110", full_mg_price:".05", subscription_mg_price:".05"
+          size:"4", total_cbd:"2400", full_price:"130", subscription_price:"110", full_mg_price:".054", subscription_mg_price:".046"
         }
       ]
     }
@@ -56,7 +56,7 @@ var pricing = {
       strength:"3%", total_cbd:"900", full_price:"56", subscription_price:"48", full_mg_price:".06", subscription_mg_price:".05"
     },
     {
-      strength:"4%", total_cbd:"1200", full_price:"66", subscription_price:"56", full_mg_price:".05", subscription_mg_price:".05"
+      strength:"4%", total_cbd:"1200", full_price:"65", subscription_price:"56", full_mg_price:".054", subscription_mg_price:".047"
     }
   ]
 }

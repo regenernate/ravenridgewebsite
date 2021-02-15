@@ -159,12 +159,12 @@
 <article class='story story-intro'>
   <h2>Compare Pricing per Milligram of CBD</h2>
   <p>The following table compares one-time purchase pricing against our subscription pricing.</p>
-  <p><strong>Prices are in cents per milligram of CBD.</strong></p>
+  <p><strong>Table includes unit price and cost per milligram of CBD.</strong></p>
   <table class='pricing'>
     <tr class='head-row'><td colspan='4'>Regenerative CBD Sublingual Oil</td></tr>
     <tr class='alt-row'><td>Strength</td><td>Total CBD</td><td>One-time<br />Purchases</td><td>Subscription</td></tr>
     {{#each pricing}}
-    <tr><td>{{strength}}</td><td>{{total_cbd}} mg</td><td>${{full_mg_price}}/mg</td><td>${{subscription_mg_price}}/mg</td></tr>
+    <tr><td>{{strength}}</td><td>{{total_cbd}} mg</td><td>${{full_price}}<br />( <em>0{{full_mg_price}}/mg</em> )</td><td>${{subscription_price}}<br />( <em>0{{subscription_mg_price}}/mg</em> )</td></tr>
     {{/each}}
   </table>
 </article>

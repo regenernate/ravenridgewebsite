@@ -99,6 +99,7 @@
   .pricing td{
     border:solid 1px black;
     padding:1rem 5px;
+    line-height:1.4rem;
   }
 
   .pricing .alt-row td{
