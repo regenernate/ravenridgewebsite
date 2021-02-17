@@ -2,7 +2,7 @@
 <article>
   <h1>RavenRidge Regenerative CBD Salve</h1>
   <img class='center medium well-padded' src='/product_images/salve-and-fingers.jpg' />
-  <p class='center big'>Select from the strengths and sizes below. For more information and a side by side pricing comparison, scroll on down.</p>
+  <p class='center big'>Select from the strengths and sizes below.<br />For more information and a side by side pricing comparison, scroll on down.</p>
 
 </article>
 
@@ -154,9 +154,15 @@
 </script>
 </div>
 <article class='story personal-story'>
+  <h2>How Salve products work</h2>
+  <p>Topical Salve products are intended to be applied to impacted areas of the body via the skin, with the expectation that some of the CBD will be absorbed into the affected areas.</p>
+  <img class='half-full' src='/salve.jpg' />
+</article>
+<article class='story personal-story'>
   <h2>Only Estate-grown or Organic Ingredients</h2>
   <p class='center medium'>We only use ingredients sourced with quality we can trust.</p>
   <img class='center small' src='/product_images/salve-bottom.jpg' />
+  <p>We also use argan oil because it has been shown to help with absorption.</p>
 </article>
 <article class='story story-intro'>
   <h2>Compare Pricing per Milligram of CBD</h2>
@@ -167,7 +173,7 @@
       <tr class='head-row'><td colspan='4'>{{strength}} Regenerative CBD Salve</td></tr>
       <tr class='alt-row'><td>Container Size</td><td>Total CBD</td><td>One-time<br />Purchases</td><td>Subscription</td></tr>
       {{#each sizes}}
-      <tr><td>{{size}} oz.</td><td>{{total_cbd}} mg</td><td>${{full_price}}<br />( <em>0{{full_mg_price}}/mg</em> )</td><td>${{subscription_price}}<br />( <em>0{{subscription_mg_price}}/mg</em> )</td></tr>
+      <tr><td>{{size}} oz.</td><td>{{total_cbd}} mg</td><td>${{full_price}}<br /><em> 0{{full_mg_price}}/mg</em></td><td>${{subscription_price}}<br /><em> 0{{subscription_mg_price}}/mg</em></td></tr>
       {{/each}}
     {{/each}}
   </table>

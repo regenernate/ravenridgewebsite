@@ -13,12 +13,33 @@
     background-color: var(--evergreen);
     color:#FFFFFF;
     display:inline-block;
-    padding:.3rem 1.5rem;
+    padding:.75rem 1rem;
   }
 
   .call_to_action_link:hover {
     background-color: var(--grass);
-    padding:.3rem 2.5rem;
+    padding:calc(.75rem - 4px) calc(1rem - 4px);
+    border: 4px solid var(--evergreen);
+  }
+
+  .callout-link-box{
+    width:fit-content;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    border: 4px solid var(--earth);
+  }
+
+  .callout-link-box .title{
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    padding-left:.5rem;
+    background-color: var(--earth);
+    color: #FFFFFF;
+  }
+
+  .callout-link-box .links{
+    padding:2rem;
   }
 
   #meet_the_wheelers{
