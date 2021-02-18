@@ -50,7 +50,7 @@ function compileTemplates(){
 
 const dib_token = "b=HVGYH9CBTW48PTWHQ2ET";
 const SUCCESS = "success";
-var newsletter_list = [{slug:'january-2021', title:'January 2021 - Now introducing ...'}];
+var newsletter_list = [{slug:'january-2021', title:'January 2021 - Introducing the newsletter.'},{slug:'february-2021', title:'February 2021 - Death and Rebirth'}];
 var sections={};
 
 loadNewsletterPosts();
@@ -156,7 +156,14 @@ async function routeRequest( request, response, file_parts ){
     template = "home";
   }else{
     template = "newsletter";
-    data_to_send.title = "January 2021 - Introducing the newsletter."
+    let fnd = false;
+    for( let i in newsletter_list ){
+      if( newsletter_list[i].slug == file_parts[0] ){
+        data_to_send.title = newsletter_list[i].title;
+        fnd = true;
+      }
+    }
+    if( !fnd ) throw new Error("The newsletter requested could not be found.");
     data_to_send.sections = sections[ file_parts[0] ];
   }
   rtn = bro.get(true, template_manager.executeTemplate( templates[template], data_to_send ) );
