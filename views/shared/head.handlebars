@@ -3,6 +3,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZ5LG95VZ0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BTBYJPJ6ZS');
+
+    if (location.hostname.split('.')[0] != 'ravenridgefamilyfarm') {
+      console.log('disabling');
+      gtag('set', 'sendHitTask', null);
+    }
+
+  </script>
 
   <link rel="stylesheet" href="https://use.typekit.net/vte8dgw.css">
   <link rel="stylesheet" type="text/css" href="/css_uglified.css" >
