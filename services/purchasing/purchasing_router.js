@@ -62,7 +62,7 @@ var pricing = {
 }
 
 async function routeRequest( request, response, file_parts ){
-  let data_to_send = { nav:{shop:true}, title:pagetitle, desc:pagedesc};
+  let data_to_send = { nav:{products:true}, title:pagetitle, desc:pagedesc};
 
   let rtn = null;
   //if no page name, use default template
@@ -80,7 +80,7 @@ async function routeRequest( request, response, file_parts ){
     data_to_send.pricing = pricing;
   }
 
-//  console.log("Thanks for shopping ::", data_to_send);
+//  console.log("Products ::", data_to_send);
   return bro.get(true, template_manager.executeTemplate( templates[template], data_to_send ));
 }
 

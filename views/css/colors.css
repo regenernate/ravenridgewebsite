@@ -59,11 +59,11 @@ a {
     background-color: var(--lichen);
   }
 
-  #nav_shop {
+  #nav_products {
     background-color: var(--evergreen);
   }
 
-  #nav_shop:hover {
+  #nav_products:hover {
     background-color: var(--grass);
   }
 
