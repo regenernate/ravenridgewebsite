@@ -66,6 +66,16 @@
     cursor: default;
   }
 
+  .shop_subnav {
+    background-color:var(--mountain);
+    color:#FFFFFF;
+  }
+
+  .shop_subnav:hover {
+    background-color:var(--dusk);
+    color:var(--mountain);
+  }
+
   #learn_subnav, #products_subnav {
     position:fixed;
     top: 2.5rem;

@@ -1,8 +1,8 @@
-
+<article class='story personal-story'>
   <h1>The RavenRidge Blog</h1>
-
-  <p>If you recall, there are four of us here at RavenRidge Family Farm. Four opinionated, cbd-using, forest loving folks.</p>
-  <p>As you likely know, we make cbd products. We also grow our hemp following regenerative practices. You'll find information on these things and more in the blog posts below (scroll to the end for the full archive).</p>
+  <p>We grow hemp following regenerative practices, we make cbd products from that hemp, and in so doing, we engage more deeploy with the living world outside our doors.</p>
+  <p>You'll find narrative and informational content about these topics and more in the blog posts below.</p>
+  <p><em>For the full archive, <a href='#blog_archive'>skip to the end</a>.</em></p>
   {{#each content.posts_by_category}}
   <section>
     <h2>{{title}}</h2>
@@ -15,14 +15,16 @@
     </div>
   </section>
   {{/each}}
-  <section>
+  <section id='blog_archive'>
     <h2>Full Blog Archive</h2>
-    <ul>
+    <ul class='padded_list no-decoration'>
     {{#each content.posts}}
       <li><a href='/blog/{{slug}}'>{{title}}</a></li>
     {{/each}}
     </ul>
   </section>
+</article>
+
 <!--
   <h2>Informational pieces</h2>
 

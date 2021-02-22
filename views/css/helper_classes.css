@@ -13,6 +13,10 @@
      position: absolute;
   }
 
+  .no-decoration{
+    list-style: none;
+  }
+
   .padded-list{
     padding-left:5vw;
     padding-right:10vw;
@@ -36,6 +40,11 @@
     margin-left:auto;
     margin-right:auto;
     text-align:center;
+  }
+
+  .title{
+    font-size:1.4rem;
+    font-family:Adriane, Georgia, serif;
   }
 
   .well-padded{

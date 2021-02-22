@@ -25,11 +25,6 @@
       "title":"Landing page for folks to sign up for our newsletter.",
       "desc":"Thanks for visiting. To learn more about our cbd products and regenerative practices, sign up for our newsletter."
     },
-    "covid-19_notice":{
-      "template":"./services/content/views/pandemic_pricing.handlebars",
-      "title":"Get what you need during the pandemic.",
-      "desc":"We have reduced our pricing after the coronavirus pandemic so people can deal more effectively with their anxiety and stress during this time."
-    },
     "trifold2020":{
       "template":"./services/content/views/trifold2020.handlebars",
       "title":"Landing page for folks who have seen our 2020 brochure.",
