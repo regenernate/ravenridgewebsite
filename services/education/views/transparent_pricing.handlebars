@@ -1,0 +1,30 @@
+<section class='story personal-story'>
+  <h1>Transparent Pricing</h1>
+  <p>We believe our pricing is among the best in the industry, particularly given the quality of our <a href="/learn/why_regenerative">regeneratively grown hemp</a>, and the care we take in making small batches using eco-conscious methods.</p>
+  <h2>Pricing per milligram of CBD</h2>
+  <p>In the tables below we show the <em>per item pricing</em> for each of our products. We also show the <strong>price per milligram CBD</strong> in each product so you can make purchasing decisions that are good for both your physical and financial well-being.</p>
+</section>
+<article class='story'>
+  <h2>Sublingual Oil Pricing</h2>
+  <p><strong>The table includes unit price and cost per milligram of CBD.</strong></p>
+  <table class='pricing'>
+    <tr class='head-row'><td colspan='4'>Regenerative CBD Sublingual Oil</td></tr>
+    <tr class='alt-row'><td>Strength</td><td>Total CBD</td><td>One-time<br />Purchases</td><td>Subscription</td></tr>
+    {{#each pricing.sublingual}}
+    <tr><td>{{strength}}</td><td>{{total_cbd}} mg</td><td>${{full_price}}<br /> <em>0{{full_mg_price}}/mg</em></td><td>${{subscription_price}}<br /> <em>0{{subscription_mg_price}}/mg</em></td></tr>
+    {{/each}}
+  </table>
+</article>
+<article class='story'>
+  <h2>Topical Salve Pricing</h2>
+  <p><strong>The table includes unit price and cost per milligram of CBD.</strong></p>
+  <table class='pricing'>
+    {{#each pricing.salve}}
+      <tr class='head-row'><td colspan='4'>{{strength}} Regenerative CBD Salve</td></tr>
+      <tr class='alt-row'><td>Container Size</td><td>Total CBD</td><td>One-time<br />Purchases</td><td>Subscription</td></tr>
+      {{#each sizes}}
+      <tr><td>{{size}} oz.</td><td>{{total_cbd}} mg</td><td>${{full_price}}<br /><em> 0{{full_mg_price}}/mg</em></td><td>${{subscription_price}}<br /><em> 0{{subscription_mg_price}}/mg</em></td></tr>
+      {{/each}}
+    {{/each}}
+  </table>
+</article>

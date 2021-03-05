@@ -66,6 +66,7 @@ async function loadBlogPosts(){
     json = await response.json();
     if(json && json.status == SUCCESS){
       post_categories = json.data;
+//      console.log(post_categories);
       //remove newsletter categories for now since the api doesn't allow us to exclude a category
       for( let cat=post_categories.length-1; cat>=0; cat-- ){
         if( post_categories[cat].slug.indexOf("newsletter") >= 0 ) post_categories.splice( cat, 1 );
@@ -73,10 +74,11 @@ async function loadBlogPosts(){
     }else{
       throw new Error("Blog Posts category call failed");
     }
-    response = await fetch('https://api.dropinblog.com/v1/json/?' + dib_token + "&limit=20");
+    response = await fetch('https://api.dropinblog.com/v1/json/?' + dib_token + "&limit=25");
     json = await response.json();
     if(json && json.status == SUCCESS ){
       post_list = json.data.posts;
+//      console.log(post_list);
       let cat_fnd;
       //remove posts with any newsletter related category
       for( let pos=post_list.length-1; pos>=0; pos--){
@@ -146,7 +148,7 @@ async function loadPost( slug ){
     let url = 'https://api.dropinblog.com/v1/json/post/?' + dib_token + "&post=" + slug;
     let response = await fetch(url);
     json = await response.json();
-    if(json && json.status == SUCCESS ) return json.data;
+    if(json && json.status == SUCCESS )return json.data;
     else return false;
   }catch(error){
     console.log('loadPost :: ', error);
@@ -175,6 +177,12 @@ async function routeRequest( request, response, file_parts ){
       route = "post";
       content.posts = getSomePosts( 2, p.post ); //override full post list with two other posts for now
       content.post = p.post;
+
+      //following is hack to add author content since we aren't currently paying for "author functionality" in drop in blog
+      content.post.author = getPostAuthor( p.post.content );
+      //remove first line of post content which should contain the author key
+      content.post.content = content.post.content.substr(content.post.content.indexOf("\n", content.post.content.indexOf("-") )+1);
+
       dts.title = p.headTitle;
       dts.description = p.headDescription;
     }else{
@@ -187,6 +195,20 @@ async function routeRequest( request, response, file_parts ){
   dts.content = content;
   rtn = bro.get(true, template_manager.executeTemplate( templates[route], dts ) );
   return rtn;
+}
+
+var author_bios = {
+                    "r":{key:"r", short_name:"Richard", bio_link:"/learn/richard", display_name:"Richard, the Farm Doc", bio:"Richard \"The Farm Doc\" is a Family Physician, committed to providing science based information to help people make informed decisions about their health, and to understand the connection between their health and the health of our soil, plants, and planet." },
+                    "m":{key:"m", short_name:"Michele", bio_link:"/learn/michele", display_name:"Michele, the Farm Artist", bio:"Michele \"The Farm Artist\" writes about farming and regenerative agriculture from the perspective of a family literacy educator and mixed media artist." },
+                    "n":{key:"n", short_name:"Nathan", bio_link:"/learn/nathan", display_name:"Nathan, the Land Manager", bio:"Nathan \"The Land Manager \" writes about regenerative agriculture and raising a son into a more sustainable world." },
+                    "c":{key:"c", short_name:"Cynthia", bio_link:"/learn/cynthia", display_name:"Cynthia, the Observationist", bio:"Cynthia \"The Observationist\" writes about animal and plant interactions from a compassionate and experienced perspective." },
+                    "unknown":{key:"unknown", short_name:"Unknown", display_name:"the Unknown Author", bio:"I assumed the name was pretty self explanatory. We simply don't know who the author of this post was. That or Nathan mucked up a bit of programming again. That Nathan." }
+                  }
+
+function getPostAuthor( post_content ){
+  let key = post_content.substr(post_content.indexOf('-') + 1, 1 ).toLowerCase();
+  if( !author_bios.hasOwnProperty(key) ) return author_bios.unknown;
+  else return author_bios[key];
 }
 
 //method to return the pinned items

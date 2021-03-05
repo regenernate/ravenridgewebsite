@@ -73,10 +73,11 @@ async function routeRequest( request, response, file_parts ){
   //check for requested template in templates object
   let data_to_send = { nav:{learn:true}, title:pages[template].title, description:pages[template].desc };
   if( templates.hasOwnProperty( template )){
-    console.log(template);
     data_to_send.nav[ template ] = true;
     if( template == "product_faqs" ){
       data_to_send.faqs = faqs;
+    }else if( template == "transparent_pricing" ){
+      data_to_send.pricing = pricing;
     }
     //execute template
     rtn = bro.get( true, template_manager.executeTemplate( templates[ template ], data_to_send ) );
@@ -87,6 +88,53 @@ async function routeRequest( request, response, file_parts ){
     rtn = bro.get(true, template_manager.executeTemplate( template_manager.unsupported_route, data_to_send ) );
   }
   return rtn;
+}
+
+//for display on the transparent_pricing page
+var pricing = {
+  salve:[
+    {
+      strength:"1%",
+      sizes:[
+        {
+          size:"1", total_cbd:"300", full_price:"42", subscription_price:"35", full_mg_price:".14", subscription_mg_price:".12"
+        },
+        {
+          size:"2", total_cbd:"600", full_price:"56", subscription_price:"48", full_mg_price:".09", subscription_mg_price:".08"
+        },
+        {
+          size:"4", total_cbd:"1200", full_price:"88", subscription_price:"76", full_mg_price:".07", subscription_mg_price:".06"
+        }
+      ]
+    },{
+      strength:"2%",
+      sizes:[
+        {
+          size:"1", total_cbd:"600", full_price:"50", subscription_price:"42", full_mg_price:".08", subscription_mg_price:".07"
+        },
+        {
+          size:"2", total_cbd:"1200", full_price:"88", subscription_price:"74", full_mg_price:".07", subscription_mg_price:".06"
+        },
+        {
+          size:"4", total_cbd:"2400", full_price:"130", subscription_price:"110", full_mg_price:".054", subscription_mg_price:".046"
+        }
+      ]
+    }
+  ],
+  sublingual:[
+    {
+      strength:"1%", total_cbd:"300", full_price:"28", subscription_price:"24", full_mg_price:".09", subscription_mg_price:".08"
+    },
+    {
+      strength:"2%", total_cbd:"600", full_price:"42", subscription_price:"36", full_mg_price:".07", subscription_mg_price:".06"
+    },
+    {
+      strength:"3%", total_cbd:"900", full_price:"56", subscription_price:"48", full_mg_price:".06", subscription_mg_price:".05"
+    },
+    {
+      strength:"4%", total_cbd:"1200", full_price:"65", subscription_price:"56", full_mg_price:".054", subscription_mg_price:".047"
+    }
+  ]
 }
 
 module.exports.router = routeRequest;
