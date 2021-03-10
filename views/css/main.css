@@ -33,6 +33,25 @@
     margin-right:auto;
   }
 
+  .question-table{
+    font-size:.8rem;
+  }
+
+  .question-table th{
+    border:solid 1px black;
+    background-color:var(--mountain);
+    color:#FFF;
+    padding:1rem 10px;
+    line-height:1rem;
+  }
+
+  .question-table td{
+    border:solid 1px black;
+    padding:1rem 10px;
+    line-height:1rem;
+  }
+
+
   .center-quote{
     display:block;
     margin-left:auto;
@@ -98,8 +117,8 @@
 
   .pricing td{
     border:solid 1px black;
-    padding:1rem 5px;
-    line-height:1.4rem;
+    padding:1rem 10px;
+    line-height:1.3rem;
   }
 
   .pricing .alt-row td{
@@ -110,9 +129,18 @@
 
 @media only screen and (max-width:500px) {
 
+  .pricing td{
+    padding:.8rem 5px;
+  }
+
 }
 
 @media only screen and (min-width: 900px) {
+
+  .pricing td{
+    padding:1rem 20px;
+    line-height:1.4rem;
+  }
 
   h1, h2, h3, p {
     padding:0;

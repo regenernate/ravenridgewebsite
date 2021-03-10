@@ -2,11 +2,14 @@
 /** base screen styles are for 500px to 900px mobile landscape through tablet screen sizes **/
 @media only screen {
 
-  .dark_section{
+  .dark-section{
+    margin-top:4rem;
     text-align:center;
+    padding-right:4rem;
+    padding-left:4rem;
     padding-top:2rem;
     padding-bottom:3rem;
-    background-color: #E3E3E3;
+    background-color: var(--dusk);
   }
 
   .call_to_action_link{
@@ -20,6 +23,18 @@
     background-color: var(--grass);
     padding:calc(.75rem - 4px) calc(1rem - 4px);
     border: 4px solid var(--evergreen);
+  }
+
+  .orange_cta_link{
+    background-color: var(--sunset);
+    color:#FFFFFF;
+    display:inline-block;
+    padding:.75rem 1rem;
+  }
+
+  .orange_cta_link:hover {
+    padding:calc(.75rem - 4px) calc(1rem - 4px);
+    border: 4px solid #000000;
   }
 
   .callout-link-box{

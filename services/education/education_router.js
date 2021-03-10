@@ -114,10 +114,10 @@ var pricing = {
         },
         {
           size:"2", total_cbd:"1200", full_price:"88", subscription_price:"74", full_mg_price:".07", subscription_mg_price:".06"
-        },
-        {
-          size:"4", total_cbd:"2400", full_price:"130", subscription_price:"110", full_mg_price:".054", subscription_mg_price:".046"
-        }
+        } /*         {
+                  size:"4", total_cbd:"2400", full_price:"130", subscription_price:"110", full_mg_price:".054", subscription_mg_price:".046"
+                }
+ */
       ]
     }
   ],
