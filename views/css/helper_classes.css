@@ -35,10 +35,20 @@
     display: none;
   }
 
+  .fda{
+    margin-top:2rem;
+    margin-bottom:1rem;
+    font-size:.8rem;
+    color:var(--mountain);
+  }
+
   .center{
     display:block;
     margin-left:auto;
     margin-right:auto;
+  }
+
+  .center-text{
     text-align:center;
   }
 

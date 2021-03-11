@@ -80,6 +80,7 @@ handlebars.registerPartial('visit_shop', handlebars.compile( fs.readFileSync( ".
 handlebars.registerPartial('navigation', handlebars.compile( fs.readFileSync( "./views/shared/navigation.handlebars", 'utf-8' )));
 handlebars.registerPartial('mtw_navigation', handlebars.compile( fs.readFileSync( "./views/shared/mtw_navigation.handlebars", 'utf-8' )));
 handlebars.registerPartial('footer', handlebars.compile( fs.readFileSync( "./views/shared/footer.handlebars", 'utf-8' )));
+handlebars.registerPartial('fda_approved', handlebars.compile( fs.readFileSync( "./views/shared/fda_approved.handlebars", 'utf-8' )));
 
 //load and compile layout templates
 var default_layout = "logged_out";
