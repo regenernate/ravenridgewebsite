@@ -21,6 +21,46 @@
         "product_name":".5% CBD Topical Salve (brown bottom label)",
         "stated_strength":"one-half percent cbd",
         "sample_id":"MO00221012-001"
+      },
+      "2021112":{
+        "product_name":"300mg CBD Sublingual Oil - 2021",
+        "stated_strength":"10 mg/ml",
+        "sample_id":"2103STL0091.032"
+      },
+      "2021113":{
+        "product_name":"600mg CBD Sublingual Oil - 2021",
+        "stated_strength":"20 mg/ml",
+        "sample_id":"2103STL0091.0323"
+      },
+      "2021114":{
+        "product_name":"900mg CBD Sublingual Oil - 2021",
+        "stated_strength":"30 mg/ml",
+        "sample_id":"2103STL0091.0324"
+      },
+      "2021115":{
+        "product_name":"1200mg CBD Sublingual Oil - 2021",
+        "stated_strength":"40 mg/ml",
+        "sample_id":"2102STL0076.0288"
+      },
+      "2021116":{
+        "product_name":"1% - 300mg CBD Topical Salve",
+        "stated_strength":"10 mg/ml",
+        "sample_id":"2103STL0088.0318"
+      },
+      "2021117":{
+        "product_name":"2% - 600mg CBD Topical Salve",
+        "stated_strength":"20 mg/ml",
+        "sample_id":"2103STL0088.0319"
+      },
+      "2021_mycotoxins":{
+        "product_name":"2021 full spectrum extract for sublingual and salve",
+        "test_type":"mycotoxins",
+        "test_year":"2021"
+      },
+      "2021_heavy_metals":{
+        "product_name":"2021 full spectrum extract for sublingual and salve",
+        "test_type":"heavy metals",
+        "test_year":"2021"
       }
   }
 }

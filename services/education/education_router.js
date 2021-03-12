@@ -63,6 +63,15 @@ fs.readFile("./services/education/data/faqs.json", function(error, content) {
     }
 });
 
+var tests;
+fs.readFile("./services/education/data/testing.json", function(error, content){
+  if(error){
+    console.log("education_router error :: " + error.message );
+  }else{
+    tests = JSON.parse(content).tests;
+  }
+});
+
 //write a method to handle route requests and return a bro
 async function routeRequest( request, response, file_parts ){
   let rtn = null;
@@ -78,6 +87,8 @@ async function routeRequest( request, response, file_parts ){
       data_to_send.faqs = faqs;
     }else if( template == "transparent_pricing" ){
       data_to_send.pricing = pricing;
+    }else if( template == "third_party_testing"){
+      data_to_send.tests = tests;
     }
     //execute template
     rtn = bro.get( true, template_manager.executeTemplate( templates[ template ], data_to_send ) );

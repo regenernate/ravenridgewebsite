@@ -43,16 +43,22 @@ function loadTests(){
         console.log("content_controller error :: " + error.message);
       } else {
         tests = JSON.parse(content).tests;
+//        console.log(tests);
         //create titles and descriptions for pages by inserting the specific test details into the base title / description, keyed by test id
         //currently hardcodes "result" as the page template that shows different tests - probably won't change so will leave it for now
         titles = {};
         for( let i in tests ){
+          if( !tests[i].hasOwnProperty("test_type" ) ){
 /*          if( tests[i].hasOwnProperty('sample_id') ){
             titles[i] = {title:insertTestDetails(pages.kaycha.title, tests[i]), desc:insertTestDetails(pages.kaycha.desc, tests[i])};
           }else{*/
             titles[ i ] = {title:insertTestDetails(pages.result.title, tests[i]), desc:insertTestDetails(pages.result.desc, tests[i])};
 //          }
+          }else{
+            titles[ i ] = {title:"This is the " + tests[i].test_type + " test for our " + tests[i].test_year + " harvest.", desc:"This page displays the " + tests[i].test_type + " test results for our " + tests[i].test_year + " hemp harvest." }
+          }
         }
+//        console.log(titles);
       }
   });
 }
@@ -77,15 +83,17 @@ module.exports.active = true;
 
 async function routeRequest( request, response, file_parts ){
   //if there is no test name sent, show list of all products and their coas
-  if(!file_parts.length || !file_parts[0].length || isNaN(file_parts[0])){
+  if(!file_parts.length || !file_parts[0].length){
+    console.log("what?");
     return bro.get(true, template_manager.executeTemplate(templates.home,{nav:nav, title:pages.home.title, description:pages.home.desc}));
   } else {
     let fp0 = file_parts[0];
+    console.log("here I am");
     //need to check object storage to see if this test result exists
     if( !tests.hasOwnProperty( fp0 ) )
       return bro.get(true, template_manager.executeTemplate(template_manager.unsupported_route, {nav:nav, title:pages.error.title, description:pages.error.desc, message:"<h1>There is no test matching this product.</h1><p>If you scanned a product URL and reached this page, please email Nathan at RavenRidgeFamilyFarm @ gmail.com.</p>"}));
     else
-      return bro.get(true, template_manager.executeTemplate(templates.result, {nav:nav, test_filename:fp0 + ".jpg", title:titles[fp0].title, description:titles[fp0].desc, product_data:tests[fp0] }));
+      return bro.get(true, template_manager.executeTemplate(templates.result, {nav:nav, test_filename:fp0 + ((tests[fp0].ext) ? "."+tests[fp0].ext : ".jpg" ), test_filetype:((tests[fp0].ext) ? tests[fp0].ext : "jpg"), title:titles[fp0].title, description:titles[fp0].desc, product_data:tests[fp0] }));
 
 // if( !tests[fp0].hasOwnProperty('sample_id') ){ //old testing company coas hosted as pdfs locally
 //  }else{ //new testing company coas hosted on their server

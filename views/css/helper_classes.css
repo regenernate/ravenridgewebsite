@@ -17,6 +17,10 @@
     list-style: none;
   }
 
+  .top-margin{
+    margin-top:2rem;
+  }
+
   .padded-list{
     padding-left:5vw;
     padding-right:10vw;
@@ -39,7 +43,28 @@
     margin-top:2rem;
     margin-bottom:1rem;
     font-size:.8rem;
+    line-height:1rem;
     color:var(--mountain);
+  }
+
+  .product-table{
+    border:1px solid #000;
+    margin-top:1rem;
+    margin-bottom:2rem;
+
+  }
+
+  .product-table th{
+    background-color: var(--mountain);
+    color:#FFF;
+    padding:1.5rem 2rem;
+    font-weight:bold;
+    border:1px solid #000;
+  }
+
+  .product-table td{
+    padding:1rem;
+    border:1px solid #000;
   }
 
   .center{
