@@ -50,7 +50,11 @@ function compileTemplates(){
 
 const dib_token = "b=HVGYH9CBTW48PTWHQ2ET";
 const SUCCESS = "success";
-var newsletter_list = [{slug:'january-2021', title:'January 2021 - Introducing the newsletter.'},{slug:'february-2021', title:'February 2021 - Death and Rebirth'}];
+var newsletter_list = [
+      {slug:'january-2021', published_on:"January 22, 2021", title:'Winter on the Farm.', image:"/newsletter_jan2021.jpg"},
+      {slug:'february-2021', published_on:"February 16, 2021", title:'Death and Rebirth', image:"/newsletter_feb2021.jpg"},
+      {slug:'march-2021', published_on:"March 18, 2021", title:'Waking the Microbes', image:"/newsletter_mar2021.jpg"}
+    ];
 var sections={};
 
 loadNewsletterPosts();
