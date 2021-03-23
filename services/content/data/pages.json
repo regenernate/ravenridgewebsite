@@ -20,9 +20,9 @@
       "title":"The terms and conditions for using this website.",
       "desc":"Potential age restrictions and general risks surrounding the use of hemp and herbal products are outlined here. Be informed."
     },
-    "newsletter_signup":{
+    "signup":{
       "template":"./services/content/views/newsletter_signup.handlebars",
-      "title":"Landing page for folks to sign up for our newsletter.",
+      "title":"Landing page for folks to sign up for our newsletter and occasional promotions.",
       "desc":"Thanks for visiting. To learn more about our cbd products and regenerative practices, sign up for our newsletter."
     },
     "trifold2020":{

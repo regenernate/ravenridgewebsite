@@ -44,6 +44,11 @@
       "title":"How to Decide what CBD product to buy",
       "desc":"Whether you are talking about salve or sublingual oils, quantity or strength of product, there is a lot to consider when picking which CBD product to buy."
     },
+    "what_dosage":{
+      "template":"./services/education/views/what_dosage.handlebars",
+      "title":"What dosage CBD product should I buy?",
+      "desc":"Our guide to selecting the right dosage for your budget and your body."
+    },
     "richard":{
       "template":"./services/education/views/richard.handlebars",
       "title":"Some information about the Farm Doc",
