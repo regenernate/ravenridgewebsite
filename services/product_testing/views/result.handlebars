@@ -1,5 +1,6 @@
+<article class='story personal-story'>
 <h1>Third Party Test Results ( COA's )</h1>
+<p>Testing below is for <strong>{{product_data.product_name}}</strong>.</p>
+{{#if product_data.stated_strength}}<p>Stated strength: <em>{{product_data.stated_strength}}</em></p>{{/if}}
 
-<h2>{{product_data.product_name}} : {{product_data.stated_strength}}</h2>
-
-<img src='/test_results/{{test_filename}}' alt='This is an image of the certificate of authenticity for {{product_data.product_name}} which has a stated strength of {{product_data.stated_strength}}.' />
+<img src='/test_results/{{test_filename}}' class='center big' alt='This is an image of the certificate of authenticity for {{product_data.product_name}} which has a stated strength of {{product_data.stated_strength}}.' />

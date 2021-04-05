@@ -20,8 +20,8 @@ table
 
 th, td
 {
- text-align: left;
- vertical-align: top;
+ text-align: center;
+ vertical-align: middle;
 }
 
 h1, h2, h3, h4, h5, h6, th, td, caption { font-weight:normal; }

@@ -1,0 +1,25 @@
+{
+  "tests":[
+    { "year":"2020",
+      "tagline":"Full Spectrum Hemp Product Line",
+      "products":[
+        {"name":"300mg Sublingual Oil ( 10mg/ml )", "lot_number":"100"},
+        {"name":"600mg Sublingual Oil ( 20mg/ml )", "lot_number":"101"},
+        {"name":"900mg Sublingual Oil ( 30mg/ml )", "lot_number":"103"},
+        {"name":".5% Topical Salve ( 5mg/ml )", "lot_number":"105"},
+        {"name":"1% Topical Salve ( 10mg/ml )", "lot_number":"104"}
+      ]
+    },
+    { "year":"2021",
+      "tagline":"Regenerative CBD Product Line",
+      "products":[
+        {"name":"300mg Sublingual Oil ( 10mg/ml )", "lot_number":"2021112"},
+        {"name":"600mg Sublingual Oil ( 20mg/ml )", "lot_number":"2021113"},
+        {"name":"900mg Sublingual Oil ( 30mg/ml )", "lot_number":"2021114"},
+        {"name":"1200mg Sublingual Oil ( 40mg/ml )", "lot_number":"2021115"},
+        {"name":"1% Topical Salve ( 10mg/ml )", "lot_number":"2021116"},
+        {"name":"2% Topical Salve ( 20mg/ml )", "lot_number":"2021117"}
+      ]
+    }
+  ]
+}

@@ -34,6 +34,21 @@
       "title":"An intro to regenerative agriculture.",
       "desc":"Regenerative agriculture is a cornerstone of our business model. Learn a bit about what it entails here."
     },
+    "transparent_pricing":{
+      "template":"./services/education/views/transparent_pricing.handlebars",
+      "title":"We offer transparent pricing for CBD products",
+      "desc":"Transparency in pricing is hard to come by, but crucially important for customers to make informed decisions about what they buy. We show per gram pricing to make this easier."
+    },
+    "which_product":{
+      "template":"./services/education/views/which_product.handlebars",
+      "title":"How to Decide what CBD product to buy",
+      "desc":"Whether you are talking about salve or sublingual oils, quantity or strength of product, there is a lot to consider when picking which CBD product to buy."
+    },
+    "what_dosage":{
+      "template":"./services/education/views/what_dosage.handlebars",
+      "title":"What dosage CBD product should I buy?",
+      "desc":"Our guide to selecting the right dosage for your budget and your body."
+    },
     "richard":{
       "template":"./services/education/views/richard.handlebars",
       "title":"Some information about the Farm Doc",

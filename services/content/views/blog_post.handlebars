@@ -2,8 +2,13 @@
 <article class='blog_post'>
   <h1>{{content.post.title}}</h1>
   <p>Posted: {{content.post.publishedAt}}</p>
-
+  <a href='#author_bio'>- {{content.post.author.display_name}}</a>
   {{{content.post.content}}}
+  <section class='story center medium alt-section'>
+    <h2 id="author_bio">Learn more about {{{content.post.author.short_name}}}</h2>
+    <p>{{{content.post.author.bio}}}</p>
+    {{#if content.post.author.bio_link}}<a href='{{content.post.author.bio_link}}'>Full bio here.</a>{{/if}}
+  </section>
 </article>
 <section>
   <h2>More posts you might like ...</h2>

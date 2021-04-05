@@ -1,10 +1,34 @@
 
-<article>
-  <h1>Thanks for your interest in our salve products</h1>
-
+<h1>RavenRidge Regenerative CBD Salve</h1>
+<article class='story farm-story'>
+  <img class='center big well-padded' src='/product_images/salve-and-fingers.jpg' />
+  <p class='center'>To buy Topical Salve:</p>
+  <a href='https://shop.ravenridgefamilyfarm.com/collections/regenerative-cbd-salve' class='call_to_action_link'>Visit our Online Store</a>
 </article>
-
-<div id="my-store-17874207"></div>
-<div>
-<script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?17874207&data_platform=code&data_date=2019-12-16" charset="utf-8"></script><script type="text/javascript"> xProductBrowser("views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-17874207","defaultCategoryId=45568001");</script>
-</div>
+<article class='story story-intro'>
+  <h2>Compare Pricing per Milligram of CBD</h2>
+  <p>The table below shows the one-time purchase and subscription pricing for our 1 and 2 percent strength topical salve.</p>
+  <p><strong>The table includes unit price and cost per milligram of CBD.</strong></p>
+  <table class='pricing'>
+    {{#each pricing}}
+      <tr class='head-row'><td colspan='4'>{{strength}} Regenerative CBD Salve</td></tr>
+      <tr class='alt-row'><td>Container Size</td><td>Total CBD</td><td>One-time<br />Purchases</td><td>Subscription</td></tr>
+      {{#each sizes}}
+      <tr><td>{{size}} oz.</td><td>{{total_cbd}} mg</td><td>${{full_price}}<br /><em> 0{{full_mg_price}}/mg</em></td><td>${{subscription_price}}<br /><em> 0{{subscription_mg_price}}/mg</em></td></tr>
+      {{/each}}
+    {{/each}}
+  </table>
+</article>
+<article class='story personal-story'>
+  <h2>How Salve products work</h2>
+  <p>Topical Salve products are intended to be applied to impacted areas of the body via the skin, with the expectation that some of the CBD will be absorbed into the affected areas.</p>
+  <img class='half-full' src='/salve.jpg' />
+</article>
+<article class='story personal-story'>
+  <h2>Only Estate-grown or Organic Ingredients</h2>
+  <p class='center medium'>We only use ingredients sourced with quality we can trust.</p>
+  <img class='center small' src='/product_images/salve-bottom.jpg' />
+  <p>We also use argan oil because it has been shown to help with absorption.</p>
+</article>
+<p class='center'>Ready to buy?</p>
+<div class='center'><a href='https://shop.ravenridgefamilyfarm.com/collections/regenerative-cbd-salve' class='call_to_action_link'>Visit our Online Store</a></div>

@@ -15,8 +15,10 @@ var templates = template_manager.compileTemplates({
   "salve":"./services/purchasing/views/salve.handlebars"
 });
 
+
+
 async function routeRequest( request, response, file_parts ){
-  let data_to_send = { nav:{shop:true}, title:pagetitle, desc:pagedesc };
+  let data_to_send = { nav:{products:true}, title:pagetitle, desc:pagedesc};
 
   let rtn = null;
   //if no page name, use default template
@@ -27,9 +29,14 @@ async function routeRequest( request, response, file_parts ){
   if( !templates.hasOwnProperty( template ) ) {
     template = "home";
   }
-  if( template != "home" ) data_to_send.nav[ template ] = true;
+/*  if( template != "home" ){
+    data_to_send.nav[ template ] = true;
+    data_to_send.pricing = pricing[template];
+  }else{
+    data_to_send.pricing = pricing;
+  } */
 
-  console.log("Thanks for shopping ::", data_to_send);
+//  console.log("Products ::", data_to_send);
   return bro.get(true, template_manager.executeTemplate( templates[template], data_to_send ));
 }
 

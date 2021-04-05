@@ -1,6 +1,6 @@
 {
   "content":"../services/content/statics_router",
-  "shop":"../services/purchasing/purchasing_router",
+  "products":"../services/purchasing/purchasing_router",
   "learn":"../services/education/education_router",
   "newsletter":"../services/content/newsletter_router",
   "blog":"../services/content/blog_router",
