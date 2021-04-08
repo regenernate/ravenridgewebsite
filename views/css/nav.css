@@ -131,14 +131,14 @@
      display: var(--hover_menu_display);
   }
 
-  #nav_newsletter, #nav_blog {
+  #nav_farmdoc, #nav_blog {
     position:fixed;
     width:50vw;
     top:auto;
     bottom:0;
   }
 
-  #nav_newsletter {
+  #nav_farmdoc {
     right: 0;
   }
 
@@ -228,11 +228,11 @@
 
   /******    navigation style changes *******/
 
-    #nav_learn, #nav_products, #nav_newsletter, #nav_blog, #nav_home {
+    #nav_learn, #nav_products, #nav_farmdoc, #nav_blog, #nav_home {
       width:20vw;
     }
 
-    #nav_newsletter, #nav_blog {
+    #nav_farmdoc, #nav_blog {
       bottom: auto;
       top:0;
     }
@@ -241,7 +241,7 @@
       left: 20vw;
     }
 
-    #nav_newsletter{
+    #nav_farmdoc{
       left: 60vw;
     }
 
@@ -270,7 +270,7 @@
 /* bigger than 1200, display two column */
 @media only screen and (min-width: 1200px) {
 
-  #nav_learn, #nav_products, #nav_newsletter, #nav_blog {
+  #nav_learn, #nav_products, #nav_farmdoc, #nav_blog {
     width:21vw;
   }
 
@@ -283,7 +283,7 @@
     left: 21vw;
   }
 
-  #nav_newsletter{
+  #nav_farmdoc{
     left: 58vw;
   }
 
