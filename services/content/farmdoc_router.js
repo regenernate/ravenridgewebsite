@@ -61,7 +61,7 @@ async function routeRequest( request, response, file_parts ){
   //get requested page name
   let template = file_parts[0].toLowerCase();
   */
-  let data_to_send = { nav:{home:true}, title:"These are the Farm Doc's Guides to CBD.", description:"The Farm Doc Guides are a resource for patients and clinicians about CBD from a medical, scientific standpoint, but in clear language you can understand. It is intented to simplify communication about CBD and how it works in the body, so folks can make better educated decisions about using these emerging products." };
+  let data_to_send = { nav:{farmdoc:true, home:true}, title:"The Farm Doc's Guides to CBD.", description:"The Farm Doc's Guides are a resource for patients, clinicians and anybody else interested in CBD from a medical, scientific standpoint, but in clear language you can understand. It is intented to simplify communication about CBD and how it works in the body, so folks can make better educated decisions about using these emerging products." };
   //check for requested template in templates object
   rtn = bro.get( true, template_manager.executeTemplate( homepage.home, data_to_send ) );
 
