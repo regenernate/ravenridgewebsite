@@ -46,9 +46,11 @@ const SUCCESS = "success";
 
 var post_categories;
 var post_list;
+var newsletter_list;
 var pinned_list;
 
 compileTemplates();
+loadNewsletterList();
 loadBlogPosts();
 //this method is called after pages.json loads
 function compileTemplates(){
@@ -57,6 +59,11 @@ function compileTemplates(){
     templates[i] = pages[i].template;
   }
   template_manager.compileTemplates(templates, true);
+}
+
+function loadNewsletterList(){
+  let d = require("../../tools/filesys/filesys_util").loadData("./services/content/data/newsletter_list.json");
+  newsletter_list = d.list;
 }
 
 async function loadBlogPosts(){
@@ -131,10 +138,12 @@ function getPinnedPosts( posts ){
 
 async function rebuildPosts(){
   let old_posts = post_list;
+  let old_news = newsletter_list;
   let old_cats = post_categories;
   let old_pins = pinned_list;
   if( !( await loadBlogPosts() ) ){
     post_list = old_posts;
+    newsletter_list = old_news;
     post_categories = old_cats;
     pinned_list = old_pins;
     return false;
@@ -161,7 +170,7 @@ async function routeRequest( request, response, file_parts ){
   let rtn = null;
   let route;
   let dts = {nav:{blog:true}}
-  let content={ posts:post_list, posts_by_category:post_categories };
+  let content= { newsletter_list:newsletter_list, posts:post_list, posts_by_category:post_categories };
   if( !file_parts || !file_parts.length ) file_parts = ['home'];
   if( file_parts[0] == "reload" ){
     let s = await rebuildPosts();

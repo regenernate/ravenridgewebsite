@@ -1,27 +1,29 @@
 <article class='story personal-story'>
-  <h1>The RavenRidge Blog</h1>
-  <p>We grow hemp following <a href='/learn/why_regenerative'>regenerative practices</a>, we make <a href='https://shop.ravenridgefamilyfarm.com'>cbd products</a> from that hemp, and in so doing, we engage more deeply with the living world outside our doors.</p>
-  <p>You'll find narrative and informational content about these topics and more in the blog posts below.</p>
-  <p><em>For the full archive, <a href='#blog_archive'>skip to the end</a>.</em></p>
-  {{#each content.posts_by_category}}
-  <section>
-    <h2>{{title}}</h2>
-    <div class='flex_box post_list'>
-      {{#each posts}}
-        {{#if featuredImage}}
-          <a href='/blog/{{slug}}'><img src='{{featuredImage}}'/>{{title}}</a>
-        {{/if}}
-      {{/each}}
-    </div>
+  <p>There are a couple of ways we share information with those who are interested.</p>
+  <section name='newsletter'>
+    <h2>The RavenRidge Monthly Newlsetter</h2>
+    <p>We email <a href='/signup'>anyone who wants it</a> a newsletter once monthly with an update from the farm, an article by the Farm Doc (Richard) on Regenerative Health, and a place-based piece to help you connect with the living world around you, wherever that may be.</p>
+    {{>newsletter_signup simple=true}}
+    <a class='call_to_action_link' href='/signup'>Sign up!</a><a class='call_to_action_link small' href='#past_editions'>Read Past Editions</a>
   </section>
-  {{/each}}
-  <section id='blog_archive'>
-    <h2>Full Blog Archive</h2>
-    <ul class='padded_list no-decoration'>
-    {{#each content.posts}}
-      <li><a href='/blog/{{slug}}'>{{title}}</a></li>
-    {{/each}}
-    </ul>
+  <section name='blog'>
+    <h2>The RavenRidge Blog</h2>
+    <p>Some of us are more prolific than others, but we all contribute when we can.</p>
+    <section id='blog_archive'>
+      <ul class='padded_list no-decoration'>
+      {{#each content.posts}}
+        <li><a href='/blog/{{slug}}'>{{title}}</a></li>
+      {{/each}}
+      </ul>
+    </section>
+  </section>
+  <section id='past_editions'>
+    <h3>Read Past Newsletter Editions</h3>
+    <ol>
+      {{#each content.newsletter_list }}
+      <a href='/newsletter/{{slug}}'><li>{{published_on}} : {{title}}</li></a>
+      {{/each}}
+    </ol>
   </section>
 </article>
 

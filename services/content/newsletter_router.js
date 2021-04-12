@@ -50,14 +50,23 @@ function compileTemplates(){
 
 const dib_token = "b=HVGYH9CBTW48PTWHQ2ET";
 const SUCCESS = "success";
-var newsletter_list = [
-      {slug:'january-2021', published_on:"January 22, 2021", title:'Winter on the Farm.', image:"/newsletter_jan2021.jpg"},
-      {slug:'february-2021', published_on:"February 16, 2021", title:'Death and Rebirth', image:"/newsletter_feb2021.jpg"},
-      {slug:'march-2021', published_on:"March 18, 2021", title:'Waking the Microbes', image:"/newsletter_mar2021.jpg"}
-    ];
+var newsletter_list;
+
+/*
+LOAD newsletter from external data file into newsletter_list before triggering loadNewsletterPosts
+then implement same load from blog_router
+*/
+
+
 var sections={};
 
-loadNewsletterPosts();
+loadNewsletterList();
+
+function loadNewsletterList(){
+  let d = require("../../tools/filesys/filesys_util").loadData("./services/content/data/newsletter_list.json");
+  newsletter_list = d.list;
+  loadNewsletterPosts();
+}
 
 async function loadNewsletterPosts(){
   let json;
