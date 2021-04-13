@@ -20,11 +20,10 @@ var bro = require("../../server/bro");
 //load any controllers needed to handle requests
 var template_manager = require('../../services/template_manager');
 
-let homepage = template_manager.compileTemplates( {"home":"./services/content/views/farmdoc_home.handlebars"}, true );
-/*
-var pages;
-var default_page;
+var pages = template_manager.compileTemplates( {"nonclinician_faq":"./services/content/views/farmdoc/nonclinician_faq.handlebars", "clinician_faq":"./services/content/views/farmdoc/clinician_faq.handlebars", "home":"./services/content/views/farmdoc_home.handlebars"}, true );
 
+var default_page = "home";
+/*
 fs.readFile("./services/content/data/pages.json", function(error, content){
   if(error) {
     console.log("content_router error loading pages.json");
@@ -55,15 +54,18 @@ function compileTemplates(){
 //write a method to handle route requests and return a bro
 async function routeRequest( request, response, file_parts ){
   let rtn = null;
-  /*
   //if no page name, use default template
   if( !file_parts || file_parts.length == 0 ) file_parts = [ default_page ];
   //get requested page name
   let template = file_parts[0].toLowerCase();
-  */
+
   let data_to_send = { nav:{farmdoc:true, home:true}, title:"The Farm Doc's Guides to CBD.", description:"The Farm Doc's Guides are a resource for patients, clinicians and anybody else interested in CBD from a medical, scientific standpoint, but in clear language you can understand. It is intented to simplify communication about CBD and how it works in the body, so folks can make better educated decisions about using these emerging products." };
   //check for requested template in templates object
-  rtn = bro.get( true, template_manager.executeTemplate( homepage.home, data_to_send ) );
+  if( pages.hasOwnProperty( template ) ){
+    rtn = bro.get(true, template_manager.executeTemplate( pages[template], data_to_send ) );
+  }else{
+    rtn = bro.get( true, template_manager.executeTemplate( pages.home, data_to_send ) );
+  }
 
   return rtn;
 }
