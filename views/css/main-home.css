@@ -130,6 +130,11 @@
     display:none;
   }
 
+  .callout-link-box .links{
+    padding:5px;
+    font-size:1rem;
+  }
+
   .farmlife_overlay {
     padding:0 1rem;
     top:3rem;
