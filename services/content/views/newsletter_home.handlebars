@@ -1,28 +1,25 @@
-<article class='story personal-story'>
+<section class='story personal-story'>
   <h1>Welcome to the RavenRidge Family Farm Newsletter</h1>
-  <p>Each issue of our monthly newsletter features:<ul class='padded-list large'><li>an update from the farm</li><li>an article about Regenerative Health <span class='extra-content'>( from Richard, the Farm Doc )</span></li><li>and some engaging content about connecting to the natural world through our own yards</li></ul></p>
-  <p class='center medium'>Plus there are always a few pictures from the farm!</p>
+  <p>We hope the pages below help you to connect more deeply with the living world outside your door.</p>
   <div class='flex_box'>
     {{#each newsletters}}
     {{#if image }}<img class='small lightly-padded' src='{{image}}' alt='The first image from the newsletter on {{published_on}}.' />{{/if}}
     {{/each}}
   </div>
-</article>
-<article class='alt-section story farm-story'>
-  <h2>Newsletter Archive</h2>
-  <p>Past newsletters are listed below.</p>
+  <h2>Read Past Editions</h2>
   <ol class='padded-list no-decoration'>
     {{#each newsletters}}
     <li class='center title'>{{published_on}} - <a href='/newsletter/{{slug}}'>{{title}}</a></li>
     {{/each}}
   </ol>
-</article>
-<section class='center big' id="signup">
-  <h2>Sign up Below</h2>
-  <p>To get an abbreviated version of future editions in your inbox each month, plus occasional subscriber-only promotions.</p>
-{{>newsletter_signup}}
 </section>
-<section class='story farm-story'>
+<section class='center big' id="signup">
+  <strong>Sign up Below</strong>
+  <p>To get an abbreviated version of future editions in your inbox each month, plus occasional subscriber-only promotions.</p>
+  {{>newsletter_signup simple=true}}
+</section>
+<section>
   <h2>The RavenRidge Blog</h2>
-  <p>For more frequently changing content, <a href='/blog'>check out our blog</a>.</p>
+  <p>For more frequently changing content, <a href='/blog#archive'>check out our blog</a>.</p>
+  <img class='center small' src='/ginger.jpg' alt='This hand drawn ginger plants represent the unique perspectives we each bring to the RavenRidge blog.' />
 </section>

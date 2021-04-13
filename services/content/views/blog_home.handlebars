@@ -1,12 +1,20 @@
 <article class='story personal-story'>
-  <p>There are a couple of ways we share information with those who are interested.</p>
+  <p><em>Sharing what we learn being central to our mission</em>, there are a couple of ways we share information with those who are interested.</p>
   <section name='newsletter'>
+    <img class='center tiny' src='/the_snail.jpg' alt='This hand drawn snail leads the way to the monthly newsletter.' />
     <h2>The RavenRidge Monthly Newlsetter</h2>
-    <p>We email <a href='/signup'>anyone who wants it</a> a newsletter once monthly with an update from the farm, an article by the Farm Doc (Richard) on Regenerative Health, and a place-based piece to help you connect with the living world around you, wherever that may be.</p>
+    <p>We email <a href='/signup'>anyone who wants it</a> a newsletter once monthly meant to help us connect with the living world outside our doors.</p>
+    <div class='flex_box'>
+      {{#each content.newsletter_list}}
+      {{#if image }}<img class='small lightly-padded' src='{{image}}' alt='The first image from the newsletter on {{published_on}}.' />{{/if}}
+      {{/each}}
+    </div>
+    <strong>Sign up now!</strong>
     {{>newsletter_signup simple=true}}
-    <a class='call_to_action_link' href='/signup'>Sign up!</a><a class='call_to_action_link small' href='#past_editions'>Read Past Editions</a>
+    <div class='center-text'><a class='call_to_action_link' href='/newsletter'>Read Past Editions</a></div>
   </section>
-  <section name='blog'>
+  <section id='archive' name='blog'>
+    <img class='well-padded center medium' src='/ginger.jpg' alt='This hand drawn ginger plants represent the unique perspectives we each bring to the RavenRidge blog.' />
     <h2>The RavenRidge Blog</h2>
     <p>Some of us are more prolific than others, but we all contribute when we can.</p>
     <section id='blog_archive'>
@@ -16,14 +24,8 @@
       {{/each}}
       </ul>
     </section>
-  </section>
-  <section id='past_editions'>
-    <h3>Read Past Newsletter Editions</h3>
-    <ol>
-      {{#each content.newsletter_list }}
-      <a href='/newsletter/{{slug}}'><li>{{published_on}} : {{title}}</li></a>
-      {{/each}}
-    </ol>
+    <strong>Click a name to learn more about each author below.</strong>
+    {{>mtw_navigation simple=true}}
   </section>
 </article>
 

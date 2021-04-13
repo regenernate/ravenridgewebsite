@@ -4,8 +4,8 @@
   <p>Posted: {{content.post.publishedAt}}</p>
   <a href='#author_bio'>- {{content.post.author.display_name}}</a>
   {{{content.post.content}}}
-  <section class='story center medium alt-section'>
-    <h2 id="author_bio">Learn more about {{{content.post.author.short_name}}}</h2>
+  <section id="author_bio" class='story center medium alt-section'>
+    <h2>Learn more about {{{content.post.author.short_name}}}</h2>
     <p>{{{content.post.author.bio}}}</p>
     {{#if content.post.author.bio_link}}<a href='{{content.post.author.bio_link}}'>Full bio here.</a>{{/if}}
   </section>
