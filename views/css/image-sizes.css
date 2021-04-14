@@ -39,6 +39,10 @@
     width: 50%;
   }
 
+  .icon-tiny{
+    max-width:50px;
+  }
+  
   .tiny{
     max-width: 150px;
   }

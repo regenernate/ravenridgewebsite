@@ -5,7 +5,7 @@
   <a href='#author_bio'>- {{content.post.author.display_name}}</a>
   {{{content.post.content}}}
   <section id="author_bio" class='story center medium alt-section'>
-    <h2>Learn more about {{{content.post.author.short_name}}}</h2>
+    <strong>Learn more about {{{content.post.author.short_name}}}</strong>
     <p>{{{content.post.author.bio}}}</p>
     {{#if content.post.author.bio_link}}<a href='{{content.post.author.bio_link}}'>Full bio here.</a>{{/if}}
   </section>
@@ -14,4 +14,9 @@
   <h2>More posts you might like ...</h2>
   <hr />
   {{>post_list content}}
+</section>
+<section>
+  <h2>The RavenRidge Newsletter</h2>
+  <p class='center-text'>If you like what you are reading here, sign up for our monthly newsletter!</p>
+  {{>newsletter_signup simple=true}}
 </section>

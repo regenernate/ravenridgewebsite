@@ -49,15 +49,20 @@
       "title":"What dosage CBD product should I buy?",
       "desc":"Our guide to selecting the right dosage for your budget and your body."
     },
+    "thefarmdoc":{
+      "template":"./services/education/views/thefarmdoc.handlebars",
+      "title":"A brief reveal of the Farm Docs credentials.",
+      "desc":"Here you can get a better sense of who exactly the Farm Doc is, and why his CBD Guides might be worth a read."
+    },
     "richard":{
       "template":"./services/education/views/richard.handlebars",
-      "title":"Some information about the Farm Doc",
+      "title":"Some information about Richard, the Farm Doc",
       "desc":"Here you can learn all there is to know about Richard, the farm doc at RavenRidge"
     },
     "michele":{
       "template":"./services/education/views/michele.handlebars",
       "title":"Some information about Michele",
-      "desc":"Here you can learn all there is to know about Michele, the assistant farm manager at RavenRidge."
+      "desc":"Here you can learn all there is to know about Michele, the farm artist at RavenRidge."
     },
     "cynthia":{
       "template":"./services/education/views/cynthia.handlebars",
@@ -67,7 +72,7 @@
     "nathan":{
       "template":"./services/education/views/nathan.handlebars",
       "title":"Some information about Nathan",
-      "desc":"Here you can learn all there is to know about Nathan, the farm manager at RavenRidge"
+      "desc":"Here you can learn all there is to know about Nathan, the farm manager for RavenRidge"
     }
   },
   "default_page":"learn_landing"
