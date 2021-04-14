@@ -1,0 +1,74 @@
+.fd-faq{
+  padding-top:3rem;
+}
+
+.fd-faqheader{
+  padding: 1rem;
+  background-color:var(--mountain);
+  color:#FFFFFF;
+}
+
+.fd-answer{
+  margin-top:1rem;
+  margin-right:5%;
+  margin-left:5%;
+}
+
+.fd-answer li{
+  padding:.25em 0 1em 1em;
+}
+
+.fd-references{
+  margin-top:1em;
+  max-width:600px;
+  border:2px solid black;
+  padding-left:1em;
+}
+
+.fd-references li {
+  list-style-position: inside;
+}
+
+.fd-callout-text {
+  color: #C80C0C;
+  font-weight:bold;
+}
+
+div[id^='cbdgf']{
+  display:none;
+}
+
+div[id^='cbdgf']:target {
+  display:block;
+}
+
+@media print {
+  body{
+    font-size:12px;
+    margin-left:3rem;
+    margin-right:2rem;
+  }
+
+  h1{
+    margin:auto;
+  }
+
+  .print-hidden{
+    display:none;
+  }
+  .fd-faq{
+    padding-top:5px;
+  }
+  .fd-faqheader{
+    padding:0;
+    border-bottom:1px solid black;
+    color:#000000;
+  }
+  .fd-answer{
+    margin:0;
+  }
+
+  .medium{
+    max-width:300px;
+  }
+}

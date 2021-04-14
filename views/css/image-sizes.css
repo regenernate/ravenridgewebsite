@@ -3,6 +3,26 @@
 
 /* assume all screen media defaults as phone to small tablet upright single column */
 
+.icon-tiny{
+  max-width:50px;
+}
+
+.tiny{
+  max-width: 150px;
+}
+
+.small{
+  max-width: 250px;
+}
+
+.medium{
+  max-width:400px;
+}
+
+.big{
+  max-width:600px;
+}
+
 @media only screen {
 
   .panoramic {
@@ -39,25 +59,6 @@
     width: 50%;
   }
 
-  .icon-tiny{
-    max-width:50px;
-  }
-  
-  .tiny{
-    max-width: 150px;
-  }
-
-  .small{
-    max-width: 250px;
-  }
-
-  .medium{
-    max-width:400px;
-  }
-
-  .big{
-    max-width:600px;
-  }
 
   .img-center{
     display:block;
