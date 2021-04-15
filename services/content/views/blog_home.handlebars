@@ -3,15 +3,15 @@
   <section name='newsletter'>
     <img class='center tiny' src='/the_snail.jpg' alt='This hand drawn snail leads the way to the monthly newsletter.' />
     <h2>The RavenRidge Newsletter</h2>
-    <p>We email <a href='/signup'>anyone who wants it</a> a newsletter once monthly meant to help us connect with the living world outside our doors.</p>
+    <p>Get monthly peeks into the seasonal cycle of the farm, notes from the Farm Doc, and ideas for connecting with the living world outside your doors, delivered free to your inbox.</p>
     <div class='flex_box'>
       {{#each content.newsletter_list}}
       {{#if image }}<img class='small lightly-padded' src='{{image}}' alt='The first image from the newsletter on {{published_on}}.' />{{/if}}
       {{/each}}
     </div>
-    <strong>Sign up now!</strong>
+    <div class='well-padded center-text'><strong>Sign up now!</strong></div>
     {{>newsletter_signup simple=true}}
-    <div class='center-text'><a class='call_to_action_link' href='/newsletter'>Read Past Editions</a></div>
+    <div class='center-text'><a href='/newsletter'>Read Past Editions</a></div>
   </section>
   <section id='archive' name='blog'>
     <img class='well-padded center medium' src='/ginger.jpg' alt='This hand drawn ginger plants represent the unique perspectives we each bring to the RavenRidge blog.' />

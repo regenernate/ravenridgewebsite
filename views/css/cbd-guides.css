@@ -20,13 +20,15 @@
 
 .fd-references{
   margin-top:1em;
-  max-width:600px;
+  max-width:800px;
   border:2px solid black;
   padding-left:1em;
 }
 
 .fd-references li {
   list-style-position: inside;
+  padding-right: .8em;
+  font-size:.8em;
 }
 
 .fd-callout-text {

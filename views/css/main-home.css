@@ -20,8 +20,9 @@
   }
 
   .call_to_action_link:hover {
+    cursor: pointer;
     background-color: var(--grass);
-    padding:calc(.75rem - 4px) calc(1rem - 4px);
+/*    padding:calc(.75rem - 4px) calc(1rem - 4px);*/
     border: 4px solid var(--evergreen);
   }
 
