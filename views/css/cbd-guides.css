@@ -34,12 +34,8 @@
   font-weight:bold;
 }
 
-div[id^='cbdgf']{
+.print-only{
   display:none;
-}
-
-div[id^='cbdgf']:target {
-  display:block;
 }
 
 @media print {
@@ -51,6 +47,10 @@ div[id^='cbdgf']:target {
 
   h1{
     margin:auto;
+  }
+
+  .print-only{
+    display:block;
   }
 
   .print-hidden{
@@ -68,7 +68,11 @@ div[id^='cbdgf']:target {
     margin:0;
   }
 
+  .fd-answer li{
+    padding-top:2px;
+  }
+
   .medium{
-    max-width:300px;
+    max-width:250px;
   }
 }
