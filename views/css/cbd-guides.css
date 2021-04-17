@@ -61,17 +61,32 @@
   .fd-faq{
     padding-top:5px;
   }
+
   .fd-faqheader{
     padding:0;
     border-bottom:1px solid black;
     color:#000000;
-  }
-  .fd-answer{
-    margin:0;
+    font-size:1.1rem;
+    line-height: 1.1em;
   }
 
+  .fd-answer{
+    font-size:.9rem;
+    line-height: 1rem;
+  }
+
+  .fd-answer ul{
+    padding:0;
+    margin:0;
+  }
   .fd-answer li{
-    padding-top:2px;
+    margin:0;
+    padding:2px 0 4px 10px;
+  }
+
+  .fd-references li{
+    font-size:.6rem;
+    line-height: .8rem;
   }
 
   .medium{
