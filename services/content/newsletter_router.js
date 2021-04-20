@@ -71,10 +71,10 @@ function loadNewsletterList(){
 async function loadNewsletterPosts(){
   let json;
   try {
-    let response = await fetch('https://api.dropinblog.com/v1/json/?' + dib_token + '&category=newsletter');
+    let response = await fetch('https://api.dropinblog.com/v1/json/?' + dib_token + '&category=newsletter&limit=25');
     json = await response.json();
     if(json && json.status == SUCCESS ){
-    //  console.log(sections);
+//      console.log(json.data.posts);
       if( !await constructEditions( json.data.posts ) ){
         throw new Error("Newsletter :: Couldn't constructEditions");
       }
@@ -93,11 +93,13 @@ async function loadNewsletterPosts(){
 
 async function constructEditions( content ){
   try{
+    //this is incredibly inefficient code and I have no idea what I was thinking when I wrote it. Somebody fix it please!!!!!
     for( let i=0; i<newsletter_list.length; i++ ){
       //initialize the sections of this newsletter edition
       newsletter_list[i].sections = { narrative:"", "our-backyards":"", "regenerative-health":"" };
       //get this editions slug for quick access
       let this_edition = newsletter_list[i].slug;
+//      console.log("Loading ... ", this_edition);
       sections[ this_edition ] = {};
       //find the sections of this edition
       for( let j in content ){
@@ -110,17 +112,18 @@ async function constructEditions( content ){
           if( tmp_slug[0] == "newsletter" ) tmp_slug.shift();
           let section = tmp_slug.join("-");
           if( !section ) continue; //skip the base "newsletter" category
-  //        console.log("   is there a ", section);
-          if( !belongs && section == this_edition ){ //this is the newsletter category and matches the current edition
+//          console.log("   is there a ", section);
+          if( !belongs && section == this_edition ){ //this is a post from this edition
             belongs = true;
-  //          console.log("Yayy!!! it belongs");
+//          console.log("Yayy!!! it belongs");
             k = -1; //reset counter since we now know this content belongs to the edition we are looking for
             continue;
-          }else if( belongs ){ //this is one of the subsection categories OR the base "newsletter" category which can be ignored
+          }if( belongs ){ //this is one of the subsection categories OR the base "newsletter" category which can be ignored
             if( newsletter_list[i].sections.hasOwnProperty( section ) ){
-  //            console.log("   we found it!!!!");
+//              console.log("   we found it!!!!");
               newsletter_list[i].sections[ section ] = content[j];
               //load this actual content
+//              console.log("loading ... " + content[j].slug);
               let fsc = 'https://api.dropinblog.com/v1/json/post/?' + dib_token + "&post=" + content[j].slug;
               let response = await fetch(fsc);
               json = await response.json();
