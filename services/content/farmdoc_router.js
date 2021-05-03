@@ -20,7 +20,7 @@ var bro = require("../../server/bro");
 //load any controllers needed to handle requests
 var template_manager = require('../../services/template_manager');
 
-var pages = template_manager.compileTemplates( {"nonclinician_faq":"./services/content/views/farmdoc/nonclinician_faq.handlebars", "clinician_faq":"./services/content/views/farmdoc/clinician_faq.handlebars", "home":"./services/content/views/farmdoc_home.handlebars"}, true );
+var pages = template_manager.compileTemplates( {"nonclinician_toconsider":"./services/content/views/farmdoc/nonclinician_toconsider.handlebars","clinician_toconsider":"./services/content/views/farmdoc/clinician_toconsider.handlebars","nonclinician_faq":"./services/content/views/farmdoc/nonclinician_faq.handlebars", "clinician_faq":"./services/content/views/farmdoc/clinician_faq.handlebars", "home":"./services/content/views/farmdoc_home.handlebars"}, true );
 
 var default_page = "home";
 /*
