@@ -75,6 +75,11 @@
     text-align:center;
   }
 
+  .v-center{
+    display: flex;
+    align-items:center;
+  }
+
   .title{
     font-size:1.4rem;
     font-family:Adriane, Georgia, serif;
