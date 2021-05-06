@@ -135,9 +135,9 @@ async function respondToRequest( request, response ){
     //for now check only for html then json accepts
     if( request_headers.hasOwnProperty( 'accept' ) ){
       let accepts_header = String(request_headers.accept).toLowerCase();
-      if( accepts_header.indexOf( mime_types['.html'] ) >= 0 ) content_type_out = mime_types['.html'];
+      if( accepts_header.indexOf( mime_types['.html'] ) >= 0 || accepts_header.indexOf( mime_types['wildcard'] ) >= 0 ) content_type_out = mime_types['.html'];
       else if( accepts_header.indexOf( mime_types['.json'] ) >= 0 ) content_type_out = mime_types['.json'];
-      else throw new Error('Dynamic routes currently only serve content with accepts header html or json.');
+      else throw new Error('Dynamic routes currently only serve content with accepts header html or json, not ' + accepts_header + '.');
     }else{
       content_type_out = mime_types['.html'];
     }

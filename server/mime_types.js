@@ -6,6 +6,7 @@ simple controller to ensure only acceptable mime types are approved in a request
 */
 
 const mimeTypes = {
+    'wildcard': '*/*',
     '.txt': 'text/plain',
     '.html': 'text/html',
     '.js': 'text/javascript',
