@@ -2,8 +2,9 @@
   "list":
     [
       {"slug":"january-2021", "published_on":"January 22, 2021", "title":"Winter on the Farm.", "image":null},
-      {"slug":"february-2021", "published_on":"February 16, 2021", "title":"Death and Rebirth", "image":"/newsletter_feb2021.jpg"},
+      {"slug":"february-2021", "published_on":"February 16, 2021", "title":"Death and Rebirth", "image":null},
       {"slug":"march-2021", "published_on":"March 18, 2021", "title":"Waking the Microbes", "image":"/newsletter_mar2021.jpg"},
-      {"slug":"april-2021", "published_on":"April 22, 2021", "title":"Consider the Seed", "image":"/newsletter_apr2021.jpg"}
+      {"slug":"april-2021", "published_on":"April 22, 2021", "title":"Consider the Seed", "image":"/newsletter_apr2021.jpg"},
+      {"slug":"may-2021", "published_on":"May 20, 2021", "title":"Birds, Bees and Botanicals", "image":"/newsletter_may2021.jpg"}
     ]
 }
