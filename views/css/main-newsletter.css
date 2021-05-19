@@ -32,6 +32,11 @@
       line-height:1.6rem;
     }
 
+    .references ol li{
+      font-size:.8rem;
+      line-height:.8rem;
+    }
+
     /* rh_ prefixes indicate the regenerative_health section */
     .rh_header {
       background-color: var(--grass);
