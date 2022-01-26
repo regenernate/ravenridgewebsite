@@ -34,6 +34,11 @@
       "template":"./services/content/views/presentations.handlebars",
       "title":"Landing page for presentations given by RavenRidge family members.",
       "desc":"We hope you will find useful information here about regenerative land management, hemp, cbd and other realted topics."
+    },
+    "closed":{
+      "template":"./services/content/views/closed.handlebars",
+      "title":"Landing page for shop button since shop is now closed!",
+      "desc":"We hope you have enjoyed using our products."
     }
   },
   "default_page":"home"
